@@ -26,7 +26,7 @@ public class openCfg {
     public static void register(CommandDispatcher<FabricClientCommandSource> dispatcher) {
         dispatcher.register(literal("cfg")
                 .executes(ctx -> fooCommand(ctx.getSource()))
-
+                .requires(fabricClientCommandSource -> true)
         );
     }
 

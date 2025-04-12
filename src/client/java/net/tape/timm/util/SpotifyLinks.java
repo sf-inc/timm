@@ -1,0 +1,128 @@
+package net.tape.timm.util;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class SpotifyLinks {
+    private static final Map<String, String> links = new HashMap<>();
+
+    static {
+
+        links.put("timm:56e218", "https://open.spotify.com/track/5ctC3SewD3IqQuqJeitoV4?si=4bb9a6a6bc104ca2");
+        links.put("timm:1752", "https://open.spotify.com/track/2Ovh7mYIFpNpu7OWMLFtTo?si=c95862cac2cd4180");
+        links.put("timm:alcatraz", "https://open.spotify.com/track/5JuUBKhjCzxTuKVTaeEkuD?si=1a31b36f284641b9");
+        links.put("timm:an_early_frost", "https://open.spotify.com/track/5JcXJiaGlgagbz7kPKf8BF?si=2ea298bb93a24cc3");
+        links.put("timm:ancients_lament", "https://open.spotify.com/track/6l1FAkvV9jQax2MmlbVKIX?si=e6ec40a45c9a4854");
+        links.put("timm:and_all_goes_quiet", "https://open.spotify.com/track/7rhz8TOiswBcCLDfRLKhRM?si=e76c20a613664e3e");
+        links.put("timm:appletrees_demise", "https://open.spotify.com/track/7q8CGBomwCB5hT7LooyNAW?si=611f528950214dd2");
+        links.put("timm:as_the_sakura_blossoms", "https://open.spotify.com/track/0E1IN2nTi1YHurb7SDl05M?si=debbc1b134b643d7");
+        links.put("timm:atomic_cubes", "https://open.spotify.com/track/2gx1htyaqcvP0StrpMmaEa?si=20a61159b53d42a6");
+        links.put("timm:axolotls_dream", "https://open.spotify.com/track/2VAuRr7E1udR7R0wQu76AL?si=463b81f26efd4a4b");
+        links.put("timm:beautiful_breeze", "https://open.spotify.com/track/6OEOJdh5jAbHbWiPLM0Fb4?si=9e3649659bc1498b");
+        links.put("timm:betulina", "https://open.spotify.com/track/2ZrHje4nuCkpd2Qs2Xqyzt?si=493ac2a479bb47f7");
+        links.put("timm:boreal_december", "https://open.spotify.com/track/3SQSKLnAcvuS2hNHQbVMN1?si=e17e3616627646b2");
+        links.put("timm:burning_etherealism", "https://open.spotify.com/track/3xfmzDfWIxB59hMwmwHZFJ?si=3488744354bc474f");
+        links.put("timm:cascadia", "https://open.spotify.com/track/3NrHf7fJ4h9wfxSxqoRMjt?si=4a18e25f916a4b70");
+        links.put("timm:cereus", "https://open.spotify.com/track/2EEu0c7p2UHmxK2Z22nUoj?si=47bded7d508440a2");
+        links.put("timm:chateau", "https://open.spotify.com/track/0ItNExP7xYwxHRLn8E0SMN?si=ba4fd8f2ef174fcd");
+        links.put("timm:choral_vortex", "https://open.spotify.com/track/3IkTkmcCp9blVxxeoXCNbJ?si=4dd36297edf64a02");
+        links.put("timm:city_of_skulk", "https://open.spotify.com/track/0MdUdF9ffw7cMEVDBE8MZE?si=3b7e33f7439942e0");
+        links.put("timm:crystal_echoes", "https://open.spotify.com/track/0x9qMvFtBr8NGXoWmLxySJ?si=56143129a281483c");
+        links.put("timm:depths_unseen", "https://open.spotify.com/track/2dQ7Ud9v0kfLU5TelRysm2?si=4626cba23af6439a");
+        links.put("timm:distant_isles", "https://open.spotify.com/track/7CGcofijlzBYz6GUupzMhi?si=26e04f8e7e3d4830");
+        links.put("timm:doctor_pavlolich", "");
+        links.put("timm:echoes", "https://open.spotify.com/track/6nAMQ5PNnuiIEo7KGpQr61?si=d4d9ddf877ea4dc7");
+        links.put("timm:echoes_of_the_canyon", "https://open.spotify.com/track/5mSzDl7gsXhKBtJ7xth1DL?si=d644e868d0984587");
+        links.put("timm:flower_bed", "https://open.spotify.com/track/6pGZB6VCqNWQxzNRrkmz4O?si=6256f9dc51174fcb");
+        links.put("timm:fracturscape", "https://open.spotify.com/track/475ldG9hIuelITly0gOHTU?si=816797bc89454f0f");
+        links.put("timm:freedom_for_all", "https://open.spotify.com/track/0MiBLCvWhTuEyVD1cHJSoK?si=902580428f1b46de");
+        links.put("timm:friday", "https://open.spotify.com/track/50q3mZHLPaGllio933Igjj?si=e7faa8ae12064235");
+        links.put("timm:frogs_lullaby", "https://open.spotify.com/track/0JC0lIDQ4OB5X3pL0IskvV?si=3a0af9004c3441ea");
+        links.put("timm:frogstep", "https://open.spotify.com/track/5Fta7876LGh6t0H0AcKxz5?si=90518f88ca4349cb");
+        links.put("timm:fungusgirl", "https://open.spotify.com/track/2SQP9K3kWhhSX30VazQogq?si=d478f8a5c9aa451a");
+        links.put("timm:generating_worlds", "https://open.spotify.com/track/7rT45XT8gvFAg16GPWs2sU?si=0d61c7829d88462a");
+        links.put("timm:guardians_anthem", "https://open.spotify.com/track/5U1nRPcuz9yv5Xqz4BnOuC?si=2f924e7dc9c54cab");
+        links.put("timm:home", "https://open.spotify.com/track/26Hyzdqpbu7wLGs2nzAFVJ?si=bf76a7cfc4bf44a5" );
+        links.put("timm:idle", "https://open.spotify.com/track/3ySZSD5wWbuFje2mQ13zuy?si=713cec09680d4598");
+        links.put("timm:ii", "https://open.spotify.com/track/4Kp3CJEZXUJiYUxjSsUJJV?si=8ca43a556eb14a40");
+        links.put("timm:its_cactie_not_cactus", "https://open.spotify.com/track/26CqrBWHH0OnPdBfVKlqP9?si=92a8b4e4789e49fa");
+        links.put("timm:juagos_guago", "https://open.spotify.com/track/7eqTR8Rjcr3c0P2NndHSa7?si=a8090be6ab324dc6");
+        links.put("timm:kart_minne", "https://open.spotify.com/track/0HSJyMfLFEjGMFzeYp1jgA?si=48b5a0b9a4614a2a");
+        links.put("timm:lack_of_water", "https://open.spotify.com/track/6Tt3Ema4e1A9tmu8mkOqaj?si=e9db3887be09413a");
+        links.put("timm:lava_pools", "https://open.spotify.com/track/0ZzoLJk0aOLl3YWAPzXUA9?si=849262341bea4c60");
+        links.put("timm:light_of_a_cucumber", "https://open.spotify.com/track/4WLPo9PAXZ1Bh6cTgwboxv?si=ed2699daf0dd4d8a");
+        links.put("timm:lost_concepts_broken_dreams", "https://open.spotify.com/track/1JZTAQDJldFyLHcoDR8uGB?si=c32270f3433143bb");
+        links.put("timm:lost_in_a_forest", "https://open.spotify.com/track/6hWyFDDILBxnk1yapeytDX?si=e91ccf5b2d304fdf");
+        links.put("timm:lost_souls", "https://open.spotify.com/track/0ABehFkyQOmopRJ3Z9j3kZ?si=1a5911dac77b45b0");
+        links.put("timm:lost_rituals", "https://open.spotify.com/track/5UaoegKdOdeMZvCUGKVAXa?si=232669d3f3bf4c21");
+        links.put("timm:lurid", "https://open.spotify.com/track/50anrYSgzU6z9Yz8WQSegb?si=02102100093d4c69");
+        links.put("timm:lurk", "https://open.spotify.com/track/56d7mcH0fyCj2c5aZiWEfp?si=b73ae065543e4bc1");
+        links.put("timm:mossy_stones", "https://open.spotify.com/track/5pPr27SxmfVPguarJYLbX1?si=1008cf42ad5643ce");
+        links.put("timm:musical_waves", "");
+        links.put("timm:nataryuk", "https://open.spotify.com/track/7q38r2ZNbWKfRJTTOieVxZ?si=93a5b6227b484fe2");
+        links.put("timm:nap_on_the_riverbed", "https://open.spotify.com/track/5JDbRh9Cboh2kBrbruuU5B?si=6864de074d1f4002");
+        links.put("timm:osiriss_tomb", "https://open.spotify.com/track/0P8ZBhNXFkoU4WGaySD5Yw?si=ef73ba7373a240df");
+        links.put("timm:paiva_lumessa", "https://open.spotify.com/track/5VJZhNaUSYXNYWJbUOXy1X?si=e19d0c65ac8a423a");
+        links.put("timm:pillars_of_moss", "https://open.spotify.com/track/6nUnvO66X8RDRQsRabXcyS?si=2b61f46b4233443e");
+        links.put("timm:pillars_of_obsidian", "https://open.spotify.com/track/6k8fBFTcKcqXbtEFwWO29W?si=ed7e3fbd3c514bdd");
+        links.put("timm:pins", "https://open.spotify.com/track/5zYfcvYqFy3gqAz8jZDQXs?si=a340386cc45d4cba");
+        links.put("timm:placid_shores", "https://open.spotify.com/track/2vwOp3BoYOCO2nUtkDPVin?si=d4290de48a5a476b");
+        links.put("timm:plain_and_simple", "");
+        links.put("timm:pro-gen_islands", "https://open.spotify.com/track/4RoVGIBmUZQkPPV6sse5ox?si=bde2361b3c07428f");
+        links.put("timm:prototaxites", "https://open.spotify.com/track/5XqtFKf7WFMSZJIL5SRqTU?si=5af1507050b44202");
+        links.put("timm:pst", "https://open.spotify.com/track/0NXphbRWWnUOtFMCEbCi5L?si=455c089eb52e4fc4");
+        links.put("timm:polar_t_block", "https://open.spotify.com/track/13sxbySJE7KKQ9sL1AUPrF?si=d25db1c49d874893");
+        links.put("timm:rats_on_saturn", "https://open.spotify.com/track/5wYOtxuel1PC2K4ocQ5ubT?si=6087ef8ed5194c92");
+        links.put("timm:road_to_samwere", "https://open.spotify.com/track/3FTsHtB3kySileGw7RPrvo?si=511eb712a1464050");
+        links.put("timm:rowing_along", "https://open.spotify.com/track/6oRKNameQqnGgnZLoq3JOW?si=4c658e39c5d4406b");
+        links.put("timm:ruins_of_dukneyth", "https://open.spotify.com/track/7DWxkZU8tVAYofnpKWABfi?si=e2630fd376e945fd");
+        links.put("timm:ruminance", "https://open.spotify.com/track/3xgG50qWeM4CiMb2qYnNPB?si=f5ab0831e6fb48e1");
+        links.put("timm:scattered_blocks", "https://open.spotify.com/track/1W09G1TNl7UswHF2PoyqxJ?si=c66aa0120e9943fe");
+        links.put("timm:scorched_earth", "https://open.spotify.com/track/7CjLph06Jvysxq0IzO0f2N?si=280778952ae0492d");
+        links.put("timm:script4506", "https://open.spotify.com/track/1A5d73MOCADKR8ddALJ6x8?si=94464e1fd3054104");
+        links.put("timm:sea_foam", "https://open.spotify.com/track/56n8we05kjFwWs6kjbz6Md?si=a59b33ad2c5745b6");
+        links.put("timm:snowmans_home", "https://open.spotify.com/track/3u4VAexz3G5qMm0RZMu8cL?si=b11ba7d08c794c6b");
+        links.put("timm:song_of_captivity", "https://open.spotify.com/track/1vBc7lQjewmIEci0VZrDWs?si=6e3f61ebd0c347a7");
+        links.put("timm:spellbound", "https://open.spotify.com/track/7bir0ecU9vdDTqn0ln4eK5?si=d5c1d9f1be134b05");
+        links.put("timm:stalagmites", "https://open.spotify.com/track/7bZY4t2wk3gA0ZCXQh6bfq?si=f3b1c6a744d247de");
+        links.put("timm:star_flakes", "https://open.spotify.com/track/1IGmgqWzX8vSHZBsDy3Bdg?si=a059b37bf37141b7");
+        links.put("timm:subterrarium", "https://open.spotify.com/track/7xqc72Mu9e8Xa9pZ4wGTBf?si=5a8c5f0e3cda478f");
+        links.put("timm:subzero", "https://open.spotify.com/track/2d5YhtPYkQ9SzMAus1ku5P?si=ae7f81bf51ae40df");
+        links.put("timm:summit", "https://open.spotify.com/track/4beLG25DuRzFQo3aWvUd9q?si=6eda845faf4c4eea");
+        links.put("timm:the_box_of_pine", "https://open.spotify.com/track/4J0nXOf3clrEzRzgMGZxko?si=676653bad5114750");
+        links.put("timm:the_dragons_home", "https://open.spotify.com/track/48sYu35E33dVcOic1YXOVs?si=6e65cb78d3fb46b3");
+        links.put("timm:the_final_grain", "https://open.spotify.com/track/0qtsK0xDLfOndWhHdpY6Qh?si=0c12dc0b67d14bfe");
+        links.put("timm:the_monk", "https://open.spotify.com/track/4oTb6QnguZpn5T7WW6F85i?si=2e01c779edd04675");
+        links.put("timm:the_peaceful_grove", "https://open.spotify.com/track/3nogial73jA6YBSsDLNIA5?si=ad64077b30ae4e58");
+        links.put("timm:the_pinkest_sheep", "https://open.spotify.com/track/4iCogiDHwE8323D5SMFOt8?si=ea10e540048044d4");
+        links.put("timm:the_wanderer", "https://open.spotify.com/track/6dZJDlvgiHEf4HwA4AuoZt?si=b6ebfbdb9ade4ace");
+        links.put("timm:there_in_the_trees", "https://open.spotify.com/track/7vMtaO4PzN5qBkxtNjX6Dx?si=296f1269176b4d10");
+        links.put("timm:thin_trees", "https://open.spotify.com/track/37IxSKFI44GXvRvhzh68Gs?si=6c76177124eb4584");
+        links.put("timm:to_eat_a_glowberry", "https://open.spotify.com/track/4kKO0lfSKPwGlp4wLGRJSW?si=572f6fa879934690");
+        links.put("timm:track_2", "");
+        links.put("timm:track_3", "");
+        links.put("timm:track_4", "");
+        links.put("timm:track_5", "");
+        links.put("timm:track_6", "");
+        links.put("timm:track_7", "");
+        links.put("timm:track_8", "");
+        links.put("timm:track_9", "");
+        links.put("timm:track_11", "");
+        links.put("timm:track_12", "");
+        links.put("timm:track_13", "");
+        links.put("timm:tulu", "https://open.spotify.com/track/7hgKgvvqONsCRF8wiXTsti?si=b5c154d8d2ac4bb8");
+        links.put("timm:turtles_retreat", "https://open.spotify.com/track/6IbppIs1TDuib5rPbRVzkY?si=420bad5714cd4e8f");
+        links.put("timm:vengeful_shade", "https://open.spotify.com/track/7yrF6pdyYQxVL86c6VvPIS?si=644ce411c40e4553");
+        links.put("timm:verdant_canopy", "https://open.spotify.com/track/3LSOqD5qhjypmhz7rA20oC?si=a90a705264f84322");
+        links.put("timm:visualizing_home", "https://open.spotify.com/track/7yZXXJTeZ7MiwaxT8S8Zzi?si=e0f133a1a0014972");
+        links.put("timm:when_the_endless_eternity_ends", "https://open.spotify.com/track/1oJ5bhPKxUEmt9k4dlOj3x?si=1b16331debd348ef");
+        links.put("timm:whispers_from_the_woods", "https://open.spotify.com/track/73PWoeUdA7srPbCGjLuTeO?si=c72b7b0b91c34d93");
+        links.put("timm:zen_blossoms", "https://open.spotify.com/track/1rpXD4hlClA4GaWDeiTOr7?si=3b831865e7a1461a");
+        links.put("timm:promised_lans", "https://open.spotify.com/track/2nLWE5MZQ7OtrSEHiKgXuT?si=e9b55fe3ff8249a5");
+        links.put("timm:infinite_realities", "https://open.spotify.com/track/4m0wNggij7kCWGJyphAxRY?si=23989c6e3e4b4b72");
+
+    }
+    public static String get(String spotURL){
+        return links.get(spotURL);
+    }
+}

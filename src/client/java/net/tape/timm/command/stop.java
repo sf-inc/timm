@@ -20,8 +20,12 @@ public class stop {
 
     public static void register(CommandDispatcher<FabricClientCommandSource> dispatcher) {
         // had to change the command name, /stop can't stop servers otherwise 🤣
-        dispatcher.register(literal("timmstop").executes(ctx -> stopSong(ctx.getSource())));
-        dispatcher.register(literal("stp").executes(ctx -> stopSong(ctx.getSource())));
+        dispatcher.register(literal("timmstop")
+                .requires(fabricClientCommandSource -> true)
+                .executes(ctx -> stopSong(ctx.getSource())));
+        dispatcher.register(literal("stp")
+                .requires(fabricClientCommandSource -> true)
+                .executes(ctx -> stopSong(ctx.getSource())));
     }
 
     private static int stopSong(FabricClientCommandSource source) {

@@ -22,6 +22,12 @@ public class biomePlaylists {
         String v = "minecraft:music.game"; // vanilla minecraft music
         // other forms of background music (biome specific vanilla songs) are not added to these playlists
         defaultPlaylists.put("minecraft:the_void", new String[]{v});
+        defaultPlaylists.put("minecraft:badlands", new String[]{"timm:badlands", v});
+        defaultPlaylists.put("minecraft:eroded_badlands", new String[]{"timm:badlands", v});
+        defaultPlaylists.put("minecraft:wooded_badlands", new String[]{"timm:badlands", v});
+        defaultPlaylists.put("minecraft:bamboo_jungle", new String[]{"timm:bamboo_jungle", v});
+        defaultPlaylists.put("minecraft:beach", new String[]{"timm:warm_ocean", "timm:ocean", v});
+        defaultPlaylists.put("minecraft:snowy_beach", new String[]{"timm:cold_ocean", "timm:ocean", v});
         defaultPlaylists.put("minecraft:plains", new String[]{"timm:plains", v});
         defaultPlaylists.put("minecraft:sunflower_plains", new String[]{"timm:plains", "timm:flower_forest", v});
         defaultPlaylists.put("minecraft:snowy_plains", new String[]{"timm:snow_plains", v});
@@ -46,10 +52,6 @@ public class biomePlaylists {
         defaultPlaylists.put("minecraft:windswept_savanna", new String[]{"timm:windy", "timm:savanna", v});
         defaultPlaylists.put("minecraft:jungle", new String[]{"timm:jungle", v});
         defaultPlaylists.put("minecraft:sparse_jungle", new String[]{"timm:jungle", v});
-        defaultPlaylists.put("minecraft:bamboo_jungle", new String[]{"timm:bamboo_jungle", v});
-        defaultPlaylists.put("minecraft:badlands", new String[]{"timm:badlands", v});
-        defaultPlaylists.put("minecraft:eroded_badlands", new String[]{"timm:badlands", v});
-        defaultPlaylists.put("minecraft:wooded_badlands", new String[]{"timm:badlands", v});
         defaultPlaylists.put("minecraft:meadow", new String[]{"timm:meadow", v});
         defaultPlaylists.put("minecraft:cherry_grove", new String[]{"timm:cherry_grove", v});
         defaultPlaylists.put("minecraft:grove", new String[]{"timm:taiga", v});
@@ -59,8 +61,6 @@ public class biomePlaylists {
         defaultPlaylists.put("minecraft:stony_peaks", new String[]{"timm:mountains", v});
         defaultPlaylists.put("minecraft:river", new String[]{"timm:river", v});
         defaultPlaylists.put("minecraft:frozen_river", new String[]{"timm:river", v});
-        defaultPlaylists.put("minecraft:beach", new String[]{"timm:warm_ocean", "timm:ocean", v});
-        defaultPlaylists.put("minecraft:snowy_beach", new String[]{"timm:cold_ocean", "timm:ocean", v});
         defaultPlaylists.put("minecraft:stony_shore", new String[]{"timm:river", v});
         defaultPlaylists.put("minecraft:warm_ocean", new String[]{"timm:warm_ocean", "timm:ocean", v});
         defaultPlaylists.put("minecraft:lukewarm_ocean", new String[]{"timm:warm_ocean", "timm:ocean", v});

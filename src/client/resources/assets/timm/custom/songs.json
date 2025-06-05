@@ -7,6 +7,10 @@
     "name": "Gold Eagle - 1752",
     "link": "https://open.spotify.com/track/2Ovh7mYIFpNpu7OWMLFtTo?si=c95862cac2cd4180"
   },
+  "timm:abyss_archipelago": {
+    "name": "Gold Eagle - Abyss' Archipelago",
+    "link": ""
+  },
   "timm:alcatraz": {
     "name": "Gold Eagle - Alcatraz",
     "link": "https://open.spotify.com/track/5JuUBKhjCzxTuKVTaeEkuD?si=1a31b36f284641b9"
@@ -26,6 +30,10 @@
   "timm:appletrees_demise": {
     "name": "Gold Eagle - Appletrees Demise",
     "link": "https://open.spotify.com/track/7q8CGBomwCB5hT7LooyNAW?si=611f528950214dd2"
+  },
+  "timm:armadillos_dream": {
+    "name": "Gold Eagle - Armadillos Dream",
+    "link": ""
   },
   "timm:as_the_sakura_blossoms": {
     "name": "Gold Eagle - As the Sakura Blossoms",
@@ -75,6 +83,10 @@
     "name": "Gold Eagle - City of Sculk",
     "link": "https://open.spotify.com/track/0MdUdF9ffw7cMEVDBE8MZE?si=3b7e33f7439942e0"
   },
+  "timm:creating_memories": {
+    "name": "Gold Eagle - Creating Memories",
+    "link": ""
+  },
   "timm:crystal_echoes": {
     "name": "Gold Eagle - Crystal Echoes",
     "link": "https://open.spotify.com/track/0x9qMvFtBr8NGXoWmLxySJ?si=56143129a281483c"
@@ -98,6 +110,18 @@
   "timm:echoes_of_the_canyon": {
     "name": "Gold Eagle - Echoes of the Canyon",
     "link": "https://open.spotify.com/track/5mSzDl7gsXhKBtJ7xth1DL?si=d644e868d0984587"
+  },
+  "timm:export": {
+    "name": "Gold Eagle - Export",
+    "link": ""
+  },
+  "timm:fish_soup": {
+    "name": "Gold Eagle - Fish Soup",
+    "link": ""
+  },
+  "timm:flint_and_steel": {
+    "name": "Gold Eagle - Flint and Steel",
+    "link": ""
   },
   "timm:flower_bed": {
     "name": "Gold Eagle - Flower Bed",
@@ -211,6 +235,10 @@
     "name": "Gold Eagle - [Unnamed Mountain Song]",
     "link": ""
   },
+  "timm:multicellular_menagerie": {
+    "name": "Wyatt Robbins - Multicellular Menagerie",
+    "link": "https://youtu.be/kAV97dcdEmk?si=HpQ81BHiBN3i9WbY"
+  },
   "timm:musical_waves": {
     "name": "Gold Eagle - Musical Waves",
     "link": ""
@@ -311,6 +339,10 @@
     "name": "Gold Eagle - Song of Captivity",
     "link": "https://open.spotify.com/track/1vBc7lQjewmIEci0VZrDWs?si=6e3f61ebd0c347a7"
   },
+  "timm:soulweaver": {
+    "name": "Gold Eagle - Soulweaver",
+    "link": ""
+  },
   "timm:spellbound": {
     "name": "Gold Eagle - Spellbound",
     "link": "https://open.spotify.com/track/7bir0ecU9vdDTqn0ln4eK5?si=d5c1d9f1be134b05"
@@ -334,6 +366,22 @@
   "timm:summit": {
     "name": "Gold Eagle - Summit",
     "link": "https://open.spotify.com/track/4beLG25DuRzFQo3aWvUd9q?si=6eda845faf4c4eea"
+  },
+  "timm:surhg": {
+    "name": "Gold Eagle - Surhg",
+    "link": ""
+  },
+  "timm:swaying_fields": {
+    "name": "Gold Eagle - Swaying Fields",
+    "link": ""
+  },
+  "timm:terrible_plants": {
+    "name": "Gold Eagle - Terrible Plants",
+    "link": ""
+  },
+  "timm:the_ancients_hymn": {
+    "name": "Gold Eagle - The Ancients Hymn",
+    "link": ""
   },
   "timm:the_box_of_pine": {
     "name": "Gold Eagle - The Box of Pine",
@@ -374,6 +422,10 @@
   "timm:thin_trees": {
     "name": "Gold Eagle - Thin Trees",
     "link": "https://open.spotify.com/track/37IxSKFI44GXvRvhzh68Gs?si=6c76177124eb4584"
+  },
+  "timm:through_the_mud": {
+    "name": "Gold Eagle - Through the Mud",
+    "link": ""
   },
   "timm:to_eat_a_glowberry": {
     "name": "Gold Eagle - To Eat a Glowberry",
@@ -444,7 +496,7 @@
     "link": "https://open.spotify.com/track/7yZXXJTeZ7MiwaxT8S8Zzi?si=e0f133a1a0014972"
   },
   "timm:when_the_endless_eternity_fades": {
-    "name": "Gold Eagle - The Endless Eternity Fades",
+    "name": "Gold Eagle - When the Endless Eternity Fades",
     "link": "https://open.spotify.com/track/1oJ5bhPKxUEmt9k4dlOj3x?si=1b16331debd348ef"
   },
   "timm:whispers_from_the_woods": {

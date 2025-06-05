@@ -13,6 +13,13 @@
     "title": "1752",
     "customId": "timm:plains"
   },
+  "timm:abyss_archipelago": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Abyss' Archipelago",
+    "customId": "timm:end"
+  },
   "timm:alcatraz": {
     "album": "The Immersive Music Mod",
     "author": "Gold Eagle",
@@ -47,6 +54,13 @@
     "cover": "TIMM",
     "title": "Appletrees Demise",
     "customId": "timm:nether_wastes"
+  },
+  "timm:armadillos_dream": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Armadillos Dream",
+    "customId": "timm:savanna"
   },
   "timm:as_the_sakura_blossoms": {
     "album": "The Immersive Music Mod",
@@ -132,6 +146,13 @@
     "title": "City of Sculk",
     "customId": "timm:deep_dark"
   },
+  "timm:creating_memories": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Creating Memories",
+    "customId": "timm:menu"
+  },
   "timm:crystal_echoes": {
     "album": "The Immersive Music Mod",
     "author": "Gold Eagle",
@@ -173,6 +194,27 @@
     "cover": "TIMM",
     "title": "Echoes of the Canyon",
     "customId": "timm:badlands"
+  },
+  "timm:export": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Export",
+    "customId": "timm:meadow"
+  },
+  "timm:fish_soup": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Gold Eagle - Fish Soup",
+    "customId": "timm:warm_ocean"
+  },
+  "timm:flint_and_steel": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Flint and Steel",
+    "customId": "timm:nether_wastes"
   },
   "timm:flower_bed": {
     "album": "The Immersive Music Mod",
@@ -370,6 +412,13 @@
     "title": "[Unnamed Mountain Song]",
     "customId": "timm:mountains"
   },
+  "timm:multicellular_menagerie": {
+    "album": "The Immersive Music Mod",
+    "author": "Wyatt Robbins",
+    "cover": "TIMM",
+    "title": "Multicellular Menagerie",
+    "customId": "timm:ocean"
+  },
   "timm:musical_waves": {
     "album": "The Immersive Music Mod",
     "author": "Gold Eagle",
@@ -545,6 +594,13 @@
     "title": "Song of Captivity",
     "customId": "timm:snow_plains"
   },
+  "timm:soulweaver": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Soulweaver",
+    "customId": "timm:soul_sand_valley"
+  },
   "timm:spellbound": {
     "album": "The Immersive Music Mod",
     "author": "Gold Eagle",
@@ -593,6 +649,27 @@
     "cover": "TIMM",
     "title": "Surhg",
     "customId": "timm:taiga"
+  },
+  "timm:swaying_fields": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Swaying Fields",
+    "customId": "timm:meadow"
+  },
+  "timm:terrible_plants": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Terrible Plants",
+    "customId": "timm:dark_forest"
+  },
+  "timm:the_ancients_hymn": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "The Ancients Hymn",
+    "customId": "timm:deep_dark"
   },
   "timm:the_box_of_pine": {
     "album": "The Immersive Music Mod",
@@ -663,6 +740,13 @@
     "cover": "TIMM",
     "title": "Thin Trees",
     "customId": "timm:bamboo_jungle"
+  },
+  "timm:through_the_mud": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Through the Mud",
+    "customId": "timm:swamp"
   },
   "timm:to_eat_a_glowberry": {
     "album": "The Immersive Music Mod",
@@ -787,7 +871,7 @@
     "album": "The Immersive Music Mod",
     "author": "Gold Eagle",
     "cover": "TIMM",
-    "title": "The Endless Eternity Fades",
+    "title": "When the Endless Eternity Fades",
     "customId": "timm:end"
   },
   "timm:whispers_from_the_woods": {

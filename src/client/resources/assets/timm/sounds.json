@@ -1,6 +1,7 @@
 {
   "menu": {
     "sounds": [
+      "timm:creating_memories",
       "timm:generating_worlds",
       "timm:idle",
       "timm:infinite_realities",
@@ -64,6 +65,7 @@
       "timm:lost_rituals",
       "timm:ruins_of_dukneyth",
       "timm:spellbound",
+      "timm:terrible_plants",
       "timm:the_wanderer"
     ]
   },
@@ -74,6 +76,7 @@
       "timm:city_of_sculk",
       "timm:depths_unseen",
       "timm:echoes",
+      "timm:the_ancients_hymn",
       "timm:vengeful_shade"
     ]
   },
@@ -140,7 +143,9 @@
 
   "meadow": {
     "sounds": [
+      "timm:export",
       "timm:ruminance",
+      "timm:swaying_fields",
       "timm:track_8"
     ]
   },
@@ -168,6 +173,7 @@
       "timm:guardians_anthem",
       "timm:musical_waves",
       "timm:kart_minne",
+      "timm:multicellular_menagerie",
       "timm:sea_foam"
     ]
   },
@@ -192,6 +198,7 @@
   "savanna": {
     "sounds": [
       "timm:alcatraz",
+      "timm:armadillos_dream",
       "timm:scattered_blocks"
     ]
   },
@@ -211,7 +218,8 @@
   "swamp": {
     "sounds": [
       "timm:frogs_lullaby",
-      "timm:frogstep"
+      "timm:frogstep",
+      "timm:through_the_mud"
     ]
   },
 
@@ -228,6 +236,7 @@
 
   "warm_ocean": {
     "sounds": [
+      "timm:fish_soup",
       "timm:light_of_a_cucumber",
       "timm:placid_shores",
       "timm:track_2"
@@ -259,6 +268,7 @@
     "sounds": [
       "timm:appletrees_demise",
       "timm:burning_etherealism",
+      "timm:flint_and_steel",
       "timm:lava_pools",
       "timm:track_3",
       "timm:track_7",
@@ -269,12 +279,14 @@
   "soul_sand_valley": {
     "sounds": [
       "timm:lost_souls",
-      "timm:script4506"
+      "timm:script4506",
+      "timm:soulweaver"
     ]
   },
 
   "end": {
     "sounds": [
+      "timm:abyss_archipelago",
       "timm:freedom_for_all",
       "timm:pillars_of_obsidian",
       "timm:pro-gen_islands",

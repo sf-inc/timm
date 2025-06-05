@@ -71,7 +71,7 @@
     "name": "Gold Eagle - Choral Vortex",
     "link": "https://open.spotify.com/track/3IkTkmcCp9blVxxeoXCNbJ?si=4dd36297edf64a02"
   },
-  "timm:city_of_skulk": {
+  "timm:city_of_sculk": {
     "name": "Gold Eagle - City of Sculk",
     "link": "https://open.spotify.com/track/0MdUdF9ffw7cMEVDBE8MZE?si=3b7e33f7439942e0"
   },
@@ -103,8 +103,8 @@
     "name": "Gold Eagle - Flower Bed",
     "link": "https://open.spotify.com/track/6pGZB6VCqNWQxzNRrkmz4O?si=6256f9dc51174fcb"
   },
-  "timm:fracturscape": {
-    "name": "Gold Eagle - Fracturscape",
+  "timm:fracturescape": {
+    "name": "Gold Eagle - Fracturescape",
     "link": "https://open.spotify.com/track/475ldG9hIuelITly0gOHTU?si=816797bc89454f0f"
   },
   "timm:freedom_for_all": {
@@ -246,10 +246,6 @@
   "timm:placid_shores": {
     "name": "Gold Eagle - Placid Shores",
     "link": "https://open.spotify.com/track/2vwOp3BoYOCO2nUtkDPVin?si=d4290de48a5a476b"
-  },
-  "timm:plain_and_simple": {
-    "name": "Gold Eagle - Plain and Simple",
-    "link": ""
   },
   "timm:polar_t_block": {
     "name": "Gold Eagle - Polar T. Block",
@@ -447,8 +443,8 @@
     "name": "Gold Eagle - Visualizing Home",
     "link": "https://open.spotify.com/track/7yZXXJTeZ7MiwaxT8S8Zzi?si=e0f133a1a0014972"
   },
-  "timm:when_the_endless_eternity_ends": {
-    "name": "Gold Eagle - The Endless Eternity Ends",
+  "timm:when_the_endless_eternity_fades": {
+    "name": "Gold Eagle - The Endless Eternity Fades",
     "link": "https://open.spotify.com/track/1oJ5bhPKxUEmt9k4dlOj3x?si=1b16331debd348ef"
   },
   "timm:whispers_from_the_woods": {

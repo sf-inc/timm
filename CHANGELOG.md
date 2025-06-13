@@ -6,6 +6,7 @@
 ## v1.0.6
 * Entire mod rewrite for better maintainability, lots of possible bug fixes
 * Remove unused songs
+* Add 12 new biome songs
 * Add `timmhelp`, a help command printing all available commands added by the mod, along with
   a short description
 * Add `next` as an alias for the `skip` command
@@ -16,3 +17,4 @@
 * Add an option to display or not song info on skip
 * Add French translation
 * Use *Cloth Config* mod to handle the configuration of the mod. This is a new dependency
+* Add Music Notification mod support

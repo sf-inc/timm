@@ -1,0 +1,891 @@
+{
+  "timm:56e218": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "5.6e+218",
+    "customId": "timm:desert"
+  },
+  "timm:1752": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "1752",
+    "customId": "timm:plains"
+  },
+  "timm:abyss_archipelago": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Abyss' Archipelago",
+    "customId": "timm:end"
+  },
+  "timm:alcatraz": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Alcatraz",
+    "customId": "timm:savanna"
+  },
+  "timm:an_early_frost": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "An Early Frost",
+    "customId": "timm:mountains"
+  },
+  "timm:ancients_lament": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Ancients Lament",
+    "customId": "timm:deep_dark"
+  },
+  "timm:and_all_goes_quiet": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "And All Goes Quiet",
+    "customId": "timm:taiga"
+  },
+  "timm:appletrees_demise": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Appletrees Demise",
+    "customId": "timm:nether_wastes"
+  },
+  "timm:armadillos_dream": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Armadillos Dream",
+    "customId": "timm:savanna"
+  },
+  "timm:as_the_sakura_blossoms": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "As the Sakura Blossoms",
+    "customId": "timm:cherry_grove"
+  },
+  "timm:atomic_cubes": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Atomic Cubes",
+    "customId": "timm:basalt_deltas"
+  },
+  "timm:axolotls_dream": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Axolotls Dream",
+    "customId": "timm:lush_caves"
+  },
+  "timm:beautiful_breeze": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Beautiful Breeze",
+    "customId": "timm:windy_hills"
+  },
+  "timm:betulina": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Betulina",
+    "customId": "timm:birch_forest"
+  },
+  "timm:boreal_december": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Boreal December",
+    "customId": "timm:taiga"
+  },
+  "timm:burning_etherealism": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Burning Etherealism",
+    "customId": "timm:nether_wastes"
+  },
+  "timm:cascadia": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Cascadia",
+    "customId": "timm:windy_hills"
+  },
+  "timm:cereus": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Cereus",
+    "customId": "timm:desert"
+  },
+  "timm:chateau": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Chateau",
+    "customId": "timm:birch_forest"
+  },
+  "timm:choral_vortex": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Choral Vortex",
+    "customId": "timm:ocean"
+  },
+  "timm:city_of_sculk": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "City of Sculk",
+    "customId": "timm:deep_dark"
+  },
+  "timm:creating_memories": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Creating Memories",
+    "customId": "timm:menu"
+  },
+  "timm:crystal_echoes": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Crystal Echoes",
+    "customId": "timm:dripstone_caves"
+  },
+  "timm:depths_unseen": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Depths Unseen",
+    "customId": "timm:deep_dark"
+  },
+  "timm:distant_isles": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Distant Isles",
+    "customId": "timm:mushroom_fields"
+  },
+  "timm:doctor_pavlolich": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Doctor Pavlolich",
+    "customId": "timm:snow_plains"
+  },
+  "timm:echoes": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Echoes",
+    "customId": "timm:deep_dark"
+  },
+  "timm:echoes_of_the_canyon": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Echoes of the Canyon",
+    "customId": "timm:badlands"
+  },
+  "timm:export": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Export",
+    "customId": "timm:meadow"
+  },
+  "timm:fish_soup": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Gold Eagle - Fish Soup",
+    "customId": "timm:warm_ocean"
+  },
+  "timm:flint_and_steel": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Flint and Steel",
+    "customId": "timm:nether_wastes"
+  },
+  "timm:flower_bed": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Flower Bed",
+    "customId": "timm:flower_forest"
+  },
+  "timm:fracturescape": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Fracturescape",
+    "customId": "timm:ice_spikes"
+  },
+  "timm:freedom_for_all": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Freedom for All",
+    "customId": "timm:end"
+  },
+  "timm:friday": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Friday",
+    "customId": "timm:forest"
+  },
+  "timm:frogs_lullaby": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Frogs Lullaby",
+    "customId": "timm:swamp"
+  },
+  "timm:frogstep": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Frogstep",
+    "customId": "timm:swamp"
+  },
+  "timm:fungusgirl": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Fungusgirl",
+    "customId": "timm:mushroom_fields"
+  },
+  "timm:generating_worlds": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Generating Worlds",
+    "customId": "timm:menu"
+  },
+  "timm:guardians_anthem": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Guardians Anthem",
+    "customId": "timm:ocean"
+  },
+  "timm:home": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Home",
+    "customId": "timm:plains"
+  },
+  "timm:idle": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Idle",
+    "customId": "timm:menu"
+  },
+  "timm:ii": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "II",
+    "customId": "timm:flower_forest"
+  },
+  "timm:infinite_realities": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Infinite Realities",
+    "customId": "timm:menu"
+  },
+  "timm:its_cactie_not_cactus": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "It's Cacti not Cactus",
+    "customId": "timm:desert"
+  },
+  "timm:juagos_guago": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Juagos Guago",
+    "customId": "timm:birch_forest"
+  },
+  "timm:kart_minne": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Kart Minne",
+    "customId": "timm:ocean"
+  },
+  "timm:lack_of_water": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Lack of Water",
+    "customId": "timm:desert"
+  },
+  "timm:lava_pools": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Lava Pools",
+    "customId": "timm:nether_wastes"
+  },
+  "timm:light_of_a_cucumber": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Light of a Cucumber",
+    "customId": "timm:warm_ocean"
+  },
+  "timm:lost_concepts_broken_dreams": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Lost Concepts (broken dreams)",
+    "customId": "timm:birch_forest"
+  },
+  "timm:lost_in_a_forest": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Lost in a Forest",
+    "customId": "timm:dark_forest"
+  },
+  "timm:lost_rituals": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Lost Rituals",
+    "customId": "timm:dark_forest"
+  },
+  "timm:lost_souls": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Lost Souls",
+    "customId": "timm:soul_sand_valley"
+  },
+  "timm:lurid": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Lurid",
+    "customId": "timm:crimson_forest"
+  },
+  "timm:lurk": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Lurk",
+    "customId": "timm:cold_ocean"
+  },
+  "timm:menu-02": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "[Unnamed Menu Song]",
+    "customId": "timm:menu"
+  },
+  "timm:mossy_stones": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Mossy Stones",
+    "customId": "timm:taiga"
+  },
+  "timm:mountain-03": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "[Unnamed Mountain Song]",
+    "customId": "timm:mountains"
+  },
+  "timm:multicellular_menagerie": {
+    "album": "The Immersive Music Mod",
+    "author": "Wyatt Robbins",
+    "cover": "TIMM",
+    "title": "Multicellular Menagerie",
+    "customId": "timm:ocean"
+  },
+  "timm:musical_waves": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Musical Waves",
+    "customId": "timm:ocean"
+  },
+  "timm:nap_on_the_riverbed": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Nap on the Riverbed",
+    "customId": "timm:river"
+  },
+  "timm:nataryuk": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Nataryuk",
+    "customId": "timm:snow_plains"
+  },
+  "timm:osiriss_tomb": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Osiris's Tomb",
+    "customId": "timm:desert"
+  },
+  "timm:paiva_lumessa": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Paiva Lumessa",
+    "customId": "timm:snow_plains"
+  },
+  "timm:pillars_of_moss": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Pillars of Moss",
+    "customId": "timm:lush_caves"
+  },
+  "timm:pillars_of_obsidian": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Pillars of Obsidian",
+    "customId": "timm:end"
+  },
+  "timm:pins": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Pins",
+    "customId": "timm:flower_forest"
+  },
+  "timm:placid_shores": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Placid Shores",
+    "customId": "timm:warm_ocean"
+  },
+  "timm:polar_t_block": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Polar T. Block",
+    "customId": "timm:snow_plains"
+  },
+  "timm:pro-gen_islands": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Pro-Gen Islands",
+    "customId": "timm:end"
+  },
+  "timm:promised_lans": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Promised Lans",
+    "customId": "timm:menu"
+  },
+  "timm:prototaxites": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Prototaxites",
+    "customId": "timm:crimson_forest"
+  },
+  "timm:pst": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Pst",
+    "customId": "timm:lush_caves"
+  },
+  "timm:rats_on_saturn": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Rats on Saturn",
+    "customId": "timm:birch_forest"
+  },
+  "timm:road_to_samwere": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Road to Såmwère",
+    "customId": "timm:plains"
+  },
+  "timm:rowing_along": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Rowing Along",
+    "customId": "timm:river"
+  },
+  "timm:ruins_of_dukneyth": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Ruins of Dukneyth",
+    "customId": "timm:dark_forest"
+  },
+  "timm:ruminance": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Ruminance",
+    "customId": "timm:meadow"
+  },
+  "timm:scattered_blocks": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Scaterred Blocks",
+    "customId": "timm:savanna"
+  },
+  "timm:scorched_earth": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Scorched Earth",
+    "customId": "timm:basalt_deltas"
+  },
+  "timm:script4506": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Script4506",
+    "customId": "timm:soul_sand_valley"
+  },
+  "timm:sea_foam": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Sea Foam",
+    "customId": "timm:ocean"
+  },
+  "timm:snowmans_home": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Snowman's Home",
+    "customId": "timm:snow_plains"
+  },
+  "timm:song_of_captivity": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Song of Captivity",
+    "customId": "timm:snow_plains"
+  },
+  "timm:soulweaver": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Soulweaver",
+    "customId": "timm:soul_sand_valley"
+  },
+  "timm:spellbound": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Spellbound",
+    "customId": "timm:dark_forest"
+  },
+  "timm:stalagmites": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Stalagmites",
+    "customId": "timm:dripstone_caves"
+  },
+  "timm:star_flakes": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Star Flakes",
+    "customId": "timm:snow_plains"
+  },
+  "timm:subterrarium": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Subterrarium",
+    "customId": "timm:lush_caves"
+  },
+  "timm:subzero": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Subzero",
+    "customId": "timm:ice_spikes"
+  },
+  "timm:summit": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Summit",
+    "customId": "timm:mountains"
+  },
+  "timm:surhg": {
+    "album": "The Immersive Music Mod",
+    "author": "GoldEagleProductions",
+    "cover": "TIMM",
+    "title": "Surhg",
+    "customId": "timm:taiga"
+  },
+  "timm:swaying_fields": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Swaying Fields",
+    "customId": "timm:meadow"
+  },
+  "timm:terrible_plants": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Terrible Plants",
+    "customId": "timm:dark_forest"
+  },
+  "timm:the_ancients_hymn": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "The Ancients Hymn",
+    "customId": "timm:deep_dark"
+  },
+  "timm:the_box_of_pine": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "The Box of Pine",
+    "customId": "timm:taiga"
+  },
+  "timm:the_dragons_home": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "The Dragon's Home",
+    "customId": "timm:end"
+  },
+  "timm:the_final_grain": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "The Final Grain",
+    "customId": "timm:badlands"
+  },
+  "timm:the_monk": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "The Monk",
+    "customId": "timm:lush_caves"
+  },
+  "timm:the_peaceful_grove": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "The Peaceful Grove",
+    "customId": "timm:forest"
+  },
+  "timm:the_pinkest_sheep": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "The Pinkest Sheep",
+    "customId": "timm:plains"
+  },
+  "timm:the_wanderer": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "The Wanderer",
+    "customId": "timm:dark_forest"
+  },
+  "timm:the_wind_blows": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "The Wind Blows",
+    "customId": "timm:desert"
+  },
+  "timm:there_in_the_trees": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "There in the Trees",
+    "customId": "timm:forest"
+  },
+  "timm:thin_trees": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Thin Trees",
+    "customId": "timm:bamboo_jungle"
+  },
+  "timm:through_the_mud": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Through the Mud",
+    "customId": "timm:swamp"
+  },
+  "timm:to_eat_a_glowberry": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "To Eat a Glowberry",
+    "customId": "timm:lush_caves"
+  },
+  "timm:track_2": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Track 2",
+    "customId": "timm:warm_ocean"
+  },
+  "timm:track_3": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Track 3",
+    "customId": "timm:nether_wastes"
+  },
+  "timm:track_4": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Track 4",
+    "customId": "timm:cherry_grove"
+  },
+  "timm:track_5": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Track 5",
+    "customId": "timm:desert"
+  },
+  "timm:track_6": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Track 6",
+    "customId": "timm:badlands"
+  },
+  "timm:track_7": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Track 7",
+    "customId": "timm:nether_wastes"
+  },
+  "timm:track_8": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Track 8",
+    "customId": "timm:meadow"
+  },
+  "timm:track_9": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Track 9",
+    "customId": "timm:nether_wastes"
+  },
+  "timm:track_11": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Track 11",
+    "customId": "timm:beach"
+  },
+  "timm:track_12": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Track 12",
+    "customId": "timm:birch_forest"
+  },
+  "timm:track_13": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Track 13",
+    "customId": "timm:flower_forest"
+  },
+  "timm:tulu": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Tulu",
+    "customId": "timm:mushroom_fields"
+  },
+  "timm:turtles_retreat": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Turtles Retreat",
+    "customId": "timm:beach"
+  },
+  "timm:vengeful_shade": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Vengeful Shade",
+    "customId": "timm:deep_dark"
+  },
+  "timm:verdant_canopy": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Verdant Canopy",
+    "customId": "timm:jungle"
+  },
+  "timm:visualizing_home": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Visualizing Home",
+    "customId": "timm:plains"
+  },
+  "timm:when_the_endless_eternity_fades": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "When the Endless Eternity Fades",
+    "customId": "timm:end"
+  },
+  "timm:whispers_from_the_woods": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Whispers from the Woods",
+    "customId": "timm:taiga"
+  },
+  "timm:zen_blossoms": {
+    "album": "The Immersive Music Mod",
+    "author": "Gold Eagle",
+    "cover": "TIMM",
+    "title": "Zen Blossoms",
+    "customId": "timm:cherry_grove"
+  }
+}

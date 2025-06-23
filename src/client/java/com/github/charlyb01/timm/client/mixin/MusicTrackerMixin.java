@@ -17,7 +17,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MusicTrackerMixin {
     @Shadow private @Nullable SoundInstance current;
 
-    @Inject(method = "play", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/sound/SoundManager;play(Lnet/minecraft/client/sound/SoundInstance;)V", shift = At.Shift.AFTER))
+    @Inject(method = "play", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/sound/SoundManager;play(Lnet/minecraft/client/sound/SoundInstance;)Lnet/minecraft/client/sound/SoundSystem$PlayResult;", shift = At.Shift.AFTER))
     private void saveMusicIdentifier(MusicInstance music, CallbackInfo ci) {
         if (this.current == null || this.current.getSound() == null) return;
         NowPlayingCmd.SONG_ID = this.current.getSound().getIdentifier();

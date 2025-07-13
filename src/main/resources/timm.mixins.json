@@ -1,9 +1,12 @@
 {
   "required": true,
   "minVersion": "0.8",
+  "refmap": "timm.refmap.json",
   "package": "com.github.charlyb01.timm.mixin",
   "compatibilityLevel": "JAVA_17",
-  "mixins": [
+  "client": [
+    "MinecraftMixin",
+    "MusicManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

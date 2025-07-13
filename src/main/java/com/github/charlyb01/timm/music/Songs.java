@@ -1,17 +1,18 @@
-package com.github.charlyb01.timm.client.music;
+package com.github.charlyb01.timm.music;
 
 import com.github.charlyb01.timm.Timm;
-import com.github.charlyb01.timm.config.ModConfig;
+import com.github.charlyb01.timm.config.Config;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
-import net.fabricmc.loader.api.FabricLoader;
-import net.fabricmc.loader.api.ModContainer;
-import net.minecraft.text.ClickEvent;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Style;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.ClickEvent;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.Style;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.fml.ModContainer;
+import net.minecraftforge.fml.ModList;
+import net.minecraftforge.fml.loading.FMLPaths;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -21,11 +22,11 @@ import java.util.HashMap;
 import java.util.Optional;
 
 public class Songs {
-    private static final HashMap<Identifier, MutableText> SONG_TEXT_BY_SONG_ID = new HashMap<>();
+    private static final HashMap<ResourceLocation, MutableComponent> SONG_TEXT_BY_SONG_ID = new HashMap<>();
 
-    public static MutableText getSongText(Identifier songId) {
+    public static MutableComponent getSongText(ResourceLocation songId) {
         if (songId == null) return null;
-        return SONG_TEXT_BY_SONG_ID.getOrDefault(songId, Text.literal(songId.toString()));
+        return SONG_TEXT_BY_SONG_ID.getOrDefault(songId, Component.literal(songId.toString()));
     }
 
     public static void init() {
@@ -44,7 +45,7 @@ public class Songs {
                     jsonReader.endObject();
                 } else {
                     String song = jsonReader.nextName();
-                    Identifier songId = new Identifier(song);
+                    ResourceLocation songId = new ResourceLocation(song);
                     String songName = null;
                     String songUrl = null;
 
@@ -65,26 +66,26 @@ public class Songs {
                 }
             }
             Timm.LOGGER.info("Songs successfully initialized");
-        } catch (IOException e) {
-            Timm.LOGGER.error("Error reading songs file: {}", e.getMessage());
+        } catch (IOException why) {
+            Timm.LOGGER.error("Error reading songs file: {}", why.getMessage());
         }
     }
 
-    private static MutableText makeSongText(Identifier identifier, String name, String url) {
-        MutableText song = Text.literal(name == null
+    private static MutableComponent makeSongText(ResourceLocation identifier, String name, String url) {
+        MutableComponent song = Component.literal(name == null
                 ? identifier.toString()
                 : name);
         if (url != null) {
-            song.setStyle(Style.EMPTY.withColor(Formatting.GREEN)
-                    .withUnderline(true)
+            song.setStyle(Style.EMPTY.withColor(ChatFormatting.GREEN)
+                    .withUnderlined(true)
                     .withClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, url)));
         }
         return song;
     }
 
     private static Path getPath() {
-        FabricLoader loader = FabricLoader.getInstance();
-        Path filePath = loader.getConfigDir()
+        Path loader = FMLPaths.CONFIGDIR.get();
+        Path filePath = loader
                 .resolve(Timm.MOD_ID)
                 .resolve("songs.json");
 
@@ -92,21 +93,23 @@ public class Songs {
             return filePath;
         }
 
-        if (ModConfig.get().general.debugLog) {
-            Timm.LOGGER.info("Player songs.json not found, using default one");
+        if (Config.DEBUG_LOG.get()) {
+            Timm.LOGGER.info("Player songs.json not found using default one");
         }
 
-        if (loader.getModContainer(Timm.MOD_ID).isEmpty()) {
+        Optional<? extends ModContainer> container = ModList.get().getModContainerById(Timm.MOD_ID);
+        if (container.isEmpty()) {
             Timm.LOGGER.error("Mod not correctly loaded");
             return null;
         }
 
-        ModContainer mod = loader.getModContainer(Timm.MOD_ID).get();
-        Optional<Path> path = mod.findPath("assets/timm/custom/songs.json");
-        if (path.isEmpty()) {
-            Timm.LOGGER.error("Could not locate default songs.json");
-            return null;
-        }
+        ModContainer mod = container.get();
+        Optional<Path> path = Optional.of(mod
+                .getModInfo()
+                .getOwningFile()
+                .getFile()
+                .findResource("assets/timm/custom/songs.json")
+        );
 
         filePath = path.get();
         if (!Files.exists(filePath)) {

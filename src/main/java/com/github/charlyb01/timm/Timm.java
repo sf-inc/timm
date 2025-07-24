@@ -8,17 +8,16 @@ import com.github.charlyb01.timm.music.Songs;
 import com.github.charlyb01.timm.registry.SoundEventRegistry;
 import com.mojang.logging.LogUtils;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.ConfigScreenHandler;
-import net.minecraftforge.client.event.RegisterClientCommandsEvent;
-import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.ModLoadingContext;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.config.ModConfig;
-import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
-import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.neoforged.api.distmarker.Dist;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.ModLoadingContext;
+import net.neoforged.fml.common.Mod;
+import net.neoforged.fml.config.ModConfig;
+import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
+import net.neoforged.neoforge.client.ConfigScreenHandler;
+import net.neoforged.neoforge.client.event.RegisterClientCommandsEvent;
+import net.neoforged.neoforge.common.NeoForge;
 import org.slf4j.Logger;
 
 // The value here should match an entry in the META-INF/mods.toml file
@@ -34,13 +33,9 @@ public class Timm
         return new ResourceLocation(MOD_ID, path);
     }
 
-    public Timm()
+    public Timm(IEventBus modEventBus)
     {
-        IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
-        MinecraftForge.EVENT_BUS.register(this);
-        MinecraftForge.EVENT_BUS.addListener(ClientModEvents::onClientCommands);
-
+        NeoForge.EVENT_BUS.addListener(ClientModEvents::onClientCommands);
         ModLoadingContext.get().registerConfig(ModConfig.Type.CLIENT, Config.SPEC);
         SoundEventRegistry.register(modEventBus);
     }

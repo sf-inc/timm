@@ -2,7 +2,7 @@ package com.github.charlyb01.timm.command;
 
 import com.github.charlyb01.timm.Timm;
 import com.github.charlyb01.timm.config.Config;
-import net.minecraftforge.client.event.RegisterClientCommandsEvent;
+import net.neoforged.neoforge.client.event.RegisterClientCommandsEvent;
 
 public class CommandRegistry {
     public static void init(RegisterClientCommandsEvent event) {

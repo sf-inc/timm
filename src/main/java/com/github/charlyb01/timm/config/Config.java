@@ -1,16 +1,16 @@
 package com.github.charlyb01.timm.config;
 
-import net.minecraftforge.common.ForgeConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec;
 
 public class Config {
-    public static final ForgeConfigSpec SPEC;
-    public static final ForgeConfigSpec.IntValue MIN_DELAY;
-    public static final ForgeConfigSpec.IntValue MAX_DELAY;
-    public static final ForgeConfigSpec.BooleanValue PRINT_ON_SKIP;
-    public static final ForgeConfigSpec.BooleanValue DEBUG_LOG;
+    public static final ModConfigSpec SPEC;
+    public static final ModConfigSpec.IntValue MIN_DELAY;
+    public static final ModConfigSpec.IntValue MAX_DELAY;
+    public static final ModConfigSpec.BooleanValue PRINT_ON_SKIP;
+    public static final ModConfigSpec.BooleanValue DEBUG_LOG;
 
     static {
-        ForgeConfigSpec.Builder builder = new ForgeConfigSpec.Builder();
+        ModConfigSpec.Builder builder = new ModConfigSpec.Builder();
         builder.push("general");
 
         MIN_DELAY = builder

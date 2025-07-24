@@ -1,3 +1,4 @@
+
 package com.github.charlyb01.timm.command;
 
 import com.mojang.brigadier.Command;

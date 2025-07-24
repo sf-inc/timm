@@ -2,20 +2,22 @@ package com.github.charlyb01.timm.registry;
 
 import com.github.charlyb01.timm.Timm;
 import net.minecraft.core.Holder;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvent;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Supplier;
 
 public class SoundEventRegistry {
-    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, Timm.MOD_ID);
+    public static final DeferredRegister<SoundEvent> SOUND_EVENTS = DeferredRegister.create(BuiltInRegistries.SOUND_EVENT, Timm.MOD_ID);
     public static final HashMap<ResourceLocation, Holder<SoundEvent>> SOUNDEVENT_BY_ID = new HashMap<>();
-    private static final HashMap<ResourceLocation, RegistryObject<SoundEvent>> REGISTRY_OBJECTS = new HashMap<>();
+    private static final HashMap<ResourceLocation, Supplier<SoundEvent>> REGISTRY_OBJECTS = new HashMap<>();
 
     static {
         register("menu");
@@ -58,7 +60,7 @@ public class SoundEventRegistry {
 
     private static void register(final String name) {
         ResourceLocation id = Timm.id(name);
-        RegistryObject<SoundEvent> reg = SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));
+        Supplier<SoundEvent> reg = SOUND_EVENTS.register(name, () -> SoundEvent.createVariableRangeEvent(id));
         REGISTRY_OBJECTS.put(id, reg);
     }
 
@@ -68,13 +70,15 @@ public class SoundEventRegistry {
     }
 
     private static void setup(final FMLCommonSetupEvent event) {
-        event.enqueueWork(() ->
-                REGISTRY_OBJECTS.forEach((id, reg) ->
-                        ForgeRegistries.SOUND_EVENTS.getHolder(reg.get()).ifPresent(holder ->
-                                SOUNDEVENT_BY_ID.put(id, holder)
-                        )
-                )
-        );
-    }
+        event.enqueueWork(() -> {
+            for (Map.Entry<ResourceLocation, Supplier<SoundEvent>> entry : REGISTRY_OBJECTS.entrySet()) {
+                SoundEvent sound = entry.getValue().get();
+                ResourceLocation id = entry.getKey();
 
+                Holder.Reference<SoundEvent> holder = BuiltInRegistries.SOUND_EVENT.getHolder(BuiltInRegistries.SOUND_EVENT.getResourceKey(sound).orElseThrow()).orElseThrow();
+
+                SOUNDEVENT_BY_ID.put(id, holder);
+            }
+        });
+    }
 }

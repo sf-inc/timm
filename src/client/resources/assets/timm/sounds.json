@@ -293,5 +293,131 @@
       "timm:music/the_dragons_home",
       "timm:music/when_the_endless_eternity_fades"
     ]
+  },
+
+  "ancient_city": {
+    "sounds": [
+      "timm:music/civilization_lost"
+    ]
+  },
+
+  "bastion_remnant": {
+    "sounds": [
+      "timm:music/hell_worn_treasures"
+    ]
+  },
+
+  "buried_treasure": {
+    "sounds": [
+      "timm:music/x_marks_the_spot"
+    ]
+  },
+
+  "desert_pyramid": {
+    "sounds": [
+      "timm:music/ankh"
+    ]
+  },
+
+  "end_city": {
+    "sounds": [
+      "timm:music/colour_of_the_void"
+    ]
+  },
+
+  "fortress": {
+    "sounds": [
+      "timm:music/ashen_citadel"
+    ]
+  },
+
+  "igloo": {
+    "sounds": [
+      "timm:music/snow_bricks"
+    ]
+  },
+
+  "jungle_pyramid": {
+    "sounds": [
+      "timm:music/under_the_overgrowth"
+    ]
+  },
+
+  "mansion": {
+    "sounds": [
+      "timm:music/isolationist"
+    ]
+  },
+
+  "mineshaft": {
+    "sounds": [
+      "timm:music/lost_and_found"
+    ]
+  },
+
+  "monument": {
+    "sounds": [
+      "timm:music/guardian_of_the_depths"
+    ]
+  },
+
+  "ocean_ruin": {
+    "sounds": [
+      "timm:music/city_of_the_drowned"
+    ]
+  },
+
+  "pillager_outpost": {
+    "sounds": [
+      "timm:music/bad_omens"
+    ]
+  },
+
+  "ruined_portal": {
+    "sounds": [
+      "timm:music/fragment_from_the_otherside"
+    ]
+  },
+
+  "ruined_portal_nether": {
+    "sounds": [
+      "timm:music/return_to_grass"
+    ]
+  },
+
+  "shipwreck": {
+    "sounds": [
+      "timm:music/naufrage"
+    ]
+  },
+
+  "stronghold": {
+    "sounds": [
+      "timm:music/what_the_builders_left_behind"
+    ]
+  },
+
+  "swamp_hut": {
+    "sounds": [
+      "timm:music/shivering_bog"
+    ]
+  },     
+
+  "trail_ruins": {
+    "sounds": [
+      "timm:music/dust_in_the_relics"
+    ]
+  },
+
+  "trial_chambers": {
+    "sounds": [
+      "timm:music/copper_whisper"
+    ]
+  },
+
+  "village": {
+    "sounds": [
+      "timm:music/valley_of_the_tradesmen"
+    ]
   }
 }

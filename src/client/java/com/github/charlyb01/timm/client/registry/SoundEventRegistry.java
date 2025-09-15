@@ -19,7 +19,11 @@ public class SoundEventRegistry {
         }
 
         register("menu");
+        registerBiomes();
+        registerStructures();
+    }
 
+    private static void registerBiomes() {
         register("badlands");
         register("bamboo_jungle");
         register("beach");
@@ -47,13 +51,37 @@ public class SoundEventRegistry {
         register("taiga");
         register("warm_ocean");
         register("windy_hills");
-        
+
         register("basalt_deltas");
         register("crimson_forest");
         register("nether_wastes");
         register("soul_sand_valley");
 
         register("end");
+    }
+
+    private static void registerStructures() {
+        register("ancient_city");
+        register("bastion_remnant");
+        register("buried_treasure");
+        register("desert_pyramid");
+        register("end_city");
+        register("fortress");
+        register("igloo");
+        register("jungle_pyramid");
+        register("mansion");
+        register("mineshaft");
+        register("monument");
+        register("ocean_ruin");
+        register("pillager_outpost");
+        register("ruined_portal");
+        register("ruined_portal_nether");
+        register("shipwreck");
+        register("stronghold");
+        register("swamp_hut");
+        register("trail_ruins");
+        register("trial_chambers");
+        register("village");
     }
 
     private static void register(final String path) {

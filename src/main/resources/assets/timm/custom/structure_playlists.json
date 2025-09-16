@@ -1,0 +1,140 @@
+{
+  "ancient_city": {
+    "distance": 32,
+    "structures": [
+      "ancient_city"
+    ]
+  },
+  "bastion_remnant": {
+    "distance": 24,
+    "structures": [
+      "bastion_remnant"
+    ]
+  },
+  "buried_treasure": {
+    "distance": 4,
+    "structures": [
+      "buried_treasure"
+    ]
+  },
+  "desert_pyramid": {
+    "distance": 24,
+    "structures": [
+      "desert_pyramid"
+    ]
+  },
+  "end_city": {
+    "distance": 32,
+    "structures": [
+      "end_city"
+    ]
+  },
+  "fortress": {
+    "distance": 24,
+    "structures": [
+      "fortress"
+    ]
+  },
+  "igloo": {
+    "distance": 16,
+    "structures": [
+      "igloo"
+    ]
+  },
+  "jungle_pyramid": {
+    "distance": 16,
+    "structures": [
+      "jungle_pyramid"
+    ]
+  },
+  "mansion": {
+    "distance": 24,
+    "structures": [
+      "mansion"
+    ]
+  },
+  "mineshaft": {
+    "distance": 16,
+    "structures": [
+      "mineshaft",
+      "mineshaft_mesa"
+    ]
+  },
+  "monument": {
+    "distance": 32,
+    "structures": [
+      "monument"
+    ]
+  },
+  "ocean_ruin": {
+    "distance": 24,
+    "structures": [
+      "ocean_ruin_cold",
+      "ocean_ruin_warm"
+    ]
+  },
+  "pillager_outpost": {
+    "distance": 16,
+    "structures": [
+      "pillager_outpost"
+    ]
+  },
+  "ruined_portal": {
+    "distance": 16,
+    "structures": [
+      "ruined_portal",
+      "ruined_portal_desert",
+      "ruined_portal_jungle",
+      "ruined_portal_mountain",
+      "ruined_portal_ocean",
+      "ruined_portal_swamp"
+    ]
+  },
+  "ruined_portal_nether": {
+    "distance": 16,
+    "structures": [
+      "ruined_portal_nether"
+    ]
+  },
+  "shipwreck": {
+    "distance": 16,
+    "structures": [
+      "shipwreck",
+      "shipwreck_beached"
+    ]
+  },
+  "stronghold": {
+    "distance": 8,
+    "structures": [
+      "stronghold"
+    ]
+  },
+  "swamp_hut": {
+    "distance": 16,
+    "structures": [
+      "swamp_hut"
+    ]
+  },
+  "trail_ruins": {
+    "distance": 8,
+    "structures": [
+      "trail_ruins"
+    ]
+  },
+  "trial_chambers": {
+    "distance": 8,
+    "structures": [
+      "trial_chambers"
+    ]
+  },
+  "village": {
+    "distance": 24,
+    "structures": [
+      "village_desert",
+      "village_plains",
+      "village_savanna",
+      "village_snowy",
+      "village_taiga"
+    ]
+  }
+}

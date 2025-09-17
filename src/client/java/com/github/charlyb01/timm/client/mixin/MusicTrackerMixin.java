@@ -5,7 +5,6 @@ import com.llamalad7.mixinextras.expression.Definition;
 import com.llamalad7.mixinextras.expression.Expression;
 import net.minecraft.client.sound.MusicTracker;
 import net.minecraft.client.sound.SoundInstance;
-import net.minecraft.sound.MusicSound;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -17,21 +16,14 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public class MusicTrackerMixin {
     @Shadow private @Nullable SoundInstance current;
 
-    @Inject(method = "play", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/sound/SoundManager;play(Lnet/minecraft/client/sound/SoundInstance;)V", shift = At.Shift.AFTER))
-    private void saveMusicIdentifier(MusicSound type, CallbackInfo ci) {
-        if (this.current == null || this.current.getSound() == null) return;
-        NowPlayingCmd.SONG_ID = this.current.getSound().getIdentifier();
-    }
-
     @Definition(id = "current", field = "Lnet/minecraft/client/sound/MusicTracker;current:Lnet/minecraft/client/sound/SoundInstance;")
     @Expression("this.current = null")
     @Inject(method = "tick", at = @At("MIXINEXTRAS:EXPRESSION"))
     private void resetMusicIdentifierOnNull(CallbackInfo ci) {
-        NowPlayingCmd.SONG_ID = null;
-    }
+        if (this.current == null || this.current.getSound() == null) return;
 
-    @Inject(method = "stop()V", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/sound/SoundManager;stop(Lnet/minecraft/client/sound/SoundInstance;)V"))
-    private void resetMusicIdentifierOnStop(CallbackInfo ci) {
-        NowPlayingCmd.SONG_ID = null;
+        if (this.current.getSound().getIdentifier().equals(NowPlayingCmd.SONG_ID)) {
+            NowPlayingCmd.SONG_ID = null;
+        }
     }
 }

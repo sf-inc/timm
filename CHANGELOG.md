@@ -3,6 +3,14 @@
 * **x.Y versions** are either updates that add content or major bug fixes
 * **x.y.Z versions** are either small content update (language translation, keybind change, ...) or bug fixes
 
+## v1.1
+* Add 21 structure songs
+  * Structure songs play when a player gets close to a structure (distance depends on the structure), replacing current
+  playing song if any
+  * This feature requires the mod to be on the server too to detect the structures
+  * This feature can be disabled in the settings
+* Music is now properly detected by the **Music Control** mod (more compatibility will come in the future)
+
 ## v1.0.6
 * Entire mod rewrite for better maintainability, lots of possible bug fixes
 * Remove unused songs

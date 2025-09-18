@@ -23,4 +23,10 @@ public class Timm implements ModInitializer {
     public static Identifier id(final String path) {
         return new Identifier(MOD_ID, path);
     }
+
+    public static void debugLog(String debugString) {
+        if (ModConfig.get().general.debugLog) {
+            LOGGER.info(debugString);
+        }
+    }
 }

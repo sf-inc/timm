@@ -1,7 +1,6 @@
 package com.github.charlyb01.timm.client.registry;
 
 import com.github.charlyb01.timm.Timm;
-import com.github.charlyb01.timm.config.ModConfig;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -14,9 +13,7 @@ public class SoundEventRegistry {
     public static final HashMap<Identifier, RegistryEntry<SoundEvent>> SOUNDEVENT_BY_ID = new HashMap<>();
 
     public static void init() {
-        if (ModConfig.get().general.debugLog) {
-            Timm.LOGGER.info("Registering sound events");
-        }
+        Timm.debugLog("Registering sound events");
 
         register("menu");
         registerBiomes();

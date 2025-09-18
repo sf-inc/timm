@@ -1,5 +1,6 @@
 package com.github.charlyb01.timm.mixin;
 
+import com.github.charlyb01.timm.Timm;
 import com.github.charlyb01.timm.music.StructurePlaylist;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.entity.player.PlayerEntity;
@@ -57,10 +58,18 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
                 if (tagKey.isEmpty()) continue;
 
                 String structureName = getStructureName(tagKey.get());
-                int distance  = StructurePlaylist.DISTANCE_FROM_STRUCTURE.get(structureName);
+                Integer distance  = StructurePlaylist.DISTANCE_FROM_STRUCTURE.get(structureName);
+                if (distance == null) {
+                    Timm.debugLog("Structure distance was not registered for: " + structureName);
+                    continue;
+                }
                 if (!structureContains(entry.getKey(), playerPos, struct, distance, structureAccessor)) continue;
 
                 Identifier soundId = StructurePlaylist.EVENT_ID_FROM_STRUCTURE.get(structureName);
+                if (soundId == null) {
+                    Timm.debugLog("Structure ids were not registered for: " + structureName);
+                    continue;
+                }
                 if (soundId.equals(this.currentSoundId)) break;
 
                 this.currentSoundId = soundId;

@@ -32,7 +32,7 @@
   "fortress": {
     "distance": 24,
     "structures": [
-      "fortress"
+      "nether_fortress"
     ]
   },
   "igloo": {
@@ -44,13 +44,13 @@
   "jungle_pyramid": {
     "distance": 16,
     "structures": [
-      "jungle_pyramid"
+      "jungle_temple"
     ]
   },
   "mansion": {
     "distance": 24,
     "structures": [
-      "mansion"
+      "woodland_mansion"
     ]
   },
   "mineshaft": {
@@ -63,7 +63,7 @@
   "monument": {
     "distance": 32,
     "structures": [
-      "monument"
+      "ocean_monument"
     ]
   },
   "ocean_ruin": {
@@ -82,7 +82,7 @@
   "ruined_portal": {
     "distance": 16,
     "structures": [
-      "ruined_portal",
+      "ruined_portal_standard",
       "ruined_portal_desert",
       "ruined_portal_jungle",
       "ruined_portal_mountain",

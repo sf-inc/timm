@@ -1,6 +1,7 @@
 package com.github.charlyb01.timm.mixin;
 
 import com.github.charlyb01.timm.Timm;
+import com.github.charlyb01.timm.config.ModConfig;
 import com.github.charlyb01.timm.music.StructurePlaylist;
 import com.mojang.authlib.GameProfile;
 import net.minecraft.entity.player.PlayerEntity;
@@ -47,6 +48,7 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
 
     @Inject(method = "playerTick", at = @At("HEAD"))
     private void onTick(CallbackInfo ci) {
+        if (!ModConfig.get().general.enableStructureMusic) return;
         if (this.age % 20 != this.tickCheck) return; // Check once per second, tick depends on player to avoid overload
 
         StructureAccessor structureAccessor = this.getServerWorld().getStructureAccessor();

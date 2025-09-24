@@ -13,6 +13,9 @@ public class GeneralConfig implements ConfigData {
 
     public boolean printOnSkip = true;
 
+    @ConfigEntry.Gui.Tooltip
+    public boolean enableStructureMusic = true;
+
     @ConfigEntry.Gui.Excluded
     public boolean debugLog = false;
 }

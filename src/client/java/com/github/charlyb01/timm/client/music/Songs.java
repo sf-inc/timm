@@ -1,7 +1,6 @@
 package com.github.charlyb01.timm.client.music;
 
 import com.github.charlyb01.timm.Timm;
-import com.github.charlyb01.timm.config.ModConfig;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import net.fabricmc.loader.api.FabricLoader;
@@ -92,9 +91,7 @@ public class Songs {
             return filePath;
         }
 
-        if (ModConfig.get().general.debugLog) {
-            Timm.LOGGER.info("Player songs.json not found, using default one");
-        }
+        Timm.debugLog("Player songs.json not found, using default one");
 
         if (loader.getModContainer(Timm.MOD_ID).isEmpty()) {
             Timm.LOGGER.error("Mod not correctly loaded");

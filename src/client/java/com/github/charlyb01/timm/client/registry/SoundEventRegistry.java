@@ -1,7 +1,6 @@
 package com.github.charlyb01.timm.client.registry;
 
 import com.github.charlyb01.timm.Timm;
-import com.github.charlyb01.timm.config.ModConfig;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.registry.entry.RegistryEntry;
@@ -14,12 +13,14 @@ public class SoundEventRegistry {
     public static final HashMap<Identifier, RegistryEntry<SoundEvent>> SOUNDEVENT_BY_ID = new HashMap<>();
 
     public static void init() {
-        if (ModConfig.get().general.debugLog) {
-            Timm.LOGGER.info("Registering sound events");
-        }
+        Timm.debugLog("Registering sound events");
 
         register("menu");
+        registerBiomes();
+        registerStructures();
+    }
 
+    private static void registerBiomes() {
         register("badlands");
         register("bamboo_jungle");
         register("beach");
@@ -47,13 +48,37 @@ public class SoundEventRegistry {
         register("taiga");
         register("warm_ocean");
         register("windy_hills");
-        
+
         register("basalt_deltas");
         register("crimson_forest");
         register("nether_wastes");
         register("soul_sand_valley");
 
         register("end");
+    }
+
+    private static void registerStructures() {
+        register("ancient_city");
+        register("bastion_remnant");
+        register("buried_treasure");
+        register("desert_pyramid");
+        register("end_city");
+        register("fortress");
+        register("igloo");
+        register("jungle_pyramid");
+        register("mansion");
+        register("mineshaft");
+        register("monument");
+        register("ocean_ruin");
+        register("pillager_outpost");
+        register("ruined_portal");
+        register("ruined_portal_nether");
+        register("shipwreck");
+        register("stronghold");
+        register("swamp_hut");
+        register("trail_ruins");
+        register("trial_chambers");
+        register("village");
     }
 
     private static void register(final String path) {

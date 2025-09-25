@@ -10,6 +10,8 @@ public class GeneralConfig implements ConfigData {
     public int minDelay = 120;
     @ConfigEntry.BoundedDiscrete(max = 600)
     public int maxDelay = 300;
+    @ConfigEntry.BoundedDiscrete(max = 10)
+    public int fadeDuration = 5;
 
     public boolean printOnSkip = true;
 

@@ -10,7 +10,9 @@
     "ClientWorldMixin",
     "MinecraftClientMixin",
     "MusicTrackerAccessor",
-    "SoundManagerMixin"
+    "MusicTrackerMixin",
+    "SoundManagerMixin",
+    "SoundSystemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

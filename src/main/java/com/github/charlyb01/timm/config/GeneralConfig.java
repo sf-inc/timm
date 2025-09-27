@@ -13,6 +13,8 @@ public class GeneralConfig implements ConfigData {
     @ConfigEntry.BoundedDiscrete(max = 10)
     public int fadeDuration = 5;
 
+    public boolean resetDelayOnBiomeSwitch = false;
+
     public boolean printOnSkip = true;
 
     @ConfigEntry.Gui.Tooltip

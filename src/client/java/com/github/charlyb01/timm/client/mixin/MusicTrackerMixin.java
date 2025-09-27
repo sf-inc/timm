@@ -8,6 +8,7 @@ import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.sound.MusicTracker;
 import net.minecraft.client.sound.SoundInstance;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.random.Random;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -23,6 +24,7 @@ public class MusicTrackerMixin {
     @Shadow private @Nullable SoundInstance current;
     @Shadow private int timeUntilNextSong;
 
+    @Shadow @Final private Random random;
     @Unique private Identifier lastBiomeEvent;
     @Unique private float volume = 1.0F;
 
@@ -39,7 +41,9 @@ public class MusicTrackerMixin {
             if (this.volume == 0.f) {
                 this.client.getSoundManager().stop(this.current);
                 this.volume = 1.f;
-                this.timeUntilNextSong = 10;
+                this.timeUntilNextSong = ModConfig.get().general.resetDelayOnBiomeSwitch
+                    ? this.random.nextBetween(ModConfig.get().general.minDelay, ModConfig.get().general.maxDelay)
+                    : 10;
                 this.current = null;
             }
         } else if (this.volume < 1.f) {

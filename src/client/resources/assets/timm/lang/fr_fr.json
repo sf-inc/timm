@@ -12,6 +12,7 @@
   "text.autoconfig.timm.option.general.minDelay": "Délai minimum entre deux musiques",
   "text.autoconfig.timm.option.general.maxDelay": "Délai maximum entre deux musiques",
   "text.autoconfig.timm.option.general.fadeDuration": "Durée de l'atténuation d'une musique",
+  "text.autoconfig.timm.option.general.resetDelayOnBiomeSwitch": "Réinitialiser le délai lors d'un changement de biome",
   "text.autoconfig.timm.option.general.printOnSkip": "Afficher la musique quand on passe",
   "text.autoconfig.timm.option.general.enableStructureMusic": "Activer les musiques des structures",
   "text.autoconfig.timm.option.general.enableStructureMusic.@Tooltip": "Cela rend le mod nécessaire côté serveur !"

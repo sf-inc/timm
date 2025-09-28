@@ -27,6 +27,7 @@ public class MusicTrackerMixin {
     @Shadow @Final private Random random;
     @Unique private Identifier lastBiomeEvent;
     @Unique private float volume = 1.0F;
+    @Unique private int switchDelay = 0;
 
     @Inject(method = "tick", at = @At("HEAD"))
     private void fadeOutMusic(CallbackInfo ci) {
@@ -58,7 +59,7 @@ public class MusicTrackerMixin {
     }
 
     @Unique
-    private boolean shouldFadeOut() {
+    private boolean biomeSwitch() {
         var currentBiome = this.client.world.getBiome(this.client.player.getBlockPos()).getKey();
         if (currentBiome.isEmpty()) {
             Timm.debugLog("Biome was not registered: likely a bug!");
@@ -72,5 +73,15 @@ public class MusicTrackerMixin {
         }
 
         return !eventsForCurrentBiome.contains(this.lastBiomeEvent);
+    }
+
+    @Unique
+    private boolean shouldFadeOut() {
+        if (this.biomeSwitch()) {
+            return ++this.switchDelay >= ModConfig.get().general.fadeDelay * 20;
+        } else {
+            this.switchDelay = 0;
+            return false;
+        }
     }
 }

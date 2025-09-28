@@ -11,6 +11,7 @@
   "text.autoconfig.timm.title": "The Immersive Music Mod - Configuration",
   "text.autoconfig.timm.option.general.minDelay": "Délai minimum entre deux musiques",
   "text.autoconfig.timm.option.general.maxDelay": "Délai maximum entre deux musiques",
+  "text.autoconfig.timm.option.general.fadeDelay": "Délai avant d'atténuer la musique (lors d'un changement de biome)",
   "text.autoconfig.timm.option.general.fadeDuration": "Durée de l'atténuation d'une musique",
   "text.autoconfig.timm.option.general.resetDelayOnBiomeSwitch": "Réinitialiser le délai lors d'un changement de biome",
   "text.autoconfig.timm.option.general.printOnSkip": "Afficher la musique quand on passe",

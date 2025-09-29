@@ -1,17 +1,16 @@
 package com.github.charlyb01.timm.mixin;
 
 import com.github.charlyb01.timm.Timm;
-import com.github.charlyb01.timm.config.ModConfig;
 import com.github.charlyb01.timm.music.StructurePlaylist;
+import com.github.charlyb01.timm.network.Constants;
 import com.mojang.authlib.GameProfile;
+import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
+import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.network.packet.s2c.play.StopSoundS2CPacket;
+import net.minecraft.network.PacketByteBuf;
 import net.minecraft.registry.tag.TagKey;
-import net.minecraft.server.network.ServerPlayNetworkHandler;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
 import net.minecraft.structure.StructurePiece;
 import net.minecraft.structure.StructureStart;
 import net.minecraft.util.Identifier;
@@ -37,7 +36,6 @@ import java.util.Set;
 public abstract class ServerPlayerEntityMixin extends PlayerEntity {
     @Shadow public abstract ServerWorld getServerWorld();
 
-    @Shadow public ServerPlayNetworkHandler networkHandler;
     @Unique private Identifier currentSoundId;
     @Unique private final int tickCheck;
 
@@ -48,7 +46,6 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
 
     @Inject(method = "playerTick", at = @At("HEAD"))
     private void onTick(CallbackInfo ci) {
-        if (!ModConfig.get().general.enableStructureMusic) return;
         if (this.age % 20 != this.tickCheck) return; // Check once per second, tick depends on player to avoid overload
 
         StructureAccessor structureAccessor = this.getServerWorld().getStructureAccessor();
@@ -75,8 +72,9 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
                 if (soundId.equals(this.currentSoundId)) break;
 
                 this.currentSoundId = soundId;
-                this.networkHandler.sendPacket(new StopSoundS2CPacket(null, SoundCategory.MUSIC));
-                this.playSound(SoundEvent.of(soundId), SoundCategory.MUSIC, 1.f, 1.f);
+                PacketByteBuf buf = PacketByteBufs.create();
+                buf.writeIdentifier(soundId);
+                ServerPlayNetworking.send((ServerPlayerEntity)(Object) this, Constants.PLAY_PACKET_ID, buf);
                 break;
             }
         }

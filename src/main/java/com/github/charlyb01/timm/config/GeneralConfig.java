@@ -21,6 +21,8 @@ public class GeneralConfig implements ConfigData {
 
     @ConfigEntry.Gui.Tooltip
     public boolean enableStructureMusic = true;
+    @ConfigEntry.Gui.EnumHandler(option = ConfigEntry.Gui.EnumHandler.EnumDisplayOption.BUTTON)
+    public StructureFadeOut structureFadeOut = StructureFadeOut.NEVER;
 
     @ConfigEntry.Gui.Excluded
     public boolean debugLog = false;

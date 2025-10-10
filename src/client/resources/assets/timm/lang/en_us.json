@@ -16,5 +16,6 @@
   "text.autoconfig.timm.option.general.resetDelayOnBiomeSwitch": "Reset delay on biome switch",
   "text.autoconfig.timm.option.general.printOnSkip": "Display song info on skip",
   "text.autoconfig.timm.option.general.enableStructureMusic": "Enable structure songs playing",
+  "text.autoconfig.timm.option.general.structureFadeOut": "Structure should fade out",
   "text.autoconfig.timm.option.general.enableStructureMusic.@Tooltip": "This makes the mod required on the server!"
 }

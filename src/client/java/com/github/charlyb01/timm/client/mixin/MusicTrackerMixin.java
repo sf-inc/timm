@@ -5,6 +5,7 @@ import com.github.charlyb01.timm.client.imixin.MusicTrackerIMixin;
 import com.github.charlyb01.timm.client.imixin.VolumeSettingIMixin;
 import com.github.charlyb01.timm.client.music.BiomePlaylist;
 import com.github.charlyb01.timm.config.ModConfig;
+import com.github.charlyb01.timm.config.StructureFadeOut;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.sound.MusicTracker;
 import net.minecraft.client.sound.SoundInstance;
@@ -33,6 +34,7 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
 
     @Unique private Identifier lastBiomeEvent;
     @Unique private Identifier structureEvent;
+    @Unique private Identifier structureEventPlaying;
     @Unique private float volume = 1.0F;
     @Unique private int switchDelay = 0;
 
@@ -68,9 +70,14 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
         }
     }
 
-    @Inject(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/sound/MusicTracker;play(Lnet/minecraft/sound/MusicSound;)V"))
+    @Inject(method = "play", at = @At("HEAD"))
     private void saveCurrentBiome(CallbackInfo ci) {
         this.lastBiomeEvent = BiomePlaylist.CURRENT_BIOME_EVENT;
+    }
+
+    @Inject(method = "play", at = @At("HEAD"))
+    private void resetStructure(MusicSound type, CallbackInfo ci) {
+        this.structureEventPlaying = null;
     }
 
     @Unique
@@ -92,7 +99,9 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
 
     @Unique
     private boolean shouldFadeOut() {
-        if (this.structureEvent != null) return true;
+        if (this.structureEvent != null && !this.structureEvent.equals(this.structureEventPlaying)) return true;
+        if (this.structureEventPlaying != null && ModConfig.get().general.structureFadeOut.equals(StructureFadeOut.NEVER))
+            return false;
 
         if (this.biomeSwitch()) {
             return ++this.switchDelay >= ModConfig.get().general.fadeDelay * 20;
@@ -110,6 +119,7 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
                 ModConfig.get().general.maxDelay,
                 false);
         this.play(musicSound);
+        this.structureEventPlaying = this.structureEvent;
         this.structureEvent = null;
     }
 

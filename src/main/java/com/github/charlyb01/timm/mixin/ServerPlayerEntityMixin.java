@@ -2,12 +2,10 @@ package com.github.charlyb01.timm.mixin;
 
 import com.github.charlyb01.timm.Timm;
 import com.github.charlyb01.timm.music.StructurePlaylist;
-import com.github.charlyb01.timm.network.Constants;
+import com.github.charlyb01.timm.network.PlayPayload;
 import com.mojang.authlib.GameProfile;
-import net.fabricmc.fabric.api.networking.v1.PacketByteBufs;
 import net.fabricmc.fabric.api.networking.v1.ServerPlayNetworking;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.network.PacketByteBuf;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
@@ -72,9 +70,7 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
                 if (soundId.equals(this.currentSoundId)) break;
 
                 this.currentSoundId = soundId;
-                PacketByteBuf buf = PacketByteBufs.create();
-                buf.writeIdentifier(soundId);
-                ServerPlayNetworking.send((ServerPlayerEntity)(Object) this, Constants.PLAY_PACKET_ID, buf);
+                ServerPlayNetworking.send((ServerPlayerEntity)(Object) this, new PlayPayload(soundId));
                 break;
             }
         }

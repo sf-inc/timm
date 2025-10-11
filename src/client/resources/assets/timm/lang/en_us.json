@@ -11,5 +11,11 @@
   "text.autoconfig.timm.title": "The Immersive Music Mod - Configuration",
   "text.autoconfig.timm.option.general.minDelay": "Minimum delay between songs",
   "text.autoconfig.timm.option.general.maxDelay": "Maximum delay between songs",
-  "text.autoconfig.timm.option.general.printOnSkip": "Display song info on skip"
+  "text.autoconfig.timm.option.general.fadeDelay": "Delay before music fades out (on biome switch)",
+  "text.autoconfig.timm.option.general.fadeDuration": "Duration of music fade out",
+  "text.autoconfig.timm.option.general.resetDelayOnBiomeSwitch": "Reset delay on biome switch",
+  "text.autoconfig.timm.option.general.printOnSkip": "Display song info on skip",
+  "text.autoconfig.timm.option.general.enableStructureMusic": "Enable structure songs playing",
+  "text.autoconfig.timm.option.general.structureFadeOut": "Structure should fade out",
+  "text.autoconfig.timm.option.general.enableStructureMusic.@Tooltip": "This makes the mod required on the server!"
 }

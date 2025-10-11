@@ -7,10 +7,10 @@
   "package": "com.github.charlyb01.timm.client.mixin",
   "compatibilityLevel": "JAVA_17",
   "client": [
-    "ClientWorldMixin",
     "MinecraftClientMixin",
-    "MusicTrackerAccessor",
-    "SoundManagerMixin"
+    "MusicTrackerMixin",
+    "SoundManagerMixin",
+    "SoundSystemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

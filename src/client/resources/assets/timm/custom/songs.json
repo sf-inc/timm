@@ -235,10 +235,6 @@
     "name": "Gold Eagle - [Unnamed Mountain Song]",
     "link": ""
   },
-  "timm:music/multicellular_menagerie": {
-    "name": "Wyatt Robbins - Multicellular Menagerie",
-    "link": "https://youtu.be/kAV97dcdEmk?si=HpQ81BHiBN3i9WbY"
-  },
   "timm:music/musical_waves": {
     "name": "Gold Eagle - Musical Waves",
     "link": ""
@@ -506,5 +502,81 @@
   "timm:music/zen_blossoms": {
     "name": "Gold Eagle - Zen Blossoms",
     "link": "https://open.spotify.com/track/1rpXD4hlClA4GaWDeiTOr7?si=3b831865e7a1461a"
+  },
+  "timm:music/civilization_lost": {
+    "name": "Gold Eagle - Civilization Lost",
+    "link": ""
+  },
+  "timm:music/hell_worn_treasures": {
+    "name": "Gold Eagle - Hellworn Treasures",
+    "link": ""
+  },
+  "timm:music/x_marks_the_spot": {
+    "name": "Gold Eagle - X Marks the Spot",
+    "link": ""
+  },
+  "timm:music/colour_of_the_void": {
+    "name": "Gold Eagle - Colour of the Void",
+    "link": ""
+  },
+  "timm:music/ashen_citadel": {
+    "name": "Gold Eagle - Ashen Citadel",
+    "link": ""
+  },
+  "timm:music/snow_bricks": {
+    "name": "Gold Eagle - Snow Bricks",
+    "link": ""
+  },
+  "timm:music/under_the_overgrowth": {
+    "name": "Gold Eagle - Under the Overgrowth",
+    "link": ""
+  },
+  "timm:music/isolationist": {
+    "name": "Gold Eagle - Isolationist",
+    "link": ""
+  },
+  "timm:music/lost_and_found": {
+    "name": "Gold Eagle - Lost and Found",
+    "link": ""
+  },
+  "timm:music/guardian_of_the_depths": {
+    "name": "Gold Eagle - Guardian of the Depths",
+    "link": ""
+  },
+  "timm:music/city_of_the_drowned": {
+    "name": "Gold Eagle - City of the Drowned",
+    "link": ""
+  },
+  "timm:music/bad_omens": {
+    "name": "Gold Eagle - Bad Omens",
+    "link": ""
+  },
+  "timm:music/fragment_from_the_otherside": {
+    "name": "Gold Eagle - Fragment from the Otherside",
+    "link": ""
+  },
+  "timm:music/return_to_grass": {
+    "name": "Gold Eagle - Return to Grass",
+    "link": ""
+  },
+  "timm:music/naufrage": {
+    "name": "Gold Eagle - Naufrage",
+    "link": ""
+  },
+  "timm:music/what_the_builders_left_behind": {
+    "name": "Gold Eagle - What the Builders Left Behind",
+    "link": "https://open.spotify.com/track/4zQOaU9x1MizKznDlzum7w?si=f6081271cf154664"
+  },
+  "timm:music/shivering_bog": {
+    "name": "Gold Eagle - Shivering Bog",
+    "link": ""
+  },
+  "timm:music/dust_in_the_relics": {
+    "name": "Gold Eagle - Dust in the Relics",
+    "link": "https://open.spotify.com/track/5LqzEZzWoxaw3mEQShUFJk?si=2208ebb8686a4189"
+  },
+  "timm:music/valley_of_the_tradesmen": {
+    "name": "Gold Eagle - Valley of the Tradesmen",
+    "link": "https://open.spotify.com/track/1sapDyjYv6PZsRzPSkLiXo?si=358466816b9a439a"
   }
 }

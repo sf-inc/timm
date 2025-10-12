@@ -8,7 +8,8 @@
   "compatibilityLevel": "JAVA_17",
   "client": [
     "MinecraftClientMixin",
-    "MusicTrackerMixin"
+    "MusicTrackerMixin",
+    "SoundManagerMixin"
   ],
   "injectors": {
     "defaultRequire": 1

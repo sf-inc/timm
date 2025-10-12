@@ -32,7 +32,7 @@ public class MinecraftClientMixin {
     private MusicSound updateEndMusic(MusicSound original) {
         if (this.player == null) return original;
 
-        RegistryEntry<Biome> biome = this.player.getWorld().getBiome(this.player.getBlockPos());
+        RegistryEntry<Biome> biome = this.player.getEntityWorld().getBiome(this.player.getBlockPos());
         Optional<RegistryKey<Biome>> biomeKey = biome.getKey();
         if (biomeKey.isEmpty()) return original;
         
@@ -54,7 +54,7 @@ public class MinecraftClientMixin {
     private Optional<Pool<MusicSound>> updateBiomeMusic(Optional<Pool<MusicSound>> original) {
         if (this.player == null) return original;
 
-        RegistryEntry<Biome> biome = this.player.getWorld().getBiome(this.player.getBlockPos());
+        RegistryEntry<Biome> biome = this.player.getEntityWorld().getBiome(this.player.getBlockPos());
         Optional<RegistryKey<Biome>> biomeKey = biome.getKey();
         if (biomeKey.isEmpty()) return original;
 

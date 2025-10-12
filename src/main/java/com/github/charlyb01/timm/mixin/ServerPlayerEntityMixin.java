@@ -32,7 +32,7 @@ import java.util.Set;
 
 @Mixin(ServerPlayerEntity.class)
 public abstract class ServerPlayerEntityMixin extends PlayerEntity {
-    @Shadow public abstract ServerWorld getWorld();
+    @Shadow public abstract ServerWorld getEntityWorld();
 
     @Unique private Identifier currentSoundId;
     @Unique private final int tickCheck;
@@ -46,7 +46,7 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
     private void onTick(CallbackInfo ci) {
         if (this.age % 20 != this.tickCheck) return; // Check once per second, tick depends on player to avoid overload
 
-        StructureAccessor structureAccessor = this.getWorld().getStructureAccessor();
+        StructureAccessor structureAccessor = this.getEntityWorld().getStructureAccessor();
         BlockPos playerPos = this.getBlockPos();
         HashMap<ChunkSectionPos, Set<Structure>> structuresByPos = getStructuresAroundPlayer(playerPos, structureAccessor);
         for (Map.Entry<ChunkSectionPos, Set<Structure>> entry : structuresByPos.entrySet()){

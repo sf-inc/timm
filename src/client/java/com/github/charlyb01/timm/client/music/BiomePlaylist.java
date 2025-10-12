@@ -22,18 +22,27 @@ import java.util.HashMap;
 import java.util.Optional;
 
 public class BiomePlaylist {
+    private static final Identifier UNDEFINED_BIOME = Timm.id("undefined_biome");
+    public static Identifier CURRENT_BIOME_EVENT = UNDEFINED_BIOME;
     public static final HashMap<Identifier, ArrayList<Identifier>> EVENTS_BY_BIOME = new HashMap<>();
     private static final Identifier CREATIVE_ID = Identifier.of("creative");
     private static final Identifier MENU_ID = Identifier.of("menu");
 
     public static MusicSound getMusicSound(Identifier biomeId, Random random) {
         ArrayList<Identifier> musics = EVENTS_BY_BIOME.get(biomeId);
-        if (musics == null || musics.isEmpty()) return null;
+        if (musics == null || musics.isEmpty()) {
+            CURRENT_BIOME_EVENT = UNDEFINED_BIOME;
+            return null;
+        }
 
         Identifier soundEventId = musics.get(random.nextInt(musics.size()));
         RegistryEntry<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
-        if (soundEvent == null) return null;
+        if (soundEvent == null) {
+            CURRENT_BIOME_EVENT = UNDEFINED_BIOME;
+            return null;
+        }
 
+        CURRENT_BIOME_EVENT = soundEventId;
         return new MusicSound(
                 soundEvent,
                 ModConfig.get().general.minDelay * 20,
@@ -114,9 +123,7 @@ public class BiomePlaylist {
             return filePath;
         }
 
-        if (ModConfig.get().general.debugLog) {
-            Timm.LOGGER.info("Player biome_playlist.json not found, using default one");
-        }
+        Timm.debugLog("Player biome_playlist.json not found, using default one");
 
         if (loader.getModContainer(Timm.MOD_ID).isEmpty()) {
             Timm.LOGGER.error("Mod not correctly loaded");

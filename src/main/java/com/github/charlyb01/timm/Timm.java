@@ -1,6 +1,8 @@
 package com.github.charlyb01.timm;
 
 import com.github.charlyb01.timm.config.ModConfig;
+import com.github.charlyb01.timm.music.StructurePlaylist;
+import com.github.charlyb01.timm.network.NetworkingRegistry;
 import me.shedaniel.autoconfig.AutoConfig;
 import me.shedaniel.autoconfig.serializer.GsonConfigSerializer;
 import me.shedaniel.autoconfig.serializer.PartitioningSerializer;
@@ -16,9 +18,17 @@ public class Timm implements ModInitializer {
     @Override
     public void onInitialize() {
         AutoConfig.register(ModConfig.class, PartitioningSerializer.wrap(GsonConfigSerializer::new));
+        NetworkingRegistry.init();
+        StructurePlaylist.init();
     }
 
     public static Identifier id(final String path) {
         return Identifier.of(MOD_ID, path);
+    }
+
+    public static void debugLog(String debugString) {
+        if (ModConfig.get().general.debugLog) {
+            LOGGER.info(debugString);
+        }
     }
 }

@@ -379,6 +379,10 @@
     "name": "Gold Eagle - The Ancients Hymn",
     "link": ""
   },
+  "timm:music/ankh": {
+    "name": "Gold Eagle - .- -. -.- ....",
+    "link": ""
+  },
   "timm:music/the_box_of_pine": {
     "name": "Gold Eagle - The Box of Pine",
     "link": "https://open.spotify.com/track/4J0nXOf3clrEzRzgMGZxko?si=676653bad5114750"
@@ -578,5 +582,9 @@
   "timm:music/valley_of_the_tradesmen": {
     "name": "Gold Eagle - Valley of the Tradesmen",
     "link": "https://open.spotify.com/track/1sapDyjYv6PZsRzPSkLiXo?si=358466816b9a439a"
+  },
+  "timm:music/copper_whisper": {
+    "name": "Gold Eagle - Copper Whisper",
+    "link": ""
   }
 }

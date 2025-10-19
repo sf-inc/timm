@@ -1,12 +1,12 @@
 {
   "ancient_city": {
-    "distance": 32,
+    "distance": 4,
     "structures": [
       "ancient_city"
     ]
   },
   "bastion_remnant": {
-    "distance": 24,
+    "distance": 16,
     "structures": [
       "bastion_remnant"
     ]
@@ -18,63 +18,63 @@
     ]
   },
   "desert_pyramid": {
-    "distance": 24,
+    "distance": 16,
     "structures": [
       "desert_pyramid"
     ]
   },
   "end_city": {
-    "distance": 32,
+    "distance": 24,
     "structures": [
       "end_city"
     ]
   },
   "fortress": {
-    "distance": 24,
+    "distance": 16,
     "structures": [
       "nether_fortress"
     ]
   },
   "igloo": {
-    "distance": 16,
+    "distance": 12,
     "structures": [
       "igloo"
     ]
   },
   "jungle_pyramid": {
-    "distance": 16,
+    "distance": 12,
     "structures": [
       "jungle_temple"
     ]
   },
   "mansion": {
-    "distance": 24,
+    "distance": 16,
     "structures": [
       "woodland_mansion"
     ]
   },
   "mineshaft": {
-    "distance": 16,
+    "distance": 8,
     "structures": [
       "mineshaft",
       "mineshaft_mesa"
     ]
   },
   "monument": {
-    "distance": 32,
+    "distance": 24,
     "structures": [
       "ocean_monument"
     ]
   },
   "ocean_ruin": {
-    "distance": 24,
+    "distance": 16,
     "structures": [
       "ocean_ruin_cold",
       "ocean_ruin_warm"
     ]
   },
   "pillager_outpost": {
-    "distance": 16,
+    "distance": 12,
     "structures": [
       "pillager_outpost"
     ]
@@ -110,7 +110,7 @@
     ]
   },
   "swamp_hut": {
-    "distance": 16,
+    "distance": 12,
     "structures": [
       "swamp_hut"
     ]
@@ -122,13 +122,13 @@
     ]
   },
   "trial_chambers": {
-    "distance": 8,
+    "distance": 4,
     "structures": [
       "trial_chambers"
     ]
   },
   "village": {
-    "distance": 24,
+    "distance": 16,
     "structures": [
       "village_desert",
       "village_plains",

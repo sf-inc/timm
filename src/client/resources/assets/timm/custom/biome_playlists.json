@@ -1,200 +1,258 @@
 {
   "creative": [
-    "minecraft:music.creative",
-    "timm:menu"
+    "timm:menu",
+    "minecraft:music.creative"
   ],
   "menu": [
-    "timm:menu"
+    "timm:menu",
+    "minecraft:music.menu"
   ],
   "minecraft:badlands": [
-    "timm:badlands"
+    "timm:badlands",
+    "minecraft:music.overworld.badlands"
   ],
   "minecraft:bamboo_jungle": [
-    "timm:bamboo_jungle"
+    "timm:bamboo_jungle",
+    "minecraft:music.overworld.bamboo_jungle"
   ],
   "minecraft:basalt_deltas": [
-    "timm:basalt_deltas"
+    "timm:basalt_deltas",
+    "minecraft:music.nether.basalt_deltas"
   ],
   "minecraft:beach": [
     "timm:beach",
     "timm:warm_ocean",
-    "timm:ocean"
+    "timm:ocean",
+    "minecraft:music.game"
   ],
   "minecraft:birch_forest": [
-    "timm:birch_forest"
+    "timm:birch_forest",
+    "minecraft:music.overworld.forest"
   ],
   "minecraft:cherry_grove": [
-    "timm:cherry_grove"
+    "timm:cherry_grove",
+    "minecraft:music.overworld.cherry_grove"
   ],
   "minecraft:cold_ocean": [
     "timm:ocean",
-    "timm:cold_ocean"
+    "timm:cold_ocean",
+    "minecraft:music.game"
   ],
   "minecraft:crimson_forest": [
-    "timm:crimson_forest"
+    "timm:crimson_forest",
+    "minecraft:music.nether.crimson_forest"
   ],
   "minecraft:dark_forest": [
-    "timm:dark_forest"
+    "timm:dark_forest",
+    "minecraft:music.overworld.forest"
   ],
   "minecraft:deep_cold_ocean": [
     "timm:cold_ocean",
-    "timm:ocean"
+    "timm:ocean",
+    "minecraft:music.game"
   ],
   "minecraft:deep_dark": [
-    "timm:deep_dark"
+    "timm:deep_dark",
+    "minecraft:music.overworld.deep_dark"
   ],
   "minecraft:deep_frozen_ocean": [
     "timm:cold_ocean",
-    "timm:ocean"
+    "timm:ocean",
+    "minecraft:music.game"
   ],
   "minecraft:deep_lukewarm_ocean": [
     "timm:warm_ocean",
-    "timm:ocean"
+    "timm:ocean",
+    "minecraft:music.game"
   ],
   "minecraft:deep_ocean": [
-    "timm:ocean"
+    "timm:ocean",
+    "minecraft:music.game"
   ],
   "minecraft:desert": [
-    "timm:desert"
+    "timm:desert",
+    "minecraft:music.overworld.desert"
   ],
   "minecraft:dripstone_caves": [
-    "timm:dripstone_caves"
+    "timm:dripstone_caves",
+    "minecraft:music.overworld.dripstone_caves"
   ],
   "minecraft:eroded_badlands": [
-    "timm:badlands"
+    "timm:badlands",
+    "minecraft:music.overworld.badlands"
   ],
   "minecraft:flower_forest": [
-    "timm:flower_forest"
+    "timm:flower_forest",
+    "minecraft:music.overworld.flower_forest"
   ],
   "minecraft:forest": [
-    "timm:forest"
+    "timm:forest",
+    "minecraft:music.overworld.forest"
   ],
   "minecraft:frozen_ocean": [
     "timm:ocean",
-    "timm:cold_ocean"
+    "timm:cold_ocean",
+    "minecraft:music.game"
   ],
   "minecraft:frozen_peaks": [
-    "timm:mountains"
+    "timm:mountains",
+    "minecraft:music.overworld.frozen_peaks"
   ],
   "minecraft:frozen_river": [
-    "timm:river"
+    "timm:river",
+    "minecraft:music.game"
   ],
   "minecraft:grove": [
-    "timm:taiga"
+    "timm:taiga",
+    "minecraft:music.overworld.grove"
   ],
   "minecraft:ice_spikes": [
-    "timm:snow_plains"
+    "timm:snow_plains",
+    "minecraft:music.game"
   ],
   "minecraft:jagged_peaks": [
-    "timm:mountains"
+    "timm:mountains",
+    "minecraft:music.overworld.jagged_peaks"
   ],
   "minecraft:jungle": [
-    "timm:jungle"
+    "timm:jungle",
+    "minecraft:music.overworld.jungle"
   ],
   "minecraft:lukewarm_ocean": [
     "timm:warm_ocean",
-    "timm:ocean"
+    "timm:ocean",
+    "minecraft:music.game"
   ],
   "minecraft:lush_caves": [
-    "timm:lush_caves"
+    "timm:lush_caves",
+    "minecraft:music.overworld.lush_caves"
   ],
   "minecraft:mangrove_swamp": [
-    "timm:swamp"
+    "timm:swamp",
+    "minecraft:music.overworld.swamp"
   ],
   "minecraft:meadow": [
-    "timm:meadow"
+    "timm:meadow",
+    "minecraft:music.overworld.meadow"
   ],
   "minecraft:mushroom_fields": [
-    "timm:mushroom"
+    "timm:mushroom",
+    "minecraft:music.game"
   ],
   "minecraft:nether_wastes": [
-    "timm:nether_wastes"
+    "timm:nether_wastes",
+    "minecraft:music.nether.nether_wastes"
   ],
   "minecraft:ocean": [
-    "timm:ocean"
+    "timm:ocean",
+    "minecraft:music.game"
   ],
   "minecraft:old_growth_birch_forest": [
-    "timm:birch_forest"
+    "timm:birch_forest",
+    "minecraft:music.overworld.forest"
   ],
   "minecraft:old_growth_pine_taiga": [
-    "timm:taiga"
+    "timm:taiga",
+    "minecraft:music.overworld.old_growth_taiga"
   ],
   "minecraft:old_growth_spruce_taiga": [
-    "timm:taiga"
+    "timm:taiga",
+    "minecraft:music.overworld.old_growth_taiga"
   ],
   "minecraft:pale_garden": [],
   "minecraft:plains": [
-    "timm:plains"
+    "timm:plains",
+    "minecraft:music.game"
   ],
   "minecraft:river": [
-    "timm:river"
+    "timm:river",
+    "minecraft:music.game"
   ],
   "minecraft:savanna": [
-    "timm:savanna"
+    "timm:savanna",
+    "minecraft:music.game"
   ],
   "minecraft:savanna_plateau": [
-    "timm:savanna"
+    "timm:savanna",
+    "minecraft:music.game"
   ],
   "minecraft:snowy_beach": [
     "timm:cold_ocean",
-    "timm:ocean"
+    "timm:ocean",
+    "minecraft:music.game"
   ],
   "minecraft:snowy_plains": [
-    "timm:snow_plains"
+    "timm:snow_plains",
+    "minecraft:music.game"
   ],
   "minecraft:snowy_slopes": [
-    "timm:mountains"
+    "timm:mountains",
+    "minecraft:music.overworld.snowy_slopes"
   ],
   "minecraft:snowy_taiga": [
     "timm:snow_plains",
-    "timm:taiga"
+    "timm:taiga",
+    "minecraft:music.game"
   ],
   "minecraft:soul_sand_valley": [
-    "timm:soul_sand_valley"
+    "timm:soul_sand_valley",
+    "minecraft:music.nether.soul_sand_valley"
   ],
   "minecraft:sparse_jungle": [
-    "timm:jungle"
+    "timm:jungle",
+    "minecraft:music.overworld.sparse_jungle"
   ],
   "minecraft:stony_peaks": [
-    "timm:mountains"
+    "timm:mountains",
+    "minecraft:music.overworld.stony_peaks"
   ],
   "minecraft:stony_shore": [
-    "timm:river"
+    "timm:river",
+    "minecraft:music.game"
   ],
   "minecraft:sunflower_plains": [
     "timm:plains",
-    "timm:flower_forest"
+    "timm:flower_forest",
+    "minecraft:music.game"
   ],
   "minecraft:swamp": [
-    "timm:swamp"
+    "timm:swamp",
+    "minecraft:music.overworld.swamp"
   ],
   "minecraft:taiga": [
-    "timm:taiga"
+    "timm:taiga",
+    "minecraft:music.game"
   ],
   "minecraft:the_void": [
     "minecraft:music.game"
   ],
   "minecraft:warm_ocean": [
     "timm:warm_ocean",
-    "timm:ocean"
+    "timm:ocean",
+    "minecraft:music.game"
   ],
   "minecraft:warped_forest": [],
   "minecraft:windswept_forest": [
     "timm:windy_hills",
-    "timm:forest"
+    "timm:forest",
+    "minecraft:music.game"
   ],
   "minecraft:windswept_gravelly_hills": [
-    "timm:windy_hills"
+    "timm:windy_hills",
+    "minecraft:music.game"
   ],
   "minecraft:windswept_hills": [
-    "timm:windy_hills"
+    "timm:windy_hills",
+    "minecraft:music.game"
   ],
   "minecraft:windswept_savanna": [
     "timm:windy_hills",
-    "timm:savanna"
+    "timm:savanna",
+    "minecraft:music.game"
   ],
   "minecraft:wooded_badlands": [
-    "timm:badlands"
+    "timm:badlands",
+    "minecraft:music.overworld.badlands"
   ],
   "terralith:alpha_islands": [
     "minecraft:music.game"

@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Optional;
 
 public class BiomePlaylist {
-    private static final Identifier UNDEFINED_BIOME = Timm.id("undefined_biome");
+    public static final Identifier UNDEFINED_BIOME = Timm.id("undefined_biome");
     public static Identifier CURRENT_BIOME_EVENT = UNDEFINED_BIOME;
     public static final HashMap<Identifier, ArrayList<Identifier>> EVENTS_BY_BIOME = new HashMap<>();
     private static final Identifier CREATIVE_ID = new Identifier("creative");

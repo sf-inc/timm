@@ -19,6 +19,7 @@
 * Music is now properly detected by the **Music Control** mod (more compatibility will come in the future)
 * Music has been resampled to make the mod lighter
 * Vanilla music has been readded to be able to play along with TIMM's songs
+* Vanilla music toasts display timm song correctly
 
 ## v1.0.6
 * Entire mod rewrite for better maintainability, lots of possible bug fixes

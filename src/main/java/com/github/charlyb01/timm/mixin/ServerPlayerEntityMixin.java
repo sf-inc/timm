@@ -44,6 +44,7 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
 
     @Inject(method = "playerTick", at = @At("HEAD"))
     private void onTick(CallbackInfo ci) {
+        if (this.isCreative()) return;
         if (this.age % 20 != this.tickCheck) return; // Check once per second, tick depends on player to avoid overload
 
         StructureAccessor structureAccessor = this.getServerWorld().getStructureAccessor();

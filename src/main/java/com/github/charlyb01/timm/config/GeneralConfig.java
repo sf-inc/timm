@@ -17,7 +17,7 @@ public class GeneralConfig implements ConfigData {
 
     public boolean resetDelayOnBiomeSwitch = false;
 
-    public boolean printOnSkip = true;
+    public boolean printOnSkip = false;
 
     @ConfigEntry.Gui.Tooltip
     public boolean enableStructureMusic = true;

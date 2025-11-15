@@ -82,6 +82,11 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
 
     @Unique
     private boolean biomeSwitch() {
+        if (BiomePlaylist.UNDEFINED_BIOME.equals(this.lastBiomeEvent)) {
+            // This happens if we're opening a world in creative
+            return false;
+        }
+
         var currentBiome = this.client.world.getBiome(this.client.player.getBlockPos()).getKey();
         if (currentBiome.isEmpty()) {
             Timm.debugLog("Biome was not registered: likely a bug!");

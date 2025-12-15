@@ -7,6 +7,10 @@
     "timm:menu",
     "minecraft:music.menu"
   ],
+  "end":[
+    "timm:end",
+    "minecraft:music.end"
+  ],
   "minecraft:badlands": [
     "timm:badlands",
     "minecraft:music.overworld.badlands"

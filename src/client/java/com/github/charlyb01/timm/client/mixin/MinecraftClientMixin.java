@@ -11,6 +11,7 @@ import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.MusicSound;
 import net.minecraft.world.biome.Biome;
 import org.jetbrains.annotations.Nullable;
+import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -21,13 +22,13 @@ import java.util.Optional;
 public class MinecraftClientMixin {
     @Shadow @Nullable public ClientPlayerEntity player;
 
-    @ModifyExpressionValue(method = "getMusicType", at = @At(value = "FIELD", target = "Lnet/minecraft/client/sound/MusicType;MENU:Lnet/minecraft/sound/MusicSound;"))
+    @ModifyExpressionValue(method = "getMusicType", at = @At(value = "FIELD", target = "Lnet/minecraft/client/sound/MusicType;MENU:Lnet/minecraft/sound/MusicSound;", opcode = Opcodes.GETSTATIC))
     private MusicSound updateMenuMusic(MusicSound original) {
         MusicSound musicSound = BiomePlaylist.getMenuMusic();
         return musicSound != null ? musicSound : original;
     }
 
-    @ModifyExpressionValue(method = "getMusicType", at = @At(value = "FIELD", target = "Lnet/minecraft/client/sound/MusicType;END:Lnet/minecraft/sound/MusicSound;"))
+    @ModifyExpressionValue(method = "getMusicType", at = @At(value = "FIELD", target = "Lnet/minecraft/client/sound/MusicType;END:Lnet/minecraft/sound/MusicSound;", opcode = Opcodes.GETSTATIC))
     private MusicSound updateEndMusic(MusicSound original) {
         if (this.player == null) return original;
 
@@ -39,7 +40,7 @@ public class MinecraftClientMixin {
         return musicSound != null ? musicSound : original;
     }
 
-    @ModifyExpressionValue(method = "getMusicType", at = @At(value = "FIELD", target = "Lnet/minecraft/client/sound/MusicType;CREATIVE:Lnet/minecraft/sound/MusicSound;"))
+    @ModifyExpressionValue(method = "getMusicType", at = @At(value = "FIELD", target = "Lnet/minecraft/client/sound/MusicType;CREATIVE:Lnet/minecraft/sound/MusicSound;", opcode = Opcodes.GETSTATIC))
     private MusicSound updateCreativeMusic(MusicSound original) {
         if (this.player == null) return original;
 

@@ -81,11 +81,11 @@ public class BiomePlaylist {
                 false);
     }
 
-    public static MusicSound getMenuMusic() {
+    public static MusicSound getMenuMusic(Random random) {
         ArrayList<Identifier> musics = EVENTS_BY_BIOME.get(MENU_ID);
         if (musics == null || musics.isEmpty()) return null;
 
-        Identifier soundEventId = musics.get(0);
+        Identifier soundEventId = musics.get(random.nextInt(musics.size()));
         RegistryEntry<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
         if (soundEvent == null) return null;
 

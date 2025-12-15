@@ -24,7 +24,9 @@ public class MinecraftClientMixin {
 
     @ModifyExpressionValue(method = "getMusicType", at = @At(value = "FIELD", target = "Lnet/minecraft/client/sound/MusicType;MENU:Lnet/minecraft/sound/MusicSound;", opcode = Opcodes.GETSTATIC))
     private MusicSound updateMenuMusic(MusicSound original) {
-        MusicSound musicSound = BiomePlaylist.getMenuMusic();
+        if (this.player == null) return original;
+
+        MusicSound musicSound = BiomePlaylist.getMenuMusic(this.player.getRandom());
         return musicSound != null ? musicSound : original;
     }
 

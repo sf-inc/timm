@@ -26,6 +26,7 @@ public class BiomePlaylist {
     public static Identifier CURRENT_BIOME_EVENT = UNDEFINED_BIOME;
     public static final HashMap<Identifier, ArrayList<Identifier>> EVENTS_BY_BIOME = new HashMap<>();
     private static final Identifier CREATIVE_ID = Identifier.of("creative");
+    private static final Identifier END_ID = Identifier.of("end");
     private static final Identifier MENU_ID = Identifier.of("menu");
 
     public static MusicSound getMusicSound(Identifier biomeId, Random random) {
@@ -65,11 +66,26 @@ public class BiomePlaylist {
                 false);
     }
 
-    public static MusicSound getMenuMusic() {
+    public static MusicSound getEndMusic(Random random) {
+        ArrayList<Identifier> musics = EVENTS_BY_BIOME.get(END_ID);
+        if (musics == null || musics.isEmpty()) return null;
+
+        Identifier soundEventId = musics.get(random.nextInt(musics.size()));
+        RegistryEntry<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
+        if (soundEvent == null) return null;
+
+        return new MusicSound(
+                soundEvent,
+                ModConfig.get().general.minDelay * 20,
+                ModConfig.get().general.maxDelay * 20,
+                false);
+    }
+
+    public static MusicSound getMenuMusic(Random random) {
         ArrayList<Identifier> musics = EVENTS_BY_BIOME.get(MENU_ID);
         if (musics == null || musics.isEmpty()) return null;
 
-        Identifier soundEventId = musics.getFirst();
+        Identifier soundEventId = musics.get(random.nextInt(musics.size()));
         RegistryEntry<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
         if (soundEvent == null) return null;
 

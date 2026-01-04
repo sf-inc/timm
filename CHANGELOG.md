@@ -3,6 +3,10 @@
 * **x.Y versions** are either updates that add content or major bug fixes
 * **x.y.Z versions** are either small content update (language translation, keybind change, ...) or bug fixes
 
+## v1.1.1
+* Fix menu playing only Timm songs (no vanilla ones)
+* Fix end music playing only vanilla songs (no Timm ones!)
+
 ## v1.1
 * Add music fade out on biome switch
   * Do not fade out if the current biome song is available in the new biome

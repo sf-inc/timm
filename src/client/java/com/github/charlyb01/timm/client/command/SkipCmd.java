@@ -6,7 +6,7 @@ import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.context.CommandContext;
 import net.fabricmc.fabric.api.client.command.v2.ClientCommandManager;
 import net.fabricmc.fabric.api.client.command.v2.FabricClientCommandSource;
-import net.minecraft.client.sound.MusicInstance;
+import net.minecraft.sound.MusicSound;
 
 public class SkipCmd {
     public static void register(CommandDispatcher<FabricClientCommandSource> dispatcher) {
@@ -21,8 +21,8 @@ public class SkipCmd {
 
     private static int skip(CommandContext<FabricClientCommandSource> context ) {
         context.getSource().getClient().getMusicTracker().stop();
-        MusicInstance musicInstance = context.getSource().getClient().getMusicInstance();
-        if (musicInstance.music() != null) {
+        MusicSound musicInstance = context.getSource().getClient().getMusicInstance();
+        if (musicInstance != null) {
             context.getSource().getClient().getMusicTracker().play(musicInstance);
 
             if (ModConfig.get().general.printOnSkip) {

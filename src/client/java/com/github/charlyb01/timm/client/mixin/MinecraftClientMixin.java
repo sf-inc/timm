@@ -1,15 +1,13 @@
 package com.github.charlyb01.timm.client.mixin;
 
 import com.github.charlyb01.timm.client.music.BiomePlaylist;
-import com.llamalad7.mixinextras.expression.Definition;
-import com.llamalad7.mixinextras.expression.Expression;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.MusicSound;
-import net.minecraft.util.collection.Pool;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import org.jetbrains.annotations.Nullable;
 import org.objectweb.asm.Opcodes;
@@ -31,34 +29,26 @@ public class MinecraftClientMixin {
         return musicSound != null ? musicSound : original;
     }
 
-    @ModifyExpressionValue(method = "getMusicInstance", at = @At(value = "FIELD", target = "Lnet/minecraft/sound/MusicType;END:Lnet/minecraft/sound/MusicSound;", opcode = Opcodes.GETSTATIC))
-    private MusicSound updateEndMusic(MusicSound original) {
+    @ModifyExpressionValue(method = "getMusicInstance", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/attribute/BackgroundMusic;getCurrent(ZZ)Ljava/util/Optional;"))
+    private Optional<MusicSound> updateBiomeMusic(Optional<MusicSound> original) {
         if (this.player == null) return original;
 
-        MusicSound musicSound = BiomePlaylist.getEndMusic(this.player.getRandom());
-        return musicSound != null ? musicSound : original;
-    }
+        World world = this.player.getEntityWorld();
+        if (world.getRegistryKey() == World.END) {
+            MusicSound musicSound = BiomePlaylist.getEndMusic(this.player.getRandom());
+            return musicSound != null ? Optional.of(musicSound) : original;
+        }
 
-    @ModifyExpressionValue(method = "getMusicInstance", at = @At(value = "FIELD", target = "Lnet/minecraft/sound/MusicType;CREATIVE:Lnet/minecraft/sound/MusicSound;", opcode = Opcodes.GETSTATIC))
-    private MusicSound updateCreativeMusic(MusicSound original) {
-        if (this.player == null) return original;
+        if (this.player.getAbilities().creativeMode && this.player.getAbilities().allowFlying) {
+            MusicSound musicSound = BiomePlaylist.getCreativeMusic(this.player.getRandom());
+            return musicSound != null ? Optional.of(musicSound) : original;
+        }
 
-        MusicSound musicSound = BiomePlaylist.getCreativeMusic(this.player.getRandom());
-        return musicSound != null ? musicSound : original;
-    }
-
-    @Definition(id = "getMusic", method = "Lnet/minecraft/world/biome/Biome;getMusic()Ljava/util/Optional;")
-    @Expression("?.getMusic()")
-    @ModifyExpressionValue(method = "getMusicInstance", at = @At("MIXINEXTRAS:EXPRESSION"))
-    private Optional<Pool<MusicSound>> updateBiomeMusic(Optional<Pool<MusicSound>> original) {
-        if (this.player == null) return original;
-
-        RegistryEntry<Biome> biome = this.player.getEntityWorld().getBiome(this.player.getBlockPos());
+        RegistryEntry<Biome> biome = world.getBiome(this.player.getBlockPos());
         Optional<RegistryKey<Biome>> biomeKey = biome.getKey();
         if (biomeKey.isEmpty()) return original;
 
         MusicSound musicSound = BiomePlaylist.getMusicSound(biomeKey.get().getValue(), this.player.getRandom());
-        Pool<MusicSound> pool = Pool.of(musicSound);
-        return musicSound != null ? Optional.of(pool) : original;
+        return musicSound != null ? Optional.of(musicSound) : original;
     }
 }

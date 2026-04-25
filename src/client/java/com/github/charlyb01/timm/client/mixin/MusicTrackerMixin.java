@@ -50,7 +50,7 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
         }
 
         // current is not null: fading management
-        float delta = 1.f / (ModConfig.get().general.fadeDuration * 20);
+        float delta = 1.f / (Math.max(1, ModConfig.get().general.fadeDuration) * 20);
 
         if (this.shouldFadeOut()) {
             this.volume = Math.max(0.f, this.volume - delta);
@@ -112,6 +112,9 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
 
     @Unique
     private boolean shouldFadeOut() {
+        if(!ModConfig.get().general.enableMusicFading)
+            return false;
+
         if (this.structureEvent != null && !this.structureEvent.equals(this.structureEventPlaying)) return true;
         if (this.structureEventPlaying != null && ModConfig.get().general.structureFadeOut.equals(StructureFadeOut.NEVER))
             return false;

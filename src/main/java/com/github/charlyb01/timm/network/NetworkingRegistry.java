@@ -4,6 +4,6 @@ import net.fabricmc.fabric.api.networking.v1.PayloadTypeRegistry;
 
 public class NetworkingRegistry {
     public static void init() {
-        PayloadTypeRegistry.playS2C().register(PlayPayload.ID, PlayPayload.CODEC);
+        PayloadTypeRegistry.clientboundPlay().register(PlayPayload.ID, PlayPayload.CODEC);
     }
 }

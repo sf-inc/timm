@@ -1,0 +1,16 @@
+{
+  "schemaVersion": 1,
+  "id": "timm-gametest",
+  "version": "1.0.0",
+  "name": "The Immersive Music Mod game tests",
+  "license": "GNU GPL-3",
+  "environment": "*",
+  "entrypoints": {
+    "fabric-client-gametest": [
+      "com.github.charlyb01.timm.gametest.TimmClientGameTest"
+    ]
+  },
+  "depends": {
+    "timm": "*"
+  }
+}

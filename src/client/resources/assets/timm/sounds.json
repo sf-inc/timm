@@ -1,422 +1,2198 @@
 {
   "menu": {
     "sounds": [
-      "timm:music/creating_memories",
-      "timm:music/generating_worlds",
-      "timm:music/idle",
-      "timm:music/infinite_realities",
-      "timm:music/menu-02",
-      "timm:music/promised_lans"
+      {
+        "name": "timm:music/creating_memories",
+        "stream": true
+      },
+      {
+        "name": "timm:music/generating_worlds",
+        "stream": true
+      },
+      {
+        "name": "timm:music/idle",
+        "stream": true
+      },
+      {
+        "name": "timm:music/infinite_realities",
+        "stream": true
+      },
+      {
+        "name": "timm:music/menu-02",
+        "stream": true
+      },
+      {
+        "name": "timm:music/promised_lans",
+        "stream": true
+      }
     ]
   },
 
   "badlands":{
     "sounds": [
-      "timm:music/echoes_of_the_canyon",
-      "timm:music/the_final_grain",
-      "timm:music/track_6"
+      {
+        "name": "timm:music/echoes_of_the_canyon",
+        "stream": true
+      },
+      {
+        "name": "timm:music/the_final_grain",
+        "stream": true
+      },
+      {
+        "name": "timm:music/track_6",
+        "stream": true
+      }
     ]
   },
 
   "bamboo_jungle": {
     "sounds": [
-      "timm:music/thin_trees"
+      {
+        "name": "timm:music/thin_trees",
+        "stream": true
+      }
     ]
   },
 
   "beach":{
     "sounds": [
-      "timm:music/track_11",
-      "timm:music/turtles_retreat"
+      {
+        "name": "timm:music/track_11",
+        "stream": true
+      },
+      {
+        "name": "timm:music/turtles_retreat",
+        "stream": true
+      }
     ]
   },
 
   "birch_forest": {
     "sounds": [
-      "timm:music/betulina",
-      "timm:music/chateau",
-      "timm:music/juagos_guago",
-      "timm:music/lost_concepts_broken_dreams",
-      "timm:music/rats_on_saturn",
-      "timm:music/track_12"
+      {
+        "name": "timm:music/betulina",
+        "stream": true
+      },
+      {
+        "name": "timm:music/chateau",
+        "stream": true
+      },
+      {
+        "name": "timm:music/juagos_guago",
+        "stream": true
+      },
+      {
+        "name": "timm:music/lost_concepts_broken_dreams",
+        "stream": true
+      },
+      {
+        "name": "timm:music/rats_on_saturn",
+        "stream": true
+      },
+      {
+        "name": "timm:music/track_12",
+        "stream": true
+      }
     ]
   },
 
   "cherry_grove": {
     "sounds": [
-      "timm:music/as_the_sakura_blossoms",
-      "timm:music/track_4",
-      "timm:music/zen_blossoms"
+      {
+        "name": "timm:music/as_the_sakura_blossoms",
+        "stream": true
+      },
+      {
+        "name": "timm:music/track_4",
+        "stream": true
+      },
+      {
+        "name": "timm:music/zen_blossoms",
+        "stream": true
+      }
     ]
   },
 
   "cold_ocean": {
     "sounds": [
-      "timm:music/choral_vortex",
-      "timm:music/guardians_anthem",
-      "timm:music/lurk",
-      "timm:music/sea_foam"
+      {
+        "name": "timm:music/choral_vortex",
+        "stream": true
+      },
+      {
+        "name": "timm:music/guardians_anthem",
+        "stream": true
+      },
+      {
+        "name": "timm:music/lurk",
+        "stream": true
+      },
+      {
+        "name": "timm:music/sea_foam",
+        "stream": true
+      }
     ]
   },
 
   "dark_forest": {
     "sounds": [
-      "timm:music/lost_in_a_forest",
-      "timm:music/lost_rituals",
-      "timm:music/ruins_of_dukneyth",
-      "timm:music/spellbound",
-      "timm:music/terrible_plants",
-      "timm:music/the_wanderer"
+      {
+        "name": "timm:music/lost_in_a_forest",
+        "stream": true
+      },
+      {
+        "name": "timm:music/lost_rituals",
+        "stream": true
+      },
+      {
+        "name": "timm:music/ruins_of_dukneyth",
+        "stream": true
+      },
+      {
+        "name": "timm:music/spellbound",
+        "stream": true
+      },
+      {
+        "name": "timm:music/terrible_plants",
+        "stream": true
+      },
+      {
+        "name": "timm:music/the_wanderer",
+        "stream": true
+      }
     ]
   },
 
   "deep_dark": {
     "sounds": [
-      "timm:music/ancients_lament",
-      "timm:music/city_of_sculk",
-      "timm:music/depths_unseen",
-      "timm:music/echoes",
-      "timm:music/the_ancients_hymn",
-      "timm:music/vengeful_shade"
+      {
+        "name": "timm:music/ancients_lament",
+        "stream": true
+      },
+      {
+        "name": "timm:music/city_of_sculk",
+        "stream": true
+      },
+      {
+        "name": "timm:music/depths_unseen",
+        "stream": true
+      },
+      {
+        "name": "timm:music/echoes",
+        "stream": true
+      },
+      {
+        "name": "timm:music/the_ancients_hymn",
+        "stream": true
+      },
+      {
+        "name": "timm:music/vengeful_shade",
+        "stream": true
+      }
     ]
   },
 
   "desert": {
     "sounds": [
-      "timm:music/56e218",
-      "timm:music/cereus",
-      "timm:music/its_cactie_not_cactus",
-      "timm:music/lack_of_water",
-      "timm:music/osiriss_tomb",
-      "timm:music/the_wind_blows",
-      "timm:music/track_5"
+      {
+        "name": "timm:music/56e218",
+        "stream": true
+      },
+      {
+        "name": "timm:music/cereus",
+        "stream": true
+      },
+      {
+        "name": "timm:music/its_cactie_not_cactus",
+        "stream": true
+      },
+      {
+        "name": "timm:music/lack_of_water",
+        "stream": true
+      },
+      {
+        "name": "timm:music/osiriss_tomb",
+        "stream": true
+      },
+      {
+        "name": "timm:music/the_wind_blows",
+        "stream": true
+      },
+      {
+        "name": "timm:music/track_5",
+        "stream": true
+      }
     ]
   },
 
   "dripstone_caves": {
     "sounds": [
-      "timm:music/crystal_echoes",
-      "timm:music/stalagmites"
+      {
+        "name": "timm:music/crystal_echoes",
+        "stream": true
+      },
+      {
+        "name": "timm:music/stalagmites",
+        "stream": true
+      }
     ]
   },
 
   "flower_forest": {
     "sounds": [
-      "timm:music/flower_bed",
-      "timm:music/ii",
-      "timm:music/pins",
-      "timm:music/track_13"
+      {
+        "name": "timm:music/flower_bed",
+        "stream": true
+      },
+      {
+        "name": "timm:music/ii",
+        "stream": true
+      },
+      {
+        "name": "timm:music/pins",
+        "stream": true
+      },
+      {
+        "name": "timm:music/track_13",
+        "stream": true
+      }
     ]
   },
 
   "forest": {
     "sounds": [
-      "timm:music/friday",
-      "timm:music/the_peaceful_grove",
-      "timm:music/there_in_the_trees"
+      {
+        "name": "timm:music/friday",
+        "stream": true
+      },
+      {
+        "name": "timm:music/the_peaceful_grove",
+        "stream": true
+      },
+      {
+        "name": "timm:music/there_in_the_trees",
+        "stream": true
+      }
     ]
   },
 
   "ice_spikes": {
     "sounds":[
-      "timm:music/fracturescape",
-      "timm:music/subzero"
+      {
+        "name": "timm:music/fracturescape",
+        "stream": true
+      },
+      {
+        "name": "timm:music/subzero",
+        "stream": true
+      }
     ]
   },
 
   "jungle": {
     "sounds": [
-      "timm:music/verdant_canopy"
+      {
+        "name": "timm:music/verdant_canopy",
+        "stream": true
+      }
     ]
   },
 
   "lush_caves": {
     "sounds": [
-      "timm:music/axolotls_dream",
-      "timm:music/pillars_of_moss",
-      "timm:music/pst",
-      "timm:music/subterrarium",
-      "timm:music/the_monk",
-      "timm:music/to_eat_a_glowberry"
+      {
+        "name": "timm:music/axolotls_dream",
+        "stream": true
+      },
+      {
+        "name": "timm:music/pillars_of_moss",
+        "stream": true
+      },
+      {
+        "name": "timm:music/pst",
+        "stream": true
+      },
+      {
+        "name": "timm:music/subterrarium",
+        "stream": true
+      },
+      {
+        "name": "timm:music/the_monk",
+        "stream": true
+      },
+      {
+        "name": "timm:music/to_eat_a_glowberry",
+        "stream": true
+      }
     ]
   },
 
   "meadow": {
     "sounds": [
-      "timm:music/export",
-      "timm:music/ruminance",
-      "timm:music/swaying_fields",
-      "timm:music/track_8"
+      {
+        "name": "timm:music/export",
+        "stream": true
+      },
+      {
+        "name": "timm:music/ruminance",
+        "stream": true
+      },
+      {
+        "name": "timm:music/swaying_fields",
+        "stream": true
+      },
+      {
+        "name": "timm:music/track_8",
+        "stream": true
+      }
     ]
   },
 
   "mountains": {
     "sounds": [
-      "timm:music/an_early_frost",
-      "timm:music/cascadia",
-      "timm:music/mountain-03",
-      "timm:music/summit"
+      {
+        "name": "timm:music/an_early_frost",
+        "stream": true
+      },
+      {
+        "name": "timm:music/cascadia",
+        "stream": true
+      },
+      {
+        "name": "timm:music/mountain-03",
+        "stream": true
+      },
+      {
+        "name": "timm:music/summit",
+        "stream": true
+      }
     ]
   },
 
   "mushroom_fields": {
     "sounds": [
-      "timm:music/distant_isles",
-      "timm:music/fungusgirl",
-      "timm:music/tulu"
+      {
+        "name": "timm:music/distant_isles",
+        "stream": true
+      },
+      {
+        "name": "timm:music/fungusgirl",
+        "stream": true
+      },
+      {
+        "name": "timm:music/tulu",
+        "stream": true
+      }
     ]
   },
 
   "ocean": {
     "sounds": [
-      "timm:music/choral_vortex",
-      "timm:music/guardians_anthem",
-      "timm:music/musical_waves",
-      "timm:music/kart_minne",
-      "timm:music/sea_foam"
+      {
+        "name": "timm:music/choral_vortex",
+        "stream": true
+      },
+      {
+        "name": "timm:music/guardians_anthem",
+        "stream": true
+      },
+      {
+        "name": "timm:music/musical_waves",
+        "stream": true
+      },
+      {
+        "name": "timm:music/kart_minne",
+        "stream": true
+      },
+      {
+        "name": "timm:music/sea_foam",
+        "stream": true
+      }
     ]
   },
 
   "plains": {
     "sounds": [
-      "timm:music/1752",
-      "timm:music/home",
-      "timm:music/road_to_samwere",
-      "timm:music/the_pinkest_sheep",
-      "timm:music/visualizing_home"
+      {
+        "name": "timm:music/1752",
+        "stream": true
+      },
+      {
+        "name": "timm:music/home",
+        "stream": true
+      },
+      {
+        "name": "timm:music/road_to_samwere",
+        "stream": true
+      },
+      {
+        "name": "timm:music/the_pinkest_sheep",
+        "stream": true
+      },
+      {
+        "name": "timm:music/visualizing_home",
+        "stream": true
+      }
     ]
   },
 
   "river": {
     "sounds": [
-      "timm:music/nap_on_the_riverbed",
-      "timm:music/rowing_along"
+      {
+        "name": "timm:music/nap_on_the_riverbed",
+        "stream": true
+      },
+      {
+        "name": "timm:music/rowing_along",
+        "stream": true
+      }
     ]
   },
 
   "savanna": {
     "sounds": [
-      "timm:music/alcatraz",
-      "timm:music/armadillos_dream",
-      "timm:music/scattered_blocks"
+      {
+        "name": "timm:music/alcatraz",
+        "stream": true
+      },
+      {
+        "name": "timm:music/armadillos_dream",
+        "stream": true
+      },
+      {
+        "name": "timm:music/scattered_blocks",
+        "stream": true
+      }
     ]
   },
 
   "snow_plains": {
     "sounds": [
-      "timm:music/doctor_pavlolich",
-      "timm:music/nataryuk",
-      "timm:music/paiva_lumessa",
-      "timm:music/polar_t_block",
-      "timm:music/snowmans_home",
-      "timm:music/song_of_captivity",
-      "timm:music/star_flakes"
+      {
+        "name": "timm:music/doctor_pavlolich",
+        "stream": true
+      },
+      {
+        "name": "timm:music/nataryuk",
+        "stream": true
+      },
+      {
+        "name": "timm:music/paiva_lumessa",
+        "stream": true
+      },
+      {
+        "name": "timm:music/polar_t_block",
+        "stream": true
+      },
+      {
+        "name": "timm:music/snowmans_home",
+        "stream": true
+      },
+      {
+        "name": "timm:music/song_of_captivity",
+        "stream": true
+      },
+      {
+        "name": "timm:music/star_flakes",
+        "stream": true
+      }
     ]
   },
 
   "swamp": {
     "sounds": [
-      "timm:music/frogs_lullaby",
-      "timm:music/frogstep",
-      "timm:music/through_the_mud"
+      {
+        "name": "timm:music/frogs_lullaby",
+        "stream": true
+      },
+      {
+        "name": "timm:music/frogstep",
+        "stream": true
+      },
+      {
+        "name": "timm:music/through_the_mud",
+        "stream": true
+      }
     ]
   },
 
   "taiga": {
     "sounds": [
-      "timm:music/and_all_goes_quiet",
-      "timm:music/boreal_december",
-      "timm:music/mossy_stones",
-      "timm:music/surhg",
-      "timm:music/the_box_of_pine",
-      "timm:music/whispers_from_the_woods"
+      {
+        "name": "timm:music/and_all_goes_quiet",
+        "stream": true
+      },
+      {
+        "name": "timm:music/boreal_december",
+        "stream": true
+      },
+      {
+        "name": "timm:music/mossy_stones",
+        "stream": true
+      },
+      {
+        "name": "timm:music/surhg",
+        "stream": true
+      },
+      {
+        "name": "timm:music/the_box_of_pine",
+        "stream": true
+      },
+      {
+        "name": "timm:music/whispers_from_the_woods",
+        "stream": true
+      }
     ]
   },
 
   "warm_ocean": {
     "sounds": [
-      "timm:music/fish_soup",
-      "timm:music/light_of_a_cucumber",
-      "timm:music/placid_shores",
-      "timm:music/track_2"
+      {
+        "name": "timm:music/fish_soup",
+        "stream": true
+      },
+      {
+        "name": "timm:music/light_of_a_cucumber",
+        "stream": true
+      },
+      {
+        "name": "timm:music/placid_shores",
+        "stream": true
+      },
+      {
+        "name": "timm:music/track_2",
+        "stream": true
+      }
     ]
   },
 
   "windy_hills": {
     "sounds": [
-      "timm:music/beautiful_breeze",
-      "timm:music/cascadia"
+      {
+        "name": "timm:music/beautiful_breeze",
+        "stream": true
+      },
+      {
+        "name": "timm:music/cascadia",
+        "stream": true
+      }
     ]
   },
 
   "basalt_deltas": {
     "sounds": [
-      "timm:music/atomic_cubes",
-      "timm:music/scorched_earth"
+      {
+        "name": "timm:music/atomic_cubes",
+        "stream": true
+      },
+      {
+        "name": "timm:music/scorched_earth",
+        "stream": true
+      }
     ]
   },
 
   "crimson_forest": {
     "sounds": [
-      "timm:music/lurid",
-      "timm:music/prototaxites"
+      {
+        "name": "timm:music/lurid",
+        "stream": true
+      },
+      {
+        "name": "timm:music/prototaxites",
+        "stream": true
+      }
     ]
   },
 
   "nether_wastes": {
     "sounds": [
-      "timm:music/appletrees_demise",
-      "timm:music/burning_etherealism",
-      "timm:music/flint_and_steel",
-      "timm:music/lava_pools",
-      "timm:music/track_3",
-      "timm:music/track_7",
-      "timm:music/track_9"
+      {
+        "name": "timm:music/appletrees_demise",
+        "stream": true
+      },
+      {
+        "name": "timm:music/burning_etherealism",
+        "stream": true
+      },
+      {
+        "name": "timm:music/flint_and_steel",
+        "stream": true
+      },
+      {
+        "name": "timm:music/lava_pools",
+        "stream": true
+      },
+      {
+        "name": "timm:music/track_3",
+        "stream": true
+      },
+      {
+        "name": "timm:music/track_7",
+        "stream": true
+      },
+      {
+        "name": "timm:music/track_9",
+        "stream": true
+      }
     ]
   },
 
   "soul_sand_valley": {
     "sounds": [
-      "timm:music/lost_souls",
-      "timm:music/script4506",
-      "timm:music/soulweaver"
+      {
+        "name": "timm:music/lost_souls",
+        "stream": true
+      },
+      {
+        "name": "timm:music/script4506",
+        "stream": true
+      },
+      {
+        "name": "timm:music/soulweaver",
+        "stream": true
+      }
     ]
   },
 
   "end": {
     "sounds": [
-      "timm:music/abyss_archipelago",
-      "timm:music/freedom_for_all",
-      "timm:music/pillars_of_obsidian",
-      "timm:music/pro-gen_islands",
-      "timm:music/the_dragons_home",
-      "timm:music/when_the_endless_eternity_fades"
+      {
+        "name": "timm:music/abyss_archipelago",
+        "stream": true
+      },
+      {
+        "name": "timm:music/freedom_for_all",
+        "stream": true
+      },
+      {
+        "name": "timm:music/pillars_of_obsidian",
+        "stream": true
+      },
+      {
+        "name": "timm:music/pro-gen_islands",
+        "stream": true
+      },
+      {
+        "name": "timm:music/the_dragons_home",
+        "stream": true
+      },
+      {
+        "name": "timm:music/when_the_endless_eternity_fades",
+        "stream": true
+      }
     ]
   },
 
   "ancient_city": {
     "sounds": [
-      "timm:music/civilization_lost"
+      {
+        "name": "timm:music/civilization_lost",
+        "stream": true
+      }
     ]
   },
 
   "bastion_remnant": {
     "sounds": [
-      "timm:music/hell_worn_treasures"
+      {
+        "name": "timm:music/hell_worn_treasures",
+        "stream": true
+      }
     ]
   },
 
   "buried_treasure": {
     "sounds": [
-      "timm:music/x_marks_the_spot"
+      {
+        "name": "timm:music/x_marks_the_spot",
+        "stream": true
+      }
     ]
   },
 
   "desert_pyramid": {
     "sounds": [
-      "timm:music/ankh"
+      {
+        "name": "timm:music/ankh",
+        "stream": true
+      }
     ]
   },
 
   "end_city": {
     "sounds": [
-      "timm:music/colour_of_the_void"
+      {
+        "name": "timm:music/colour_of_the_void",
+        "stream": true
+      }
     ]
   },
 
   "fortress": {
     "sounds": [
-      "timm:music/ashen_citadel"
+      {
+        "name": "timm:music/ashen_citadel",
+        "stream": true
+      }
     ]
   },
 
   "igloo": {
     "sounds": [
-      "timm:music/snow_bricks"
+      {
+        "name": "timm:music/snow_bricks",
+        "stream": true
+      }
     ]
   },
 
   "jungle_pyramid": {
     "sounds": [
-      "timm:music/under_the_overgrowth"
+      {
+        "name": "timm:music/under_the_overgrowth",
+        "stream": true
+      }
     ]
   },
 
   "mansion": {
     "sounds": [
-      "timm:music/isolationist"
+      {
+        "name": "timm:music/isolationist",
+        "stream": true
+      }
     ]
   },
 
   "mineshaft": {
     "sounds": [
-      "timm:music/lost_and_found"
+      {
+        "name": "timm:music/lost_and_found",
+        "stream": true
+      }
     ]
   },
 
   "monument": {
     "sounds": [
-      "timm:music/guardian_of_the_depths"
+      {
+        "name": "timm:music/guardian_of_the_depths",
+        "stream": true
+      }
     ]
   },
 
   "ocean_ruin": {
     "sounds": [
-      "timm:music/city_of_the_drowned"
+      {
+        "name": "timm:music/city_of_the_drowned",
+        "stream": true
+      }
     ]
   },
 
   "pillager_outpost": {
     "sounds": [
-      "timm:music/bad_omens"
+      {
+        "name": "timm:music/bad_omens",
+        "stream": true
+      }
     ]
   },
 
   "ruined_portal": {
     "sounds": [
-      "timm:music/fragment_from_the_otherside"
+      {
+        "name": "timm:music/fragment_from_the_otherside",
+        "stream": true
+      }
     ]
   },
 
   "ruined_portal_nether": {
     "sounds": [
-      "timm:music/return_to_grass"
+      {
+        "name": "timm:music/return_to_grass",
+        "stream": true
+      }
     ]
   },
 
   "shipwreck": {
     "sounds": [
-      "timm:music/naufrage"
+      {
+        "name": "timm:music/naufrage",
+        "stream": true
+      }
     ]
   },
 
   "stronghold": {
     "sounds": [
-      "timm:music/what_the_builders_left_behind"
+      {
+        "name": "timm:music/what_the_builders_left_behind",
+        "stream": true
+      }
     ]
   },
 
   "swamp_hut": {
     "sounds": [
-      "timm:music/shivering_bog"
+      {
+        "name": "timm:music/shivering_bog",
+        "stream": true
+      }
     ]
   },     
 
   "trail_ruins": {
     "sounds": [
-      "timm:music/dust_in_the_relics"
+      {
+        "name": "timm:music/dust_in_the_relics",
+        "stream": true
+      }
     ]
   },
 
   "trial_chambers": {
     "sounds": [
-      "timm:music/copper_whisper"
+      {
+        "name": "timm:music/copper_whisper",
+        "stream": true
+      }
     ]
   },
 
   "village": {
     "sounds": [
-      "timm:music/valley_of_the_tradesmen"
+      {
+        "name": "timm:music/valley_of_the_tradesmen",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.1752": {
+    "sounds": [
+      {
+        "name": "timm:music/1752",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.56e218": {
+    "sounds": [
+      {
+        "name": "timm:music/56e218",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.abyss_archipelago": {
+    "sounds": [
+      {
+        "name": "timm:music/abyss_archipelago",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.alcatraz": {
+    "sounds": [
+      {
+        "name": "timm:music/alcatraz",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.an_early_frost": {
+    "sounds": [
+      {
+        "name": "timm:music/an_early_frost",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.ancients_lament": {
+    "sounds": [
+      {
+        "name": "timm:music/ancients_lament",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.and_all_goes_quiet": {
+    "sounds": [
+      {
+        "name": "timm:music/and_all_goes_quiet",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.ankh": {
+    "sounds": [
+      {
+        "name": "timm:music/ankh",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.appletrees_demise": {
+    "sounds": [
+      {
+        "name": "timm:music/appletrees_demise",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.armadillos_dream": {
+    "sounds": [
+      {
+        "name": "timm:music/armadillos_dream",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.as_the_sakura_blossoms": {
+    "sounds": [
+      {
+        "name": "timm:music/as_the_sakura_blossoms",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.ashen_citadel": {
+    "sounds": [
+      {
+        "name": "timm:music/ashen_citadel",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.atomic_cubes": {
+    "sounds": [
+      {
+        "name": "timm:music/atomic_cubes",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.axolotls_dream": {
+    "sounds": [
+      {
+        "name": "timm:music/axolotls_dream",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.bad_omens": {
+    "sounds": [
+      {
+        "name": "timm:music/bad_omens",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.beautiful_breeze": {
+    "sounds": [
+      {
+        "name": "timm:music/beautiful_breeze",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.betulina": {
+    "sounds": [
+      {
+        "name": "timm:music/betulina",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.boreal_december": {
+    "sounds": [
+      {
+        "name": "timm:music/boreal_december",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.burning_etherealism": {
+    "sounds": [
+      {
+        "name": "timm:music/burning_etherealism",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.cascadia": {
+    "sounds": [
+      {
+        "name": "timm:music/cascadia",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.cereus": {
+    "sounds": [
+      {
+        "name": "timm:music/cereus",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.chateau": {
+    "sounds": [
+      {
+        "name": "timm:music/chateau",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.choral_vortex": {
+    "sounds": [
+      {
+        "name": "timm:music/choral_vortex",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.city_of_sculk": {
+    "sounds": [
+      {
+        "name": "timm:music/city_of_sculk",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.city_of_the_drowned": {
+    "sounds": [
+      {
+        "name": "timm:music/city_of_the_drowned",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.civilization_lost": {
+    "sounds": [
+      {
+        "name": "timm:music/civilization_lost",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.colour_of_the_void": {
+    "sounds": [
+      {
+        "name": "timm:music/colour_of_the_void",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.copper_whisper": {
+    "sounds": [
+      {
+        "name": "timm:music/copper_whisper",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.creating_memories": {
+    "sounds": [
+      {
+        "name": "timm:music/creating_memories",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.crystal_echoes": {
+    "sounds": [
+      {
+        "name": "timm:music/crystal_echoes",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.depths_unseen": {
+    "sounds": [
+      {
+        "name": "timm:music/depths_unseen",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.distant_isles": {
+    "sounds": [
+      {
+        "name": "timm:music/distant_isles",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.doctor_pavlolich": {
+    "sounds": [
+      {
+        "name": "timm:music/doctor_pavlolich",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.dust_in_the_relics": {
+    "sounds": [
+      {
+        "name": "timm:music/dust_in_the_relics",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.echoes": {
+    "sounds": [
+      {
+        "name": "timm:music/echoes",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.echoes_of_the_canyon": {
+    "sounds": [
+      {
+        "name": "timm:music/echoes_of_the_canyon",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.export": {
+    "sounds": [
+      {
+        "name": "timm:music/export",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.fish_soup": {
+    "sounds": [
+      {
+        "name": "timm:music/fish_soup",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.flint_and_steel": {
+    "sounds": [
+      {
+        "name": "timm:music/flint_and_steel",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.flower_bed": {
+    "sounds": [
+      {
+        "name": "timm:music/flower_bed",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.fracturescape": {
+    "sounds": [
+      {
+        "name": "timm:music/fracturescape",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.fragment_from_the_otherside": {
+    "sounds": [
+      {
+        "name": "timm:music/fragment_from_the_otherside",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.freedom_for_all": {
+    "sounds": [
+      {
+        "name": "timm:music/freedom_for_all",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.friday": {
+    "sounds": [
+      {
+        "name": "timm:music/friday",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.frogs_lullaby": {
+    "sounds": [
+      {
+        "name": "timm:music/frogs_lullaby",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.frogstep": {
+    "sounds": [
+      {
+        "name": "timm:music/frogstep",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.fungusgirl": {
+    "sounds": [
+      {
+        "name": "timm:music/fungusgirl",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.generating_worlds": {
+    "sounds": [
+      {
+        "name": "timm:music/generating_worlds",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.guardian_of_the_depths": {
+    "sounds": [
+      {
+        "name": "timm:music/guardian_of_the_depths",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.guardians_anthem": {
+    "sounds": [
+      {
+        "name": "timm:music/guardians_anthem",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.hell_worn_treasures": {
+    "sounds": [
+      {
+        "name": "timm:music/hell_worn_treasures",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.home": {
+    "sounds": [
+      {
+        "name": "timm:music/home",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.idle": {
+    "sounds": [
+      {
+        "name": "timm:music/idle",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.ii": {
+    "sounds": [
+      {
+        "name": "timm:music/ii",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.infinite_realities": {
+    "sounds": [
+      {
+        "name": "timm:music/infinite_realities",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.isolationist": {
+    "sounds": [
+      {
+        "name": "timm:music/isolationist",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.its_cactie_not_cactus": {
+    "sounds": [
+      {
+        "name": "timm:music/its_cactie_not_cactus",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.juagos_guago": {
+    "sounds": [
+      {
+        "name": "timm:music/juagos_guago",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.kart_minne": {
+    "sounds": [
+      {
+        "name": "timm:music/kart_minne",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.lack_of_water": {
+    "sounds": [
+      {
+        "name": "timm:music/lack_of_water",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.lava_pools": {
+    "sounds": [
+      {
+        "name": "timm:music/lava_pools",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.light_of_a_cucumber": {
+    "sounds": [
+      {
+        "name": "timm:music/light_of_a_cucumber",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.lost_and_found": {
+    "sounds": [
+      {
+        "name": "timm:music/lost_and_found",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.lost_concepts_broken_dreams": {
+    "sounds": [
+      {
+        "name": "timm:music/lost_concepts_broken_dreams",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.lost_in_a_forest": {
+    "sounds": [
+      {
+        "name": "timm:music/lost_in_a_forest",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.lost_rituals": {
+    "sounds": [
+      {
+        "name": "timm:music/lost_rituals",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.lost_souls": {
+    "sounds": [
+      {
+        "name": "timm:music/lost_souls",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.lurid": {
+    "sounds": [
+      {
+        "name": "timm:music/lurid",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.lurk": {
+    "sounds": [
+      {
+        "name": "timm:music/lurk",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.menu-02": {
+    "sounds": [
+      {
+        "name": "timm:music/menu-02",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.mossy_stones": {
+    "sounds": [
+      {
+        "name": "timm:music/mossy_stones",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.mountain-03": {
+    "sounds": [
+      {
+        "name": "timm:music/mountain-03",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.musical_waves": {
+    "sounds": [
+      {
+        "name": "timm:music/musical_waves",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.nap_on_the_riverbed": {
+    "sounds": [
+      {
+        "name": "timm:music/nap_on_the_riverbed",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.nataryuk": {
+    "sounds": [
+      {
+        "name": "timm:music/nataryuk",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.naufrage": {
+    "sounds": [
+      {
+        "name": "timm:music/naufrage",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.osiriss_tomb": {
+    "sounds": [
+      {
+        "name": "timm:music/osiriss_tomb",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.paiva_lumessa": {
+    "sounds": [
+      {
+        "name": "timm:music/paiva_lumessa",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.pillars_of_moss": {
+    "sounds": [
+      {
+        "name": "timm:music/pillars_of_moss",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.pillars_of_obsidian": {
+    "sounds": [
+      {
+        "name": "timm:music/pillars_of_obsidian",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.pins": {
+    "sounds": [
+      {
+        "name": "timm:music/pins",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.placid_shores": {
+    "sounds": [
+      {
+        "name": "timm:music/placid_shores",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.polar_t_block": {
+    "sounds": [
+      {
+        "name": "timm:music/polar_t_block",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.pro-gen_islands": {
+    "sounds": [
+      {
+        "name": "timm:music/pro-gen_islands",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.promised_lans": {
+    "sounds": [
+      {
+        "name": "timm:music/promised_lans",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.prototaxites": {
+    "sounds": [
+      {
+        "name": "timm:music/prototaxites",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.pst": {
+    "sounds": [
+      {
+        "name": "timm:music/pst",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.rats_on_saturn": {
+    "sounds": [
+      {
+        "name": "timm:music/rats_on_saturn",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.return_to_grass": {
+    "sounds": [
+      {
+        "name": "timm:music/return_to_grass",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.road_to_samwere": {
+    "sounds": [
+      {
+        "name": "timm:music/road_to_samwere",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.rowing_along": {
+    "sounds": [
+      {
+        "name": "timm:music/rowing_along",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.ruins_of_dukneyth": {
+    "sounds": [
+      {
+        "name": "timm:music/ruins_of_dukneyth",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.ruminance": {
+    "sounds": [
+      {
+        "name": "timm:music/ruminance",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.scattered_blocks": {
+    "sounds": [
+      {
+        "name": "timm:music/scattered_blocks",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.scorched_earth": {
+    "sounds": [
+      {
+        "name": "timm:music/scorched_earth",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.script4506": {
+    "sounds": [
+      {
+        "name": "timm:music/script4506",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.sea_foam": {
+    "sounds": [
+      {
+        "name": "timm:music/sea_foam",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.shivering_bog": {
+    "sounds": [
+      {
+        "name": "timm:music/shivering_bog",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.snow_bricks": {
+    "sounds": [
+      {
+        "name": "timm:music/snow_bricks",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.snowmans_home": {
+    "sounds": [
+      {
+        "name": "timm:music/snowmans_home",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.song_of_captivity": {
+    "sounds": [
+      {
+        "name": "timm:music/song_of_captivity",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.soulweaver": {
+    "sounds": [
+      {
+        "name": "timm:music/soulweaver",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.spellbound": {
+    "sounds": [
+      {
+        "name": "timm:music/spellbound",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.stalagmites": {
+    "sounds": [
+      {
+        "name": "timm:music/stalagmites",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.star_flakes": {
+    "sounds": [
+      {
+        "name": "timm:music/star_flakes",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.subterrarium": {
+    "sounds": [
+      {
+        "name": "timm:music/subterrarium",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.subzero": {
+    "sounds": [
+      {
+        "name": "timm:music/subzero",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.summit": {
+    "sounds": [
+      {
+        "name": "timm:music/summit",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.surhg": {
+    "sounds": [
+      {
+        "name": "timm:music/surhg",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.swaying_fields": {
+    "sounds": [
+      {
+        "name": "timm:music/swaying_fields",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.terrible_plants": {
+    "sounds": [
+      {
+        "name": "timm:music/terrible_plants",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.the_ancients_hymn": {
+    "sounds": [
+      {
+        "name": "timm:music/the_ancients_hymn",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.the_box_of_pine": {
+    "sounds": [
+      {
+        "name": "timm:music/the_box_of_pine",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.the_dragons_home": {
+    "sounds": [
+      {
+        "name": "timm:music/the_dragons_home",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.the_final_grain": {
+    "sounds": [
+      {
+        "name": "timm:music/the_final_grain",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.the_monk": {
+    "sounds": [
+      {
+        "name": "timm:music/the_monk",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.the_peaceful_grove": {
+    "sounds": [
+      {
+        "name": "timm:music/the_peaceful_grove",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.the_pinkest_sheep": {
+    "sounds": [
+      {
+        "name": "timm:music/the_pinkest_sheep",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.the_wanderer": {
+    "sounds": [
+      {
+        "name": "timm:music/the_wanderer",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.the_wind_blows": {
+    "sounds": [
+      {
+        "name": "timm:music/the_wind_blows",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.there_in_the_trees": {
+    "sounds": [
+      {
+        "name": "timm:music/there_in_the_trees",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.thin_trees": {
+    "sounds": [
+      {
+        "name": "timm:music/thin_trees",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.through_the_mud": {
+    "sounds": [
+      {
+        "name": "timm:music/through_the_mud",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.to_eat_a_glowberry": {
+    "sounds": [
+      {
+        "name": "timm:music/to_eat_a_glowberry",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.track_11": {
+    "sounds": [
+      {
+        "name": "timm:music/track_11",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.track_12": {
+    "sounds": [
+      {
+        "name": "timm:music/track_12",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.track_13": {
+    "sounds": [
+      {
+        "name": "timm:music/track_13",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.track_2": {
+    "sounds": [
+      {
+        "name": "timm:music/track_2",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.track_3": {
+    "sounds": [
+      {
+        "name": "timm:music/track_3",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.track_4": {
+    "sounds": [
+      {
+        "name": "timm:music/track_4",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.track_5": {
+    "sounds": [
+      {
+        "name": "timm:music/track_5",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.track_6": {
+    "sounds": [
+      {
+        "name": "timm:music/track_6",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.track_7": {
+    "sounds": [
+      {
+        "name": "timm:music/track_7",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.track_8": {
+    "sounds": [
+      {
+        "name": "timm:music/track_8",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.track_9": {
+    "sounds": [
+      {
+        "name": "timm:music/track_9",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.tulu": {
+    "sounds": [
+      {
+        "name": "timm:music/tulu",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.turtles_retreat": {
+    "sounds": [
+      {
+        "name": "timm:music/turtles_retreat",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.under_the_overgrowth": {
+    "sounds": [
+      {
+        "name": "timm:music/under_the_overgrowth",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.valley_of_the_tradesmen": {
+    "sounds": [
+      {
+        "name": "timm:music/valley_of_the_tradesmen",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.vengeful_shade": {
+    "sounds": [
+      {
+        "name": "timm:music/vengeful_shade",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.verdant_canopy": {
+    "sounds": [
+      {
+        "name": "timm:music/verdant_canopy",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.visualizing_home": {
+    "sounds": [
+      {
+        "name": "timm:music/visualizing_home",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.what_the_builders_left_behind": {
+    "sounds": [
+      {
+        "name": "timm:music/what_the_builders_left_behind",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.when_the_endless_eternity_fades": {
+    "sounds": [
+      {
+        "name": "timm:music/when_the_endless_eternity_fades",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.whispers_from_the_woods": {
+    "sounds": [
+      {
+        "name": "timm:music/whispers_from_the_woods",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.x_marks_the_spot": {
+    "sounds": [
+      {
+        "name": "timm:music/x_marks_the_spot",
+        "stream": true
+      }
+    ]
+  },
+
+  "track.zen_blossoms": {
+    "sounds": [
+      {
+        "name": "timm:music/zen_blossoms",
+        "stream": true
+      }
     ]
   }
 }

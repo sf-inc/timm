@@ -7,11 +7,11 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.sound.MusicSound;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.random.Random;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.Identifier;
+import net.minecraft.sounds.Music;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.util.RandomSource;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -22,14 +22,15 @@ import java.util.HashMap;
 import java.util.Optional;
 
 public class BiomePlaylist {
+    public static final RandomSource MENU_RANDOM = RandomSource.create();
     public static final Identifier UNDEFINED_BIOME = Timm.id("undefined_biome");
     public static Identifier CURRENT_BIOME_EVENT = UNDEFINED_BIOME;
     public static final HashMap<Identifier, ArrayList<Identifier>> EVENTS_BY_BIOME = new HashMap<>();
-    private static final Identifier CREATIVE_ID = Identifier.of("creative");
-    private static final Identifier END_ID = Identifier.of("end");
-    private static final Identifier MENU_ID = Identifier.of("menu");
+    private static final Identifier CREATIVE_ID = Identifier.parse("creative");
+    private static final Identifier END_ID = Identifier.parse("end");
+    private static final Identifier MENU_ID = Identifier.parse("menu");
 
-    public static MusicSound getMusicSound(Identifier biomeId, Random random) {
+    public static Music getMusicSound(Identifier biomeId, RandomSource random) {
         ArrayList<Identifier> musics = EVENTS_BY_BIOME.get(biomeId);
         if (musics == null || musics.isEmpty()) {
             CURRENT_BIOME_EVENT = UNDEFINED_BIOME;
@@ -37,59 +38,65 @@ public class BiomePlaylist {
         }
 
         Identifier soundEventId = musics.get(random.nextInt(musics.size()));
-        RegistryEntry<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
+        Holder<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
         if (soundEvent == null) {
             CURRENT_BIOME_EVENT = UNDEFINED_BIOME;
             return null;
         }
 
         CURRENT_BIOME_EVENT = soundEventId;
-        return new MusicSound(
+        return new Music(
                 soundEvent,
                 ModConfig.get().general.minDelay * 20,
                 ModConfig.get().general.maxDelay * 20,
                 false);
     }
 
-    public static MusicSound getCreativeMusic(Random random) {
+    public static Music getCreativeMusic(RandomSource random) {
+        // Not tied to a biome: a song started here must not fade out on biome switch
+        CURRENT_BIOME_EVENT = UNDEFINED_BIOME;
         ArrayList<Identifier> musics = EVENTS_BY_BIOME.get(CREATIVE_ID);
         if (musics == null || musics.isEmpty()) return null;
 
         Identifier soundEventId = musics.get(random.nextInt(musics.size()));
-        RegistryEntry<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
+        Holder<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
         if (soundEvent == null) return null;
 
-        return new MusicSound(
+        return new Music(
                 soundEvent,
                 ModConfig.get().general.minDelay * 20,
                 ModConfig.get().general.maxDelay * 20,
                 false);
     }
 
-    public static MusicSound getEndMusic(Random random) {
+    public static Music getEndMusic(RandomSource random) {
+        // Not tied to a biome: a song started here must not fade out on biome switch
+        CURRENT_BIOME_EVENT = UNDEFINED_BIOME;
         ArrayList<Identifier> musics = EVENTS_BY_BIOME.get(END_ID);
         if (musics == null || musics.isEmpty()) return null;
 
         Identifier soundEventId = musics.get(random.nextInt(musics.size()));
-        RegistryEntry<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
+        Holder<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
         if (soundEvent == null) return null;
 
-        return new MusicSound(
+        return new Music(
                 soundEvent,
                 ModConfig.get().general.minDelay * 20,
                 ModConfig.get().general.maxDelay * 20,
                 false);
     }
 
-    public static MusicSound getMenuMusic(Random random) {
+    public static Music getMenuMusic(RandomSource random) {
+        // Not tied to a biome: a song started here must not fade out on biome switch
+        CURRENT_BIOME_EVENT = UNDEFINED_BIOME;
         ArrayList<Identifier> musics = EVENTS_BY_BIOME.get(MENU_ID);
         if (musics == null || musics.isEmpty()) return null;
 
         Identifier soundEventId = musics.get(random.nextInt(musics.size()));
-        RegistryEntry<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
+        Holder<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
         if (soundEvent == null) return null;
 
-        return new MusicSound(soundEvent, 20, 60, false);
+        return new Music(soundEvent, 20, 60, false);
     }
 
     public static void init() {
@@ -98,8 +105,7 @@ public class BiomePlaylist {
         Path path = getPath();
         if (path == null) return;
 
-        try {
-            JsonReader jsonReader = new JsonReader(new InputStreamReader(Files.newInputStream(path)));
+        try (JsonReader jsonReader = new JsonReader(new InputStreamReader(Files.newInputStream(path)))) {
             while (jsonReader.hasNext()) {
                 JsonToken jsonToken = jsonReader.peek();
                 if (jsonToken == JsonToken.BEGIN_OBJECT) {
@@ -108,14 +114,14 @@ public class BiomePlaylist {
                     jsonReader.endObject();
                 } else {
                     String biomeName = jsonReader.nextName();
-                    Identifier biomeId = Identifier.of(biomeName);
+                    Identifier biomeId = Identifier.parse(biomeName);
                     ArrayList<Identifier> musics = new ArrayList<>();
 
                     if (jsonReader.peek() == JsonToken.BEGIN_ARRAY) {
                         jsonReader.beginArray();
                         while (jsonReader.hasNext()) {
                             String musicId = jsonReader.nextString();
-                            musics.add(Identifier.of(musicId));
+                            musics.add(Identifier.parse(musicId));
                         }
                         jsonReader.endArray();
                     }

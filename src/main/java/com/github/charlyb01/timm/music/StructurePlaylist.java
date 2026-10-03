@@ -5,7 +5,7 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
-import net.minecraft.util.Identifier;
+import net.minecraft.resources.Identifier;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -25,8 +25,7 @@ public class StructurePlaylist {
         Path path = getPath();
         if (path == null) return;
 
-        try {
-            JsonReader jsonReader = new JsonReader(new InputStreamReader(Files.newInputStream(path)));
+        try (JsonReader jsonReader = new JsonReader(new InputStreamReader(Files.newInputStream(path)))) {
             while (jsonReader.hasNext()) {
                 JsonToken jsonToken = jsonReader.peek();
                 if (jsonToken == JsonToken.BEGIN_OBJECT) {

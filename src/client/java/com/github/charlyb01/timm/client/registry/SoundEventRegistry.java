@@ -1,16 +1,16 @@
 package com.github.charlyb01.timm.client.registry;
 
 import com.github.charlyb01.timm.Timm;
-import net.minecraft.registry.Registries;
-import net.minecraft.registry.Registry;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Identifier;
+import net.minecraft.core.Holder;
+import net.minecraft.core.Registry;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.sounds.SoundEvent;
 
 import java.util.HashMap;
 
 public class SoundEventRegistry {
-    public static final HashMap<Identifier, RegistryEntry<SoundEvent>> SOUNDEVENT_BY_ID = new HashMap<>();
+    public static final HashMap<Identifier, Holder<SoundEvent>> SOUNDEVENT_BY_ID = new HashMap<>();
 
     public static void init() {
         Timm.debugLog("Registering sound events");
@@ -83,6 +83,6 @@ public class SoundEventRegistry {
 
     private static void register(final String path) {
         Identifier id = Timm.id(path);
-        SOUNDEVENT_BY_ID.put(id, Registry.registerReference(Registries.SOUND_EVENT, id, SoundEvent.of(id)));
+        SOUNDEVENT_BY_ID.put(id, Registry.registerForHolder(BuiltInRegistries.SOUND_EVENT, id, SoundEvent.createVariableRangeEvent(id)));
     }
 }

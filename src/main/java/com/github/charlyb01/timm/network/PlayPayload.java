@@ -1,18 +1,18 @@
 package com.github.charlyb01.timm.network;
 
 import com.github.charlyb01.timm.Timm;
-import net.minecraft.network.RegistryByteBuf;
-import net.minecraft.network.codec.PacketCodec;
-import net.minecraft.network.packet.CustomPayload;
-import net.minecraft.util.Identifier;
+import net.minecraft.network.RegistryFriendlyByteBuf;
+import net.minecraft.network.codec.StreamCodec;
+import net.minecraft.network.protocol.common.custom.CustomPacketPayload;
+import net.minecraft.resources.Identifier;
 
-public record PlayPayload(Identifier soundId) implements CustomPayload {
+public record PlayPayload(Identifier soundId) implements CustomPacketPayload {
     public static final Identifier PLAY_PAYLOAD_ID = Timm.id("play_packet");
-    public static final CustomPayload.Id<PlayPayload> ID = new CustomPayload.Id<>(PLAY_PAYLOAD_ID);
-    public static final PacketCodec<RegistryByteBuf, PlayPayload> CODEC = PacketCodec.tuple(Identifier.PACKET_CODEC, PlayPayload::soundId, PlayPayload::new);
+    public static final CustomPacketPayload.Type<PlayPayload> ID = new CustomPacketPayload.Type<>(PLAY_PAYLOAD_ID);
+    public static final StreamCodec<RegistryFriendlyByteBuf, PlayPayload> CODEC = StreamCodec.composite(Identifier.STREAM_CODEC, PlayPayload::soundId, PlayPayload::new);
 
     @Override
-    public Id<? extends CustomPayload> getId() {
+    public Type<? extends CustomPacketPayload> type() {
         return ID;
     }
 }

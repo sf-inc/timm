@@ -5,13 +5,12 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
-import net.minecraft.text.ClickEvent;
-import net.minecraft.text.MutableText;
-import net.minecraft.text.Style;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
-import net.minecraft.util.Identifier;
-
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.ClickEvent;
+import net.minecraft.network.chat.Component;
+import net.minecraft.network.chat.MutableComponent;
+import net.minecraft.network.chat.Style;
+import net.minecraft.resources.Identifier;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.net.URI;
@@ -21,11 +20,11 @@ import java.util.HashMap;
 import java.util.Optional;
 
 public class Songs {
-    private static final HashMap<Identifier, MutableText> SONG_TEXT_BY_SONG_ID = new HashMap<>();
+    private static final HashMap<Identifier, MutableComponent> SONG_TEXT_BY_SONG_ID = new HashMap<>();
 
-    public static MutableText getSongText(Identifier songId) {
+    public static MutableComponent getSongText(Identifier songId) {
         if (songId == null) return null;
-        return SONG_TEXT_BY_SONG_ID.getOrDefault(songId, Text.literal(songId.toString()));
+        return SONG_TEXT_BY_SONG_ID.getOrDefault(songId, Component.literal(songId.toString()));
     }
 
     public static void init() {
@@ -44,7 +43,7 @@ public class Songs {
                     jsonReader.endObject();
                 } else {
                     String song = jsonReader.nextName();
-                    Identifier songId = Identifier.of(song);
+                    Identifier songId = Identifier.parse(song);
                     String songName = null;
                     String songUrl = null;
 
@@ -70,13 +69,13 @@ public class Songs {
         }
     }
 
-    private static MutableText makeSongText(Identifier identifier, String name, String url) {
-        MutableText song = Text.literal(name == null
+    private static MutableComponent makeSongText(Identifier identifier, String name, String url) {
+        MutableComponent song = Component.literal(name == null
                 ? identifier.toString()
                 : name);
         if (url != null) {
-            song.setStyle(Style.EMPTY.withColor(Formatting.GREEN)
-                    .withUnderline(true)
+            song.setStyle(Style.EMPTY.withColor(ChatFormatting.GREEN)
+                    .withUnderlined(true)
                     .withClickEvent(new ClickEvent.OpenUrl(URI.create(url))));
         }
         return song;

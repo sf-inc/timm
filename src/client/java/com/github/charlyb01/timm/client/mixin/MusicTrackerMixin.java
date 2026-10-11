@@ -7,15 +7,15 @@ import com.github.charlyb01.timm.config.ModConfig;
 import com.github.charlyb01.timm.config.StructureFadeOut;
 import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
 import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.sound.MusicTracker;
-import net.minecraft.client.sound.SoundInstance;
-import net.minecraft.registry.Registries;
-import net.minecraft.sound.MusicSound;
-import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvent;
-import net.minecraft.util.Identifier;
-import net.minecraft.util.math.random.Random;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.resources.sounds.SoundInstance;
+import net.minecraft.client.sounds.MusicManager;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.Identifier;
+import net.minecraft.sounds.Music;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.util.RandomSource;
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
@@ -25,14 +25,14 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-@Mixin(MusicTracker.class)
+@Mixin(MusicManager.class)
 public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
-    @Shadow @Final private MinecraftClient client;
-    @Shadow @Final private Random random;
-    @Shadow private @Nullable SoundInstance current;
-    @Shadow private int timeUntilNextSong;
+    @Shadow @Final private Minecraft minecraft;
+    @Shadow @Final private RandomSource random;
+    @Shadow private @Nullable SoundInstance currentMusic;
+    @Shadow private int nextSongDelay;
 
-    @Shadow public abstract void play(MusicSound music);
+    @Shadow public abstract void startPlaying(Music music);
 
     @Unique private Identifier lastBiomeEvent;
     @Unique private Identifier structureEvent;
@@ -42,9 +42,9 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
 
     @Inject(method = "tick", at = @At("HEAD"))
     private void onTick(CallbackInfo ci) {
-        if (this.client.world == null || this.client.player == null) return;
+        if (this.minecraft.level == null || this.minecraft.player == null) return;
 
-        if (this.current == null) {
+        if (this.currentMusic == null) {
             if (this.structureEvent != null) this.playStructureMusic();
             return;
         }
@@ -54,37 +54,37 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
 
         if (this.shouldFadeOut()) {
             this.volume = Math.max(0.f, this.volume - delta);
-            this.client.getSoundManager().setVolume(SoundCategory.MUSIC, this.volume);
+            this.minecraft.getSoundManager().updateCategoryVolume(SoundSource.MUSIC, this.volume);
 
             if (this.volume > 0.f) return;
-            this.client.getSoundManager().stop(this.current);
+            this.minecraft.getSoundManager().stop(this.currentMusic);
             this.volume = 1.f;
-            this.client.getSoundManager().setVolume(SoundCategory.MUSIC, this.volume);
-            this.timeUntilNextSong = ModConfig.get().general.resetDelayOnBiomeSwitch
-                ? this.random.nextBetween(ModConfig.get().general.minDelay, ModConfig.get().general.maxDelay)
+            this.minecraft.getSoundManager().updateCategoryVolume(SoundSource.MUSIC, this.volume);
+            this.nextSongDelay = ModConfig.get().general.resetDelayOnBiomeSwitch
+                ? this.random.nextIntBetweenInclusive(ModConfig.get().general.minDelay, ModConfig.get().general.maxDelay)
                 : 10;
-            this.current = null;
+            this.currentMusic = null;
 
             if (this.structureEvent == null) return;
             this.playStructureMusic();
         } else if (this.volume < 1.f) {
             this.volume = Math.min(1.f, this.volume + delta);
-            this.client.getSoundManager().setVolume(SoundCategory.MUSIC, this.volume);
+            this.minecraft.getSoundManager().updateCategoryVolume(SoundSource.MUSIC, this.volume);
         }
     }
 
-    @Inject(method = "play", at = @At("HEAD"))
+    @Inject(method = "startPlaying", at = @At("HEAD"))
     private void saveCurrentBiome(CallbackInfo ci) {
         this.lastBiomeEvent = BiomePlaylist.CURRENT_BIOME_EVENT;
     }
 
-    @Inject(method = "play", at = @At("HEAD"))
+    @Inject(method = "startPlaying", at = @At("HEAD"))
     private void resetStructure(CallbackInfo ci) {
         this.structureEventPlaying = null;
     }
 
-    @WrapOperation(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/sound/MusicTracker;canFadeTowardsVolume(F)Z"))
-    private boolean useOnlyOneFadeMethod(MusicTracker instance, float volume, Operation<Boolean> original) {
+    @WrapOperation(method = "tick", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/sounds/MusicManager;fadePlaying(F)Z"))
+    private boolean useOnlyOneFadeMethod(MusicManager instance, float volume, Operation<Boolean> original) {
         return false;
     }
 
@@ -95,13 +95,13 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
             return false;
         }
 
-        var currentBiome = this.client.world.getBiome(this.client.player.getBlockPos()).getKey();
+        var currentBiome = this.minecraft.level.getBiome(this.minecraft.player.blockPosition()).unwrapKey();
         if (currentBiome.isEmpty()) {
             Timm.debugLog("Biome was not registered: likely a bug!");
             return true;
         }
 
-        var eventsForCurrentBiome = BiomePlaylist.EVENTS_BY_BIOME.get(currentBiome.get().getValue());
+        var eventsForCurrentBiome = BiomePlaylist.EVENTS_BY_BIOME.get(currentBiome.get().identifier());
         if (eventsForCurrentBiome == null) {
             Timm.debugLog("Current biome was not registered in playlist: fade out to default");
             return true;
@@ -129,12 +129,12 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
 
     @Unique
     private void playStructureMusic() {
-        SoundEvent soundEvent = SoundEvent.of(this.structureEvent);
-        MusicSound musicSound = new MusicSound(Registries.SOUND_EVENT.getEntry(soundEvent),
+        SoundEvent soundEvent = SoundEvent.createVariableRangeEvent(this.structureEvent);
+        Music musicSound = new Music(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(soundEvent),
                 ModConfig.get().general.minDelay,
                 ModConfig.get().general.maxDelay,
                 false);
-        this.play(musicSound);
+        this.startPlaying(musicSound);
         this.structureEventPlaying = this.structureEvent;
         this.structureEvent = null;
     }

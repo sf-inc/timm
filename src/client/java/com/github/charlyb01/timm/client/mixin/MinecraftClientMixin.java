@@ -2,13 +2,6 @@ package com.github.charlyb01.timm.client.mixin;
 
 import com.github.charlyb01.timm.client.music.BiomePlaylist;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
-import net.minecraft.client.MinecraftClient;
-import net.minecraft.client.network.ClientPlayerEntity;
-import net.minecraft.registry.RegistryKey;
-import net.minecraft.registry.entry.RegistryEntry;
-import net.minecraft.sound.MusicSound;
-import net.minecraft.world.World;
-import net.minecraft.world.biome.Biome;
 import org.jetbrains.annotations.Nullable;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
@@ -16,39 +9,46 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 
 import java.util.Optional;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.player.LocalPlayer;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.sounds.Music;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.level.biome.Biome;
 
-@Mixin(MinecraftClient.class)
+@Mixin(Minecraft.class)
 public class MinecraftClientMixin {
-    @Shadow @Nullable public ClientPlayerEntity player;
+    @Shadow @Nullable public LocalPlayer player;
 
-    @ModifyExpressionValue(method = "getMusicInstance", at = @At(value = "FIELD", target = "Lnet/minecraft/sound/MusicType;MENU:Lnet/minecraft/sound/MusicSound;", opcode = Opcodes.GETSTATIC))
-    private MusicSound updateMenuMusic(MusicSound original) {
+    @ModifyExpressionValue(method = "getSituationalMusic", at = @At(value = "FIELD", target = "Lnet/minecraft/sounds/Musics;MENU:Lnet/minecraft/sounds/Music;", opcode = Opcodes.GETSTATIC))
+    private Music updateMenuMusic(Music original) {
         if (this.player == null) return original;
 
-        MusicSound musicSound = BiomePlaylist.getMenuMusic(this.player.getRandom());
+        Music musicSound = BiomePlaylist.getMenuMusic(this.player.getRandom());
         return musicSound != null ? musicSound : original;
     }
 
-    @ModifyExpressionValue(method = "getMusicInstance", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/attribute/BackgroundMusic;getCurrent(ZZ)Ljava/util/Optional;"))
-    private Optional<MusicSound> updateBiomeMusic(Optional<MusicSound> original) {
+    @ModifyExpressionValue(method = "getSituationalMusic", at = @At(value = "INVOKE", target = "Lnet/minecraft/world/attribute/BackgroundMusic;select(ZZ)Ljava/util/Optional;"))
+    private Optional<Music> updateBiomeMusic(Optional<Music> original) {
         if (this.player == null) return original;
 
-        World world = this.player.getEntityWorld();
-        if (world.getRegistryKey() == World.END) {
-            MusicSound musicSound = BiomePlaylist.getEndMusic(this.player.getRandom());
+        Level world = this.player.level();
+        if (world.dimension() == Level.END) {
+            Music musicSound = BiomePlaylist.getEndMusic(this.player.getRandom());
             return musicSound != null ? Optional.of(musicSound) : original;
         }
 
-        if (this.player.getAbilities().creativeMode && this.player.getAbilities().allowFlying) {
-            MusicSound musicSound = BiomePlaylist.getCreativeMusic(this.player.getRandom());
+        if (this.player.getAbilities().instabuild && this.player.getAbilities().mayfly) {
+            Music musicSound = BiomePlaylist.getCreativeMusic(this.player.getRandom());
             return musicSound != null ? Optional.of(musicSound) : original;
         }
 
-        RegistryEntry<Biome> biome = world.getBiome(this.player.getBlockPos());
-        Optional<RegistryKey<Biome>> biomeKey = biome.getKey();
+        Holder<Biome> biome = world.getBiome(this.player.blockPosition());
+        Optional<ResourceKey<Biome>> biomeKey = biome.unwrapKey();
         if (biomeKey.isEmpty()) return original;
 
-        MusicSound musicSound = BiomePlaylist.getMusicSound(biomeKey.get().getValue(), this.player.getRandom());
+        Music musicSound = BiomePlaylist.getMusicSound(biomeKey.get().identifier(), this.player.getRandom());
         return musicSound != null ? Optional.of(musicSound) : original;
     }
 }

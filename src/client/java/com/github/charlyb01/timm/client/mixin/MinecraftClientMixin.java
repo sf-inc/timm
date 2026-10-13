@@ -7,12 +7,14 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.MusicSound;
+import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import org.jetbrains.annotations.Nullable;
 import org.objectweb.asm.Opcodes;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 
 import java.util.Optional;
@@ -21,11 +23,12 @@ import java.util.Optional;
 public class MinecraftClientMixin {
     @Shadow @Nullable public ClientPlayerEntity player;
 
+    @Unique private static final Random MENU_RANDOM = Random.create();
+
+    // Vanilla only picks the menu music when there is no player, so it can't provide the random source
     @ModifyExpressionValue(method = "getMusicInstance", at = @At(value = "FIELD", target = "Lnet/minecraft/sound/MusicType;MENU:Lnet/minecraft/sound/MusicSound;", opcode = Opcodes.GETSTATIC))
     private MusicSound updateMenuMusic(MusicSound original) {
-        if (this.player == null) return original;
-
-        MusicSound musicSound = BiomePlaylist.getMenuMusic(this.player.getRandom());
+        MusicSound musicSound = BiomePlaylist.getMenuMusic(MENU_RANDOM);
         return musicSound != null ? musicSound : original;
     }
 

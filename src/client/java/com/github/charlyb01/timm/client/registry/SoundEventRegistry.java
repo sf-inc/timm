@@ -7,6 +7,7 @@ import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
 
 public class SoundEventRegistry {
     public static final HashMap<Identifier, Holder<SoundEvent>> SOUNDEVENT_BY_ID = new HashMap<>();
@@ -17,6 +18,7 @@ public class SoundEventRegistry {
         register("menu");
         registerBiomes();
         registerStructures();
+        registerVanilla();
     }
 
     private static void registerBiomes() {
@@ -80,8 +82,18 @@ public class SoundEventRegistry {
         register("village");
     }
 
+    // Vanilla music referenced explicitly by the playlists
+    private static void registerVanilla() {
+        register(SoundEvents.MUSIC_MENU);
+        register(SoundEvents.MUSIC_END);
+    }
+
     private static void register(final String path) {
         Identifier id = Timm.id(path);
         SOUNDEVENT_BY_ID.put(id, Registry.registerForHolder(BuiltInRegistries.SOUND_EVENT, id, SoundEvent.createVariableRangeEvent(id)));
+    }
+
+    private static void register(final Holder<SoundEvent> soundEvent) {
+        SOUNDEVENT_BY_ID.put(soundEvent.value().location(), soundEvent);
     }
 }

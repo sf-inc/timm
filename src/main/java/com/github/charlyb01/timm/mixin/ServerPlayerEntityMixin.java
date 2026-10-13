@@ -35,11 +35,11 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
     @Shadow public abstract ServerWorld getServerWorld();
 
     @Unique private Identifier currentSoundId;
-    @Unique private final int tickCheck;
+    // Must be a field initializer: Mixin merges those into the target constructor, but not a mixin constructor body.
+    @Unique private final int tickCheck = Math.floorMod(this.uuid.hashCode(), 20);
 
     public ServerPlayerEntityMixin(World world, BlockPos pos, float yaw, GameProfile gameProfile) {
         super(world, pos, yaw, gameProfile);
-        this.tickCheck = this.uuid.hashCode() % 20;
     }
 
     @Inject(method = "playerTick", at = @At("HEAD"))

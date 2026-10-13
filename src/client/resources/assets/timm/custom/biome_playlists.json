@@ -111,7 +111,7 @@
     "minecraft:music.overworld.grove"
   ],
   "minecraft:ice_spikes": [
-    "timm:snow_plains",
+    "timm:ice_spikes",
     "minecraft:music.game"
   ],
   "minecraft:jagged_peaks": [
@@ -140,7 +140,7 @@
     "minecraft:music.overworld.meadow"
   ],
   "minecraft:mushroom_fields": [
-    "timm:mushroom",
+    "timm:mushroom_fields",
     "minecraft:music.game"
   ],
   "minecraft:nether_wastes": [
@@ -380,7 +380,7 @@
     "timm:taiga"
   ],
   "terralith:mirage_isles": [
-    "timm:mushroom"
+    "timm:mushroom_fields"
   ],
   "terralith:moonlight_grove": [
     "timm:dark_forest"
@@ -1784,10 +1784,10 @@
     "timm:swamp"
   ],
   "wythers:mushroom_caves": [
-    "timm:mushroom"
+    "timm:mushroom_fields"
   ],
   "wythers:mushroom_island": [
-    "timm:mushroom"
+    "timm:mushroom_fields"
   ],
   "wythers:old_growth_taiga_crags": [
     "timm:taiga"
@@ -2011,7 +2011,7 @@
     "timm:nether_wastes"
   ],
   "betternether:nether_grasslands": [
-    "timm:soul_sand_valleys"
+    "timm:soul_sand_valley"
   ],
   "betternether:nether_jungle": [
     "minecraft:music.game"

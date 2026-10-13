@@ -3,7 +3,15 @@
 * **x.Y versions** are either updates that add content or major bug fixes
 * **x.y.Z versions** are either small content update (language translation, keybind change, ...) or bug fixes
 
-# v1.1.2
+## v1.1.3
+* Fix the menu playlist never being used: the menu only played vanilla music
+* Fix vanilla End music cutting Timm End songs short
+* Fix mushroom biomes (Mushroom Fields, Terralith's Mirage Isles, Wythers' Mushroom Caves and Mushroom Island) and
+  BetterNether's Nether Grasslands never playing their Timm songs
+* Fix Ice Spikes playing Snowy Plains songs instead of its own
+* Spread structure detection between players over time as intended, instead of checking every player on the same tick
+
+## v1.1.2
 * Add an option to disable music fading on biome switch
 * Add a safeguard for null fade duration to prevent bugs
 

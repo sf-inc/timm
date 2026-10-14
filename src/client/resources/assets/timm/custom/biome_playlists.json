@@ -214,6 +214,10 @@
     "timm:river",
     "minecraft:music.game"
   ],
+  "minecraft:sulfur_caves": [
+    "timm:dripstone_caves",
+    "minecraft:music.overworld.sulfur_caves"
+  ],
   "minecraft:sunflower_plains": [
     "timm:plains",
     "timm:flower_forest",

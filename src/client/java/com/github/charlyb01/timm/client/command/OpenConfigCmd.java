@@ -16,8 +16,8 @@ public class OpenConfigCmd {
     }
 
     private static int configScreen(CommandContext<FabricClientCommandSource> context ) {
-        context.getSource().getClient().schedule(() -> context.getSource().getClient().setScreen(
-                AutoConfigClient.getConfigScreen(ModConfig.class, context.getSource().getClient().screen).get()));
+        context.getSource().getClient().schedule(() -> context.getSource().getClient().gui.setScreen(
+                AutoConfigClient.getConfigScreen(ModConfig.class, context.getSource().getClient().gui.screen()).get()));
         return Command.SINGLE_SUCCESS;
     }
 }

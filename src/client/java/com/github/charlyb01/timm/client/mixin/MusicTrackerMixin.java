@@ -133,6 +133,11 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
 
     @Override
     public void timm$setStructureEventId(Identifier soundId) {
+        // Already playing this structure song: drop any pending switch, otherwise it restarts as soon as it ends
+        if (this.current != null && soundId.equals(this.structureEventPlaying)) {
+            this.structureEvent = null;
+            return;
+        }
         this.structureEvent = soundId;
     }
 }

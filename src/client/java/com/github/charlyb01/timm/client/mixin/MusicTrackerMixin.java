@@ -83,7 +83,7 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
     @Unique
     private boolean biomeSwitch() {
         if (BiomePlaylist.UNDEFINED_BIOME.equals(this.lastBiomeEvent)) {
-            // This happens if we're opening a world in creative
+            // Not a biome song (creative, end, menu, underwater...): never fade out on biome switch
             return false;
         }
 

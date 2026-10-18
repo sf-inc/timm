@@ -17,6 +17,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Optional;
 
@@ -25,6 +27,12 @@ public class MinecraftClientMixin {
     @Shadow @Nullable public ClientPlayerEntity player;
 
     @Unique private static final Random MENU_RANDOM = Random.create();
+
+    @Inject(method = "getMusicType", at = @At("HEAD"))
+    private void resetBiomeEvent(CallbackInfoReturnable<MusicSound> cir) {
+        // Only the biome branch sets it back: any other music type must not fade out on biome switch
+        BiomePlaylist.CURRENT_BIOME_EVENT = BiomePlaylist.UNDEFINED_BIOME;
+    }
 
     // Vanilla only picks the menu music when there is no player, so it can't provide the random source
     @ModifyExpressionValue(method = "getMusicType", at = @At(value = "FIELD", target = "Lnet/minecraft/client/sound/MusicType;MENU:Lnet/minecraft/sound/MusicSound;", opcode = Opcodes.GETSTATIC))

@@ -12,6 +12,7 @@
 * Fix Ice Spikes playing Snowy Plains songs instead of its own
 * Spread structure detection between players over time as intended, instead of checking every player on the same tick
 * Fix a structure song restarting right after it ends when re-entering its structure while it is still playing
+* Fix Creative, End, underwater and dragon songs fading out on biome switch
 
 ## v1.1.2
 * Add an option to disable music fading on biome switch

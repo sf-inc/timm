@@ -58,7 +58,7 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
             this.client.getSoundManager().stop(this.current);
             this.volume = 1.f;
             this.timeUntilNextSong = ModConfig.get().general.resetDelayOnBiomeSwitch
-                ? this.random.nextBetween(ModConfig.get().general.minDelay, ModConfig.get().general.maxDelay)
+                ? this.random.nextBetween(ModConfig.get().general.minDelay * 20, ModConfig.get().general.maxDelay * 20)
                 : 10;
             this.current = null;
 
@@ -123,8 +123,8 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
     private void playStructureMusic() {
         SoundEvent soundEvent = SoundEvent.of(this.structureEvent);
         MusicSound musicSound = new MusicSound(Registries.SOUND_EVENT.getEntry(soundEvent),
-                ModConfig.get().general.minDelay,
-                ModConfig.get().general.maxDelay,
+                ModConfig.get().general.minDelay * 20,
+                ModConfig.get().general.maxDelay * 20,
                 false);
         this.play(musicSound);
         this.structureEventPlaying = this.structureEvent;

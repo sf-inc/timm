@@ -20,7 +20,8 @@ public class SoundManagerMixin {
     }
 
     @Inject(method = "stop", at = @At("HEAD"))
-    private void resetMusicIdentifierOnStop(CallbackInfo ci) {
+    private void resetMusicIdentifierOnStop(SoundInstance sound, CallbackInfo ci) {
+        if (!sound.getCategory().equals(SoundCategory.MUSIC)) return;
         NowPlayingCmd.SONG_ID = null;
     }
 }

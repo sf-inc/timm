@@ -4,4 +4,6 @@ import net.minecraft.util.Identifier;
 
 public interface MusicTrackerIMixin {
     void timm$setStructureEventId(Identifier soundId);
+
+    boolean timm$isPlayingTimmSong();
 }

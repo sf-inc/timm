@@ -5,11 +5,18 @@
 
 ## v1.1.3
 * Fix the menu playlist never being used: the menu only played vanilla music
-* Fix vanilla End music cutting Timm End songs short
+* Fix vanilla music (End, menu, modded biomes music) cutting Timm songs short
+* Fix reset delay on biome switch delay value: the value was reset with the time in seconds instead of ticks
 * Fix mushroom biomes (Mushroom Fields, Terralith's Mirage Isles, Wythers' Mushroom Caves and Mushroom Island) and
   BetterNether's Nether Grasslands never playing their Timm songs
 * Fix Ice Spikes playing Snowy Plains songs instead of its own
 * Spread structure detection between players over time as intended, instead of checking every player on the same tick
+* Fix a structure song restarting right after it ends when re-entering its structure while it is still playing
+* Fix Creative, End, underwater and dragon songs fading out on biome switch
+* Fix two nearby structures switching back and forth between their songs
+* Fix a structure song never playing again when visiting another structure of the same kind
+* Update modded biome playlists: add missing biomes, fix misspelled biome ids, replace Oh The Biomes You'll Go
+  with Oh The Biomes We've Gone, and let modded biomes also play their default music
 
 ## v1.1.2
 * Add an option to disable music fading on biome switch

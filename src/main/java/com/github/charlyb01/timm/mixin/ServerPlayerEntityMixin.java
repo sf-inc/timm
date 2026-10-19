@@ -50,6 +50,7 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
         StructureAccessor structureAccessor = this.getServerWorld().getStructureAccessor();
         BlockPos playerPos = this.getBlockPos();
         HashMap<ChunkSectionPos, Set<Structure>> structuresByPos = getStructuresAroundPlayer(playerPos, structureAccessor);
+        Identifier foundSoundId = null;
         for (Map.Entry<ChunkSectionPos, Set<Structure>> entry : structuresByPos.entrySet()){
             for (Structure struct : entry.getValue()) {
                 var tagKey = struct.getValidBiomes().getTagKey();
@@ -68,13 +69,19 @@ public abstract class ServerPlayerEntityMixin extends PlayerEntity {
                     Timm.debugLog("Structure ids were not registered for: " + structureName);
                     continue;
                 }
-                if (soundId.equals(this.currentSoundId)) break;
-
-                this.currentSoundId = soundId;
-                ServerPlayNetworking.send((ServerPlayerEntity)(Object) this, new PlayPayload(soundId));
-                break;
+                // Keep the structure that was sent last while the player is still near it, otherwise two
+                // structures in range would be sent alternately and keep restarting each other's music
+                if (soundId.equals(this.currentSoundId)) return;
+                if (foundSoundId == null) foundSoundId = soundId;
             }
         }
+        if (foundSoundId == null) {
+            // Out of every structure: allow its music to play again on the next visit
+            this.currentSoundId = null;
+            return;
+        }
+        this.currentSoundId = foundSoundId;
+        ServerPlayNetworking.send((ServerPlayerEntity)(Object) this, new PlayPayload(foundSoundId));
     }
 
     @Unique

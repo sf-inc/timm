@@ -9,6 +9,8 @@ import net.minecraft.client.network.ClientPlayerEntity;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.entry.RegistryEntry;
 import net.minecraft.sound.MusicSound;
+import net.minecraft.sound.MusicType;
+import net.minecraft.util.Identifier;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.biome.Biome;
 import org.jetbrains.annotations.Nullable;
@@ -17,6 +19,8 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
+import org.spongepowered.asm.mixin.injection.Inject;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Optional;
 
@@ -26,27 +30,30 @@ public class MinecraftClientMixin {
 
     @Unique private static final Random MENU_RANDOM = Random.create();
 
+    @Inject(method = "getMusicType", at = @At("HEAD"))
+    private void resetBiomeEvent(CallbackInfoReturnable<MusicSound> cir) {
+        // Only the biome branch sets it back: any other music type must not fade out on biome switch
+        BiomePlaylist.CURRENT_BIOME_EVENT = BiomePlaylist.UNDEFINED_BIOME;
+    }
+
     // Vanilla only picks the menu music when there is no player, so it can't provide the random source
     @ModifyExpressionValue(method = "getMusicType", at = @At(value = "FIELD", target = "Lnet/minecraft/sound/MusicType;MENU:Lnet/minecraft/sound/MusicSound;", opcode = Opcodes.GETSTATIC))
     private MusicSound updateMenuMusic(MusicSound original) {
-        MusicSound musicSound = BiomePlaylist.getMenuMusic(MENU_RANDOM);
-        return musicSound != null ? musicSound : original;
+        return BiomePlaylist.getMenuMusic(original, MENU_RANDOM);
     }
 
     @ModifyExpressionValue(method = "getMusicType", at = @At(value = "FIELD", target = "Lnet/minecraft/sound/MusicType;END:Lnet/minecraft/sound/MusicSound;", opcode = Opcodes.GETSTATIC))
     private MusicSound updateEndMusic(MusicSound original) {
         if (this.player == null) return original;
 
-        MusicSound musicSound = BiomePlaylist.getEndMusic(this.player.getRandom());
-        return musicSound != null ? musicSound : original;
+        return BiomePlaylist.getEndMusic(original, this.player.getRandom());
     }
 
     @ModifyExpressionValue(method = "getMusicType", at = @At(value = "FIELD", target = "Lnet/minecraft/sound/MusicType;CREATIVE:Lnet/minecraft/sound/MusicSound;", opcode = Opcodes.GETSTATIC))
     private MusicSound updateCreativeMusic(MusicSound original) {
         if (this.player == null) return original;
 
-        MusicSound musicSound = BiomePlaylist.getCreativeMusic(this.player.getRandom());
-        return musicSound != null ? musicSound : original;
+        return BiomePlaylist.getCreativeMusic(original, this.player.getRandom());
     }
 
     @Definition(id = "getMusic", method = "Lnet/minecraft/world/biome/Biome;getMusic()Ljava/util/Optional;")
@@ -56,10 +63,9 @@ public class MinecraftClientMixin {
         if (this.player == null) return original;
 
         RegistryEntry<Biome> biome = this.player.getWorld().getBiome(this.player.getBlockPos());
-        Optional<RegistryKey<Biome>> biomeKey = biome.getKey();
-        if (biomeKey.isEmpty()) return original;
+        Identifier biomeId = biome.getKey().map(RegistryKey::getValue).orElse(null);
 
-        MusicSound musicSound = BiomePlaylist.getMusicSound(biomeKey.get().getValue(), this.player.getRandom());
-        return musicSound != null ? Optional.of(musicSound) : original;
+        // Vanilla falls back to the game music when the biome has none
+        return Optional.of(BiomePlaylist.getMusicSound(biomeId, original.orElse(MusicType.GAME), this.player.getRandom()));
     }
 }

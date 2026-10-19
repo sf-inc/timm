@@ -5,7 +5,7 @@
 
 ## v1.1.3
 * Fix the menu playlist never being used: the menu only played vanilla music
-* Fix vanilla End music cutting Timm End songs short
+* Fix vanilla music (End, menu, modded biomes music) cutting Timm songs short
 * Fix reset delay on biome switch delay value: the value was reset with the time in seconds instead of ticks
 * Fix mushroom biomes (Mushroom Fields, Terralith's Mirage Isles, Wythers' Mushroom Caves and Mushroom Island) and
   BetterNether's Nether Grasslands never playing their Timm songs

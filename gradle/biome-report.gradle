@@ -167,7 +167,6 @@ tasks.register('biomeReport') {
             def foreign = allBiomes.findAll { !it.startsWith("$namespace:") }
             def added = allBiomes.findAll { !playlist.containsKey(it) }
             def stale = entries.findAll { !allBiomes.contains(it) }
-            def noDefault = entries.findAll { allBiomes.contains(it) && !playlist[it].contains('default') }
 
             dump[namespace] = allBiomes.collectEntries { id ->
                 [id, biomesByVersion.findAll { it.value.contains(id) }.keySet().toList()]
@@ -181,12 +180,11 @@ tasks.register('biomeReport') {
             if (foreign) report << "- Biomes in another namespace: ${foreign.join(', ')}\n"
             report << "- NEW (${added.size()}): ${added.join(', ') ?: '-'}\n"
             report << "- STALE (${stale.size()}): ${stale.collect { overlayBiomes[it] ? "$it [overlay ${overlayBiomes[it]}]" : it }.join(', ') ?: '-'}\n"
-            report << "- Missing `default` (${noDefault.size()}): ${noDefault.join(', ') ?: '-'}\n"
             def otherOverlays = overlayBiomes.keySet().findAll { !entries.contains(it) }
             if (otherOverlays) report << "- In inactive overlays only: ${otherOverlays.collect { "$it [${overlayBiomes[it]}]" }.join(', ')}\n"
             report << '\n'
 
-            logger.lifecycle("$namespace: ${allBiomes.size()} biomes, ${added.size()} new, ${stale.size()} stale, ${noDefault.size()} without default")
+            logger.lifecycle("$namespace: ${allBiomes.size()} biomes, ${added.size()} new, ${stale.size()} stale")
         }
 
         // Playlist checks
@@ -198,15 +196,17 @@ tasks.register('biomeReport') {
         def registered = (file('src/client/java/com/github/charlyb01/timm/client/registry/SoundEventRegistry.java').text =~
                 /register\("([^"]+)"\)/).collect { "timm:${it[1]}".toString() }
         def unknownIds = playlist.collectMany { biome, ids ->
-            ids.findAll { (it.startsWith('timm:') && !registered.contains(it)) || !(it.startsWith('timm:') || it.startsWith('minecraft:music.') || it == 'default') }
+            ids.findAll { it != 'default' && !registered.contains(it) }
                     .collect { "$biome -> $it" }
         }
         def duplicateIds = playlist.findAll { biome, ids -> ids.size() != ids.unique(false).size() }.keySet()
+        def noDefault = playlist.findAll { biome, ids -> !ids.contains('default') }.keySet()
 
         report << "## Playlist checks\n\n"
         report << "- Namespaces without a configured mod: ${unknownNamespaces.join(', ') ?: '-'}\n"
         report << "- Duplicate keys: ${duplicateKeys.join(', ') ?: '-'}\n"
         report << "- Unknown music ids: ${unknownIds.join(', ') ?: '-'}\n"
+        report << "- Entries without `default` (vanilla music fallback): ${noDefault.join(', ') ?: '-'}\n"
         report << "- Duplicate music ids in a list: ${duplicateIds.join(', ') ?: '-'}\n"
         warnings.each { report << "- Warning: $it\n" }
 

@@ -140,4 +140,9 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
         }
         this.structureEvent = soundId;
     }
+
+    @Override
+    public boolean timm$isPlayingTimmSong() {
+        return this.current != null && Timm.MOD_ID.equals(this.current.getId().getNamespace());
+    }
 }

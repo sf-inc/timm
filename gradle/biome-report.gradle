@@ -167,6 +167,12 @@ tasks.register('biomeReport') {
             def foreign = allBiomes.findAll { !it.startsWith("$namespace:") }
             def added = allBiomes.findAll { !playlist.containsKey(it) }
             def stale = entries.findAll { !allBiomes.contains(it) }
+            // Without any release for these versions, keep the entries for the versions where the mod exists
+            if (biomesByVersion.isEmpty()) {
+                report << "\nNo release for ${mcVersions.join(', ')}: ${entries.size()} playlist entries kept as-is\n\n"
+                logger.lifecycle("$namespace: no release, ${entries.size()} entries kept")
+                return
+            }
 
             dump[namespace] = allBiomes.collectEntries { id ->
                 [id, biomesByVersion.findAll { it.value.contains(id) }.keySet().toList()]

@@ -322,9 +322,6 @@
     "timm:bamboo_jungle",
     "default"
   ],
-  "terralith:cave/crystal_caves": [
-    "default"
-  ],
   "terralith:cave/deep_caves": [
     "default"
   ],
@@ -334,10 +331,6 @@
     "default"
   ],
   "terralith:cave/granite_caves": [
-    "default"
-  ],
-  "terralith:cave/ice_caves": [
-    "timm:ice_spikes",
     "default"
   ],
   "terralith:cave/infested_caves": [
@@ -365,6 +358,11 @@
   ],
   "terralith:cold_shrubland": [
     "timm:snow_plains",
+    "default"
+  ],
+  "terralith:deep_warm_ocean": [
+    "timm:warm_ocean",
+    "timm:ocean",
     "default"
   ],
   "terralith:desert_canyon": [
@@ -464,11 +462,6 @@
     "timm:dark_forest",
     "default"
   ],
-  "terralith:mountain_steppe": [
-    "timm:mountains",
-    "timm:plains",
-    "default"
-  ],
   "terralith:orchid_swamp": [
     "timm:swamp",
     "default"
@@ -538,9 +531,6 @@
   "terralith:siberian_taiga": [
     "timm:snow_plains",
     "timm:taiga",
-    "default"
-  ],
-  "terralith:skylands": [
     "default"
   ],
   "terralith:skylands_autumn": [
@@ -644,10 +634,6 @@
   "terralith:cave/andesite_caves": [
     "default"
   ],
-  "terralith:cave/desert_caves": [
-    "timm:desert",
-    "default"
-  ],
   "terralith:cave/diorite_caves": [
     "default"
   ],
@@ -660,10 +646,6 @@
   ],
   "natures_spirit:alpine_highlands": [
     "timm:mountains",
-    "default"
-  ],
-  "natures_spirit:amber_covert": [
-    "timm:birch_forest",
     "default"
   ],
   "natures_spirit:arid_highlands": [
@@ -728,10 +710,6 @@
   "natures_spirit:dusty_slopes": [
     "timm:desert",
     "timm:mountains",
-    "default"
-  ],
-  "natures_spirit:eroded_river": [
-    "timm:river",
     "default"
   ],
   "natures_spirit:fir_forest": [
@@ -1302,6 +1280,10 @@
     "timm:lush_caves",
     "default"
   ],
+  "biomeswevegone:pale_bog": [
+    "timm:swamp",
+    "default"
+  ],
   "biomeswevegone:prairie": [
     "timm:plains",
     "default"
@@ -1520,6 +1502,10 @@
   "regions_unexplored:infernal_holt": [
     "default"
   ],
+  "regions_unexplored:inferno": [
+    "timm:dripstone_caves",
+    "default"
+  ],
   "regions_unexplored:joshua_desert": [
     "timm:desert",
     "default"
@@ -1553,6 +1539,19 @@
   ],
   "regions_unexplored:old_growth_bayou": [
     "timm:swamp",
+    "default"
+  ],
+  "regions_unexplored:old_growth_boreal_taiga": [
+    "timm:taiga",
+    "default"
+  ],
+  "regions_unexplored:old_growth_forest": [
+    "timm:forest",
+    "default"
+  ],
+  "regions_unexplored:old_growth_golden_boreal_taiga": [
+    "timm:birch_forest",
+    "timm:taiga",
     "default"
   ],
   "regions_unexplored:orchard": [
@@ -1659,8 +1658,21 @@
     "timm:warm_ocean",
     "default"
   ],
+  "regions_unexplored:tundra": [
+    "timm:snow_plains",
+    "default"
+  ],
   "regions_unexplored:willow_forest": [
     "timm:swamp",
+    "default"
+  ],
+  "regions_unexplored:windswept_maple_forest": [
+    "timm:windy_hills",
+    "timm:forest",
+    "default"
+  ],
+  "regions_unexplored:wisteria_grove": [
+    "timm:flower_forest",
     "default"
   ],
   "terrestria:caldera": [

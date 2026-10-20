@@ -17,6 +17,8 @@
 * Fix a structure song never playing again when visiting another structure of the same kind
 * Update modded biome playlists: add missing biomes, fix misspelled biome ids, replace Oh The Biomes You'll Go
   with Oh The Biomes We've Gone, and let modded biomes also play their default music
+* Fix underwater music being replaced by the biome playlist, and only use the creative playlist where vanilla plays
+  creative music (1.21.11+)
 
 ## v1.1.2
 * Add an option to disable music fading on biome switch

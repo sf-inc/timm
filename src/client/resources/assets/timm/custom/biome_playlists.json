@@ -46,6 +46,10 @@
     "timm:crimson_forest",
     "default"
   ],
+  "minecraft:dappled_forest": [
+    "timm:forest",
+    "default"
+  ],
   "minecraft:dark_forest": [
     "timm:dark_forest",
     "default"

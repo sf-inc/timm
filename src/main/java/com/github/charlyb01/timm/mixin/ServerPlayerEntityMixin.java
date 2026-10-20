@@ -100,7 +100,7 @@ public abstract class ServerPlayerEntityMixin extends Player {
     @Unique
     private static boolean structureContains(SectionPos chunkPos, BlockPos playerPos, Structure structure,
                                              int expansion, StructureManager structureAccessor) {
-        for (StructureStart structureStart : structureAccessor.startsForStructure(chunkPos, structure)) {
+        for (StructureStart structureStart : structureAccessor.startsForStructure(chunkPos.x(), chunkPos.z(), structure)) {
             for (StructurePiece structurePiece : structureStart.getPieces()) {
                 if (structurePiece.getBoundingBox().inflatedBy(expansion).isInside(playerPos)) {
                     return true;

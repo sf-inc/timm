@@ -61,7 +61,7 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
             this.volume = 1.f;
             this.minecraft.getSoundManager().updateCategoryVolume(SoundSource.MUSIC, this.volume);
             this.nextSongDelay = ModConfig.get().general.resetDelayOnBiomeSwitch
-                ? this.random.nextIntBetweenInclusive(ModConfig.get().general.minDelay, ModConfig.get().general.maxDelay)
+                ? this.random.nextIntBetweenInclusive(ModConfig.get().general.minDelay * 20, ModConfig.get().general.maxDelay * 20)
                 : 10;
             this.currentMusic = null;
 
@@ -91,7 +91,7 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
     @Unique
     private boolean biomeSwitch() {
         if (BiomePlaylist.UNDEFINED_BIOME.equals(this.lastBiomeEvent)) {
-            // This happens if we're opening a world in creative
+            // Not a biome song (creative, end, menu, underwater...): never fade out on biome switch
             return false;
         }
 
@@ -112,6 +112,8 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
 
     @Unique
     private boolean shouldFadeOut() {
+        if (this.minecraft.getMusicVolume() <= 0.f) return true;
+
         if(!ModConfig.get().general.enableMusicFading)
             return false;
 
@@ -131,8 +133,8 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
     private void playStructureMusic() {
         SoundEvent soundEvent = SoundEvent.createVariableRangeEvent(this.structureEvent);
         Music musicSound = new Music(BuiltInRegistries.SOUND_EVENT.wrapAsHolder(soundEvent),
-                ModConfig.get().general.minDelay,
-                ModConfig.get().general.maxDelay,
+                ModConfig.get().general.minDelay * 20,
+                ModConfig.get().general.maxDelay * 20,
                 false);
         this.startPlaying(musicSound);
         this.structureEventPlaying = this.structureEvent;
@@ -141,6 +143,16 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
 
     @Override
     public void timm$setStructureEventId(Identifier soundId) {
+        // Already playing this structure song: drop any pending switch, otherwise it restarts as soon as it ends
+        if (this.currentMusic != null && soundId.equals(this.structureEventPlaying)) {
+            this.structureEvent = null;
+            return;
+        }
         this.structureEvent = soundId;
+    }
+
+    @Override
+    public boolean timm$isPlayingTimmSong() {
+        return this.currentMusic != null && Timm.MOD_ID.equals(this.currentMusic.getIdentifier().getNamespace());
     }
 }

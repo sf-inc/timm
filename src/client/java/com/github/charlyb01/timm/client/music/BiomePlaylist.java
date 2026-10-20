@@ -1,17 +1,21 @@
 package com.github.charlyb01.timm.client.music;
 
 import com.github.charlyb01.timm.Timm;
+import com.github.charlyb01.timm.client.imixin.MusicTrackerIMixin;
 import com.github.charlyb01.timm.client.registry.SoundEventRegistry;
 import com.github.charlyb01.timm.config.ModConfig;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 import net.fabricmc.loader.api.FabricLoader;
 import net.fabricmc.loader.api.ModContainer;
+import net.minecraft.client.Minecraft;
 import net.minecraft.core.Holder;
 import net.minecraft.resources.Identifier;
 import net.minecraft.sounds.Music;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.util.RandomSource;
+import org.jetbrains.annotations.Nullable;
+
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.nio.file.Files;
@@ -28,67 +32,56 @@ public class BiomePlaylist {
     private static final Identifier END_ID = Identifier.parse("end");
     private static final Identifier MENU_ID = Identifier.parse("menu");
 
-    public static Music getMusicSound(Identifier biomeId, RandomSource random) {
-        ArrayList<Identifier> musics = EVENTS_BY_BIOME.get(biomeId);
-        if (musics == null || musics.isEmpty()) {
-            CURRENT_BIOME_EVENT = UNDEFINED_BIOME;
-            return null;
-        }
-
-        Identifier soundEventId = musics.get(random.nextInt(musics.size()));
+    @Nullable
+    public static Music getMusicSound(@Nullable Identifier biomeId, @Nullable Music original, RandomSource random) {
+        Identifier soundEventId = pick(biomeId, random);
         Holder<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
-        if (soundEvent == null) {
-            CURRENT_BIOME_EVENT = UNDEFINED_BIOME;
-            return null;
-        }
-
-        CURRENT_BIOME_EVENT = soundEventId;
-        return new Music(
-                soundEvent,
-                ModConfig.get().general.minDelay * 20,
-                ModConfig.get().general.maxDelay * 20,
-                false);
+        CURRENT_BIOME_EVENT = soundEvent != null ? soundEventId : UNDEFINED_BIOME;
+        return music(soundEvent, original);
     }
 
-    public static Music getCreativeMusic(RandomSource random) {
-        ArrayList<Identifier> musics = EVENTS_BY_BIOME.get(CREATIVE_ID);
-        if (musics == null || musics.isEmpty()) return null;
-
-        Identifier soundEventId = musics.get(random.nextInt(musics.size()));
-        Holder<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
-        if (soundEvent == null) return null;
-
-        return new Music(
-                soundEvent,
-                ModConfig.get().general.minDelay * 20,
-                ModConfig.get().general.maxDelay * 20,
-                false);
+    @Nullable
+    public static Music getCreativeMusic(@Nullable Music original, RandomSource random) {
+        Holder<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(pick(CREATIVE_ID, random));
+        return music(soundEvent, original);
     }
 
-    public static Music getEndMusic(RandomSource random) {
-        ArrayList<Identifier> musics = EVENTS_BY_BIOME.get(END_ID);
-        if (musics == null || musics.isEmpty()) return null;
-
-        Identifier soundEventId = musics.get(random.nextInt(musics.size()));
-        Holder<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
-        if (soundEvent == null) return null;
-
-        return new Music(
-                soundEvent,
-                ModConfig.get().general.minDelay * 20,
-                ModConfig.get().general.maxDelay * 20,
-                false);
+    @Nullable
+    public static Music getEndMusic(@Nullable Music original, RandomSource random) {
+        Holder<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(pick(END_ID, random));
+        return music(soundEvent, original);
     }
 
-    public static Music getMenuMusic(RandomSource random) {
-        ArrayList<Identifier> musics = EVENTS_BY_BIOME.get(MENU_ID);
+    @Nullable
+    public static Music getMenuMusic(@Nullable Music original, RandomSource random) {
+        Holder<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(pick(MENU_ID, random));
+        return music(soundEvent, original, 20, 60);
+    }
+
+    @Nullable
+    private static Identifier pick(@Nullable Identifier playlistId, RandomSource random) {
+        ArrayList<Identifier> musics = playlistId == null ? null : EVENTS_BY_BIOME.get(playlistId);
         if (musics == null || musics.isEmpty()) return null;
 
-        Identifier soundEventId = musics.get(random.nextInt(musics.size()));
-        Holder<SoundEvent> soundEvent = SoundEventRegistry.SOUNDEVENT_BY_ID.get(soundEventId);
-        if (soundEvent == null) return null;
+        return musics.get(random.nextInt(musics.size()));
+    }
 
-        return new Music(soundEvent, 20, 60, false);
+    // Without a Timm song ("default", any other id, or no playlist), play the original music instead (none if silent).
+    // The pick is redone every tick: the original music must not replace a playing Timm song, or vanilla music
+    // (menu, End, biomes with replace_current_music) would cut it.
+    // Every song uses the config delays
+    @Nullable
+    private static Music music(@Nullable Holder<SoundEvent> soundEvent, @Nullable Music original) {
+        return music(soundEvent, original, ModConfig.get().general.minDelay * 20, ModConfig.get().general.maxDelay * 20);
+    }
+
+    @Nullable
+    private static Music music(@Nullable Holder<SoundEvent> soundEvent, @Nullable Music original, int minDelay, int maxDelay) {
+        if (soundEvent != null) return new Music(soundEvent, minDelay, maxDelay, false);
+        if (original == null) return null;
+
+        boolean timmPlaying = ((MusicTrackerIMixin) Minecraft.getInstance().getMusicManager()).timm$isPlayingTimmSong();
+        return new Music(original.sound(), minDelay, maxDelay, original.replaceCurrentMusic() && !timmPlaying);
     }
 
     public static void init() {

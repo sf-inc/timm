@@ -20,7 +20,8 @@ public class SoundManagerMixin {
     }
 
     @Inject(method = "stop(Lnet/minecraft/client/resources/sounds/SoundInstance;)V", at = @At("HEAD"))
-    private void resetMusicIdentifierOnStop(CallbackInfo ci) {
+    private void resetMusicIdentifierOnStop(SoundInstance sound, CallbackInfo ci) {
+        if (!sound.getSource().equals(SoundSource.MUSIC)) return;
         NowPlayingCmd.SONG_ID = null;
     }
 }

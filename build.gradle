@@ -97,3 +97,5 @@ publishing {
         // retrieving dependencies.
     }
 }
+
+apply from: "gradle/biome-report.gradle"

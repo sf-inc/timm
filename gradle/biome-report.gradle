@@ -1,0 +1,225 @@
+// Biome report: lists the biomes of the external mods referenced by biome_playlists.json and diffs them against it.
+// Every mod is downloaded from Modrinth (newest version for each Minecraft version, Fabric preferred) and read statically:
+// biomes are the data/<ns>/worldgen/biome/**.json files of the jar, its nested jars and its active pack overlays.
+//
+// Usage: gradle biomeReport [-PbiomeMcVersions=1.20.1,1.20.4]   (default: minecraft_version)
+// Output: build/biome-report/report.md and build/biome-report/biomes.json. The playlist file is never modified.
+
+import groovy.json.JsonOutput
+import groovy.json.JsonSlurper
+
+import java.util.zip.ZipEntry
+import java.util.zip.ZipFile
+import java.util.zip.ZipInputStream
+
+// Playlist namespace -> Modrinth project slug
+ext.biomeMods = [
+        terralith         : 'terralith',
+        natures_spirit    : 'natures-spirit',
+        biomesoplenty     : 'biomes-o-plenty',
+        biomeswevegone    : 'oh-the-biomes-weve-gone',
+        regions_unexplored: 'regions-unexplored',
+        terrestria        : 'terrestria',
+        wythers           : 'expanded-ecosphere',
+        betternether      : 'betternether',
+]
+
+// Minecraft version -> data pack format, used to know which pack overlays are active. Extend when porting.
+ext.biomeDataPackFormats = [
+        '1.20'  : 15, '1.20.1': 15, '1.20.2': 18, '1.20.3': 26, '1.20.4': 26,
+        '1.20.5': 41, '1.20.6': 41, '1.21': 48, '1.21.1': 48, '1.21.2': 57, '1.21.3': 57,
+        '1.21.4': 61, '1.21.5': 71, '1.21.6': 80, '1.21.7': 81, '1.21.8': 81, '1.21.9': 88, '1.21.10': 88, '1.21.11': 94,
+        '26.1': 101, '26.1.1': 101, '26.1.2': 101,
+]
+
+static Object modrinthGet(String url) {
+    def connection = new URL(url).openConnection()
+    connection.setRequestProperty('User-Agent', 'charlyb01/timm biome-report')
+    return new JsonSlurper().parse(connection.inputStream)
+}
+
+static int majorFormat(Object format) {
+    return format instanceof List ? (format[0] as int) : (format as int)
+}
+
+// Overlay entry -> whether it applies to the given pack format (null when the format is unknown)
+static Boolean overlayActive(Map entry, Integer packFormat) {
+    if (packFormat == null) return null
+    def formats = entry.formats
+    if (formats == null && entry.min_format != null) {
+        return majorFormat(entry.min_format) <= packFormat && packFormat <= majorFormat(entry.max_format ?: entry.min_format)
+    }
+    if (formats instanceof Number) return formats == packFormat
+    if (formats instanceof List) return formats[0] <= packFormat && packFormat <= formats[1]
+    if (formats instanceof Map) return formats.min_inclusive <= packFormat && packFormat <= formats.max_inclusive
+    return null
+}
+
+// Reads one jar (and its nested jars): returns [biomes: Set<id>, overlayBiomes: Map<id, overlay description>]
+static Map readBiomes(Map<String, byte[]> files, Integer packFormat) {
+    def biomes = new TreeSet<String>()
+    def overlayBiomes = new TreeMap<String, String>()
+    def activeDirs = [''] as Set
+    def inactiveDirs = [:]
+
+    def mcmeta = files['pack.mcmeta']
+    if (mcmeta != null) {
+        def overlays = new JsonSlurper().parse(mcmeta)?.overlays?.entries ?: []
+        overlays.each { Map entry ->
+            def active = overlayActive(entry, packFormat)
+            if (active) activeDirs << "${entry.directory}/".toString()
+            else inactiveDirs["${entry.directory}/".toString()] = "${entry.directory} (formats ${JsonOutput.toJson(entry.formats ?: [entry.min_format, entry.max_format])}${active == null ? ', unknown target format' : ''})".toString()
+        }
+    }
+
+    def pattern = ~/^(.*?)data\/([^\/]+)\/worldgen\/biome\/(.+)\.json$/
+    files.each { name, bytes ->
+        def matcher = name =~ pattern
+        if (matcher.matches()) {
+            def (prefix, namespace, path) = [matcher.group(1), matcher.group(2), matcher.group(3)]
+            if (namespace == 'minecraft') return
+            def id = "$namespace:$path".toString()
+            if (activeDirs.contains(prefix)) biomes << id
+            else if (inactiveDirs.containsKey(prefix)) overlayBiomes[id] = inactiveDirs[prefix]
+        } else if (name.startsWith('META-INF/jars/') && name.endsWith('.jar')) {
+            def nested = readBiomes(unzip(new ZipInputStream(new ByteArrayInputStream(bytes))), packFormat)
+            biomes.addAll(nested.biomes)
+            overlayBiomes.putAll(nested.overlayBiomes)
+        }
+    }
+    overlayBiomes.keySet().removeAll(biomes)
+    return [biomes: biomes, overlayBiomes: overlayBiomes]
+}
+
+static Map<String, byte[]> unzip(ZipInputStream zip) {
+    def files = [:]
+    ZipEntry entry
+    while ((entry = zip.nextEntry) != null) {
+        if (!entry.directory) files[entry.name] = zip.readAllBytes()
+    }
+    return files
+}
+
+static Map<String, byte[]> unzip(File file) {
+    def files = [:]
+    new ZipFile(file).withCloseable { zip ->
+        zip.entries().each { ZipEntry entry ->
+            if (!entry.directory) files[entry.name] = zip.getInputStream(entry).readAllBytes()
+        }
+    }
+    return files
+}
+
+tasks.register('biomeReport') {
+    group = 'timm'
+    description = 'Lists the biomes of the external mods from Modrinth and diffs them against biome_playlists.json'
+
+    doLast {
+        def mcVersions = (project.findProperty('biomeMcVersions') ?: project.minecraft_version).toString().split(',')*.trim()
+        def outDir = layout.buildDirectory.dir('biome-report').get().asFile
+        def playlistFile = file('src/client/resources/assets/timm/custom/biome_playlists.json')
+        def playlistText = playlistFile.text
+        Map<String, List<String>> playlist = new JsonSlurper().parseText(playlistText)
+
+        def report = new StringBuilder("# Biome report (Minecraft ${mcVersions.join(', ')})\n\n")
+        def dump = [:]
+        def warnings = []
+
+        biomeMods.each { String namespace, String slug ->
+            def modrinthProject = modrinthGet("https://api.modrinth.com/v2/project/$slug")
+            report << "## `$namespace`: ${modrinthProject.title}\n\n"
+            report << "- Modrinth: https://modrinth.com/${modrinthProject.project_type}/$slug\n"
+            report << "- Source: ${modrinthProject.source_url ?: '(none on Modrinth)'}\n"
+
+            def biomesByVersion = [:]
+            def overlayBiomes = new TreeMap<String, String>()
+            mcVersions.each { String mcVersion ->
+                def query = URLEncoder.encode(JsonOutput.toJson([mcVersion]), 'UTF-8')
+                def versions = modrinthGet("https://api.modrinth.com/v2/project/$slug/version?game_versions=$query")
+                        .sort { a, b -> b.date_published <=> a.date_published }
+                def version = versions.find { 'fabric' in it.loaders } ?: versions.find()
+                if (version == null) {
+                    report << "- $mcVersion: no version on Modrinth\n"
+                    return
+                }
+
+                def jarInfo = version.files.find { it.primary } ?: version.files.find()
+                def jar = new File(outDir, "cache/$slug/${jarInfo.filename}")
+                if (!jar.exists()) {
+                    jar.parentFile.mkdirs()
+                    logger.lifecycle("Downloading ${jarInfo.url}")
+                    new URL(jarInfo.url).withInputStream { input -> jar.withOutputStream { it << input } }
+                }
+
+                def packFormat = biomeDataPackFormats[mcVersion]
+                if (packFormat == null) warnings << "Unknown data pack format for $mcVersion: pack overlays of `$slug` are not applied".toString()
+                def biomes = readBiomes(unzip(jar), packFormat)
+                biomesByVersion[mcVersion] = biomes.biomes
+                overlayBiomes.putAll(biomes.overlayBiomes)
+
+                report << "- $mcVersion: [${version.version_number}](https://modrinth.com/${modrinthProject.project_type}/$slug/version/${version.id})" +
+                        " (${version.version_type}, ${version.loaders.join('/')}, game versions ${version.game_versions.join(' ')})" +
+                        ", `${jarInfo.filename}`: ${biomes.biomes.size()} biomes\n"
+            }
+
+            def allBiomes = new TreeSet<String>(biomesByVersion.values().flatten())
+            overlayBiomes.keySet().removeAll(allBiomes)
+            def entries = playlist.keySet().findAll { it.startsWith("$namespace:") }
+            def foreign = allBiomes.findAll { !it.startsWith("$namespace:") }
+            def added = allBiomes.findAll { !playlist.containsKey(it) }
+            def stale = entries.findAll { !allBiomes.contains(it) }
+            // Without any release for these versions, keep the entries for the versions where the mod exists
+            if (biomesByVersion.isEmpty()) {
+                report << "\nNo release for ${mcVersions.join(', ')}: ${entries.size()} playlist entries kept as-is\n\n"
+                logger.lifecycle("$namespace: no release, ${entries.size()} entries kept")
+                return
+            }
+
+            dump[namespace] = allBiomes.collectEntries { id ->
+                [id, biomesByVersion.findAll { it.value.contains(id) }.keySet().toList()]
+            }
+
+            report << "\n${allBiomes.size()} biomes, ${entries.size()} playlist entries\n\n"
+            biomesByVersion.each { mcVersion, biomes ->
+                def only = biomes.findAll { id -> biomesByVersion.any { it.key != mcVersion && !it.value.contains(id) } }
+                if (only) report << "- Only for $mcVersion: ${only.join(', ')}\n"
+            }
+            if (foreign) report << "- Biomes in another namespace: ${foreign.join(', ')}\n"
+            report << "- NEW (${added.size()}): ${added.join(', ') ?: '-'}\n"
+            report << "- STALE (${stale.size()}): ${stale.collect { overlayBiomes[it] ? "$it [overlay ${overlayBiomes[it]}]" : it }.join(', ') ?: '-'}\n"
+            def otherOverlays = overlayBiomes.keySet().findAll { !entries.contains(it) }
+            if (otherOverlays) report << "- In inactive overlays only: ${otherOverlays.collect { "$it [${overlayBiomes[it]}]" }.join(', ')}\n"
+            report << '\n'
+
+            logger.lifecycle("$namespace: ${allBiomes.size()} biomes, ${added.size()} new, ${stale.size()} stale")
+        }
+
+        // Playlist checks
+        def unknownNamespaces = playlist.keySet().findAll { it.contains(':') }
+                .collect { it.substring(0, it.indexOf(':')) }.unique()
+                .findAll { it != 'minecraft' && !biomeMods.containsKey(it) }
+        def keys = (playlistText =~ /(?m)^\s*"([^"]+)"\s*:/).collect { it[1] }
+        def duplicateKeys = keys.countBy { it }.findAll { it.value > 1 }.keySet()
+        def registered = (file('src/client/java/com/github/charlyb01/timm/client/registry/SoundEventRegistry.java').text =~
+                /register\("([^"]+)"\)/).collect { "timm:${it[1]}".toString() }
+        def unknownIds = playlist.collectMany { biome, ids ->
+            ids.findAll { it != 'default' && !registered.contains(it) }
+                    .collect { "$biome -> $it" }
+        }
+        def duplicateIds = playlist.findAll { biome, ids -> ids.size() != ids.unique(false).size() }.keySet()
+        def noDefault = playlist.findAll { biome, ids -> !ids.contains('default') }.keySet()
+
+        report << "## Playlist checks\n\n"
+        report << "- Namespaces without a configured mod: ${unknownNamespaces.join(', ') ?: '-'}\n"
+        report << "- Duplicate keys: ${duplicateKeys.join(', ') ?: '-'}\n"
+        report << "- Unknown music ids: ${unknownIds.join(', ') ?: '-'}\n"
+        report << "- Entries without `default` (vanilla music fallback): ${noDefault.join(', ') ?: '-'}\n"
+        report << "- Duplicate music ids in a list: ${duplicateIds.join(', ') ?: '-'}\n"
+        warnings.each { report << "- Warning: $it\n" }
+
+        outDir.mkdirs()
+        new File(outDir, 'report.md').text = report.toString()
+        new File(outDir, 'biomes.json').text = JsonOutput.prettyPrint(JsonOutput.toJson(dump))
+        logger.lifecycle("Biome report written to ${new File(outDir, 'report.md')}")
+    }
+}

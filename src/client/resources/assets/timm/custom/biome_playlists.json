@@ -2542,6 +2542,10 @@
     "timm:basalt_deltas",
     "default"
   ],
+  "betternether:gloomwood": [
+    "timm:soul_sand_valley",
+    "default"
+  ],
   "betternether:gravel_desert": [
     "timm:nether_wastes",
     "default"

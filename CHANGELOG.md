@@ -19,6 +19,7 @@
   with Oh The Biomes We've Gone, and let modded biomes also play their default music
 * Fix underwater music being replaced by the biome playlist, and only use the creative playlist where vanilla plays
   creative music (1.21.11+)
+* Fix non-Timm music never fading out in silent places such as the Pale Garden (1.21.11+)
 
 ## v1.1.2
 * Add an option to disable music fading on biome switch

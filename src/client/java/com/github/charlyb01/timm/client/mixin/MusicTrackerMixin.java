@@ -112,6 +112,8 @@ public abstract class MusicTrackerMixin implements MusicTrackerIMixin {
 
     @Unique
     private boolean shouldFadeOut() {
+        if (this.client.getMusicVolume() <= 0.f) return true;
+
         if(!ModConfig.get().general.enableMusicFading)
             return false;
 

@@ -218,7 +218,7 @@
   ],
   "minecraft:sulfur_caves": [
     "timm:dripstone_caves",
-    "minecraft:music.overworld.sulfur_caves"
+    "default"
   ],
   "minecraft:sunflower_plains": [
     "timm:plains",

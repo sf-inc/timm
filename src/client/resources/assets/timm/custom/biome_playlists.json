@@ -851,10 +851,6 @@
     "timm:savanna",
     "default"
   ],
-  "biomesoplenty:aspen_glade": [
-    "timm:birch_forest",
-    "default"
-  ],
   "biomesoplenty:auroral_garden": [
     "timm:birch_forest",
     "timm:lush_caves",
@@ -899,6 +895,10 @@
     "timm:end",
     "default"
   ],
+  "biomesoplenty:end_flats": [
+    "timm:end",
+    "default"
+  ],
   "biomesoplenty:end_reef": [
     "timm:end",
     "default"
@@ -935,10 +935,6 @@
     "timm:lush_caves",
     "default"
   ],
-  "biomesoplenty:grassland": [
-    "timm:plains",
-    "default"
-  ],
   "biomesoplenty:gravel_beach": [
     "timm:windy_hills",
     "default"
@@ -952,9 +948,6 @@
   ],
   "biomesoplenty:jade_cliffs": [
     "timm:taiga",
-    "default"
-  ],
-  "biomesoplenty:jacaranda_glade": [
     "default"
   ],
   "biomesoplenty:lavender_field": [
@@ -1075,6 +1068,11 @@
     "default"
   ],
   "biomesoplenty:spider_nest": [
+    "default"
+  ],
+  "biomesoplenty:subtropics": [
+    "timm:forest",
+    "timm:flower_forest",
     "default"
   ],
   "biomesoplenty:tropics": [
